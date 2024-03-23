@@ -1,8 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -13,17 +17,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('admin.user.login');
     }
 
     /**
@@ -34,51 +28,36 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'email' => 'required|email:filter',
+            'password' => 'required'
+        ]);
+
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        if( Auth::attempt([
+            'email' => $email, 
+            'password' => $password,
+            'level' => [0,1]
+        ])){
+            $user = User::where('email', $email)->first();
+            Auth::login($user);
+            return redirect('admin/home'); 
+        }
+
+        return back()->with('error','ERORR: Incorrect email address or password');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    // Log Out
+    public function logout(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        Auth::logout();
+ 
+        $request->session()->invalidate();
+ 
+        $request->session()->regenerateToken();
+ 
+        return redirect('admin/login');
     }
 }

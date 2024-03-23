@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -34,7 +34,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = $this->productService->getAll();
+
+        return view('admin.product.view', ['products' => $products]);
     }
 
     /**
@@ -44,7 +46,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $brands = $this->brandService->getAll();
+        $categories = $this->categoryService->getAll();
+
+        return view('admin.product.create',['brands' => $brands, 'categories' => $categories]);
     }
 
     /**
@@ -55,7 +60,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = $this->productService->store($request);
+        
+        return redirect('admin/product/'. $product->id)
+                        ->with('success', 'SUCESSS: New product was successfully added!');
     }
 
     /**
@@ -64,9 +72,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('admin.product.detail', ['product' => $product ]);
     }
 
     /**
@@ -75,9 +83,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        $categories = $this->categoryService->getAll();
+        $brands = $this->brandService->getAll();
+        return view('admin.product.edit', ['product' => $product , 'categories' => $categories, 'brands' => $brands]);
     }
 
     /**
@@ -87,9 +97,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $product_id)
     {
-        //
+        $this->productService->update($request, $product_id);
+        return redirect('admin/product') -> with('success','SUCCESS: Product was successfully edited!');
     }
 
     /**
@@ -98,8 +109,12 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($product_id)
     {
-        //
+        $result = $this->productService->destroy($product_id);
+        
+        if($result){
+            return back()->with('success', 'SUCCESS: Product was successfully deleted! ');
+        }
     }
 }
