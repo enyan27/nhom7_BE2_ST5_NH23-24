@@ -30,6 +30,7 @@ return new class extends Migration
             $table->integer('view_count')->nullable();
             $table->integer('rate_total')->nullable();
             $table->double('rate_count')->nullable();
+
             $table->timestamps();
         });
     }

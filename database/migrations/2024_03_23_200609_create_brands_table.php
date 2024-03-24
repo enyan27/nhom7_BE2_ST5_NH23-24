@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('brandname')->unique();
             $table->text('description');
             $table->tinyInteger('active');
+            
             $table->timestamps();
         });
     }

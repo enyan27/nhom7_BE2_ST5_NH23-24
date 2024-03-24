@@ -27,6 +27,7 @@ return new class extends Migration
             $table->text('message')->nullable();
             $table->string('payment');
             $table->double('total_price');
+            
             $table->timestamps();
         });
     }

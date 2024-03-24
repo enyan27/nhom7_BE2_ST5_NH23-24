@@ -26,6 +26,8 @@ use App\Http\Controllers\Admin\StatisticController;
 */
 
 
+
+
 //Admin Page
 
 Route::prefix('admin')->group(function () {
@@ -51,3 +53,5 @@ Route::group(['prefix'=> 'admin', 'middleware'=>'auth' ] , function () {
        
     });
 });
+
+Route::redirect('/','/admin/login'); // Test Admin Page
