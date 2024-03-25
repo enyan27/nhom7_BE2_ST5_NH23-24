@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AccountService
 {
+    // Update->Avatar
     public function update($request) {
 
         $user = User::find(Auth::id());
@@ -34,13 +35,14 @@ class AccountService
         return true;
     }
 
+    // Update->Order status
     public function updateOrderStatus($request) {
         if($request->ajax()) {
             $order = Order::find($request->order_id);
-            $order->status = $request->status;   
+            $order->status = $request->status;
             $order->save();
 
-            foreach ($order->orderDetails as $orderDetail){
+            foreach ($order->orderDetails as $orderDetail) {
                 if($request->status == 3 or $request->status == 4) {
                     $orderDetail->productDetail->quantity += $orderDetail->quantity;
                     $orderDetail->productDetail->save();
