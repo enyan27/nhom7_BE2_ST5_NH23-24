@@ -1,74 +1,57 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Services\Brand\BrandService;
+use App\Models\Brand;
 
 class BrandController extends Controller
 {
-    public function index()
-    {
-        //
+    protected $brandService;
+
+    public function __construct(BrandService $brandService) {
+
+        $this->brandService = $brandService;
     }
 
-    public function create()
-    {
-        //
+    public function index() {
+
+        $brands = $this->brandService->getAll();
+
+        return view('admin.brand.view', compact('brands'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function create() {
+
+        return view('admin.brand.create');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function store(Request $request) {
+
+        $this->brandService->create($request);
+
+        return redirect('admin/brand/create')->with('success','SUCCESS: New brand was successfully added!');
+    } 
+
+    public function show(Brand $brand) {
+
+        return view('admin.brand.edit', compact('brand'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function update(Request $request, Brand $brand) {
+        
+        $this->brandService->update($request, $brand);
+        return redirect('admin/brand')->with('success','SUCCESS: Brand was successfully edited!');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    public function destroy($id) {
+        
+        $result = $this->brandService->destroy($id);   
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        if($result) {
+            return redirect('admin/brand')->with('success','SUCCESS: Brand was successfully deleted!');
+        }
     }
 }
