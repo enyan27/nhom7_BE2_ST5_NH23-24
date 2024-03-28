@@ -1,84 +1,69 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Services\Product\ProductService;
+use App\Http\Services\ProductDetail\ProductDetailService;
+use App\Models\Product;
+use App\Models\ProductDetail;
 
 class ProductDetailController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    protected $productService;
+    protected $productDetailService;
+
+    public function __construct(ProductService $productService, ProductDetailService $productDetailService) {
+
+        $this->productService = $productService;
+
+        $this->productDetailService = $productDetailService;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function index($product_id) {
+
+        $product = $this->productService->find($product_id);
+        $productDetails = $product->productDetail;
+
+        return view('admin.product.detail.view', ['productDetails' => $productDetails, 'product' => $product]); 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function create(Product $product) {
+
+        return view('admin.product.detail.create', ['product' => $product]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function store(Request $request, $product_id){
+
+        $this->productDetailService->store($request, $product_id);
+        $this->productService->updateQuantity($product_id);
+
+        return redirect('admin/product/' . $product_id . '/detail/create')
+                    ->with('success', 'SUCCESS: New product detail was successfully added!');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function edit($product_id, $productDetail_id) {
+
+        $productDetail = $this->productDetailService->find($product_id, $productDetail_id);
+
+        return view('admin.product.detail.edit', ['productDetail' => $productDetail]); 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $product_id, $productDetail_id) {
+
+        $this->productDetailService->update($request, $product_id, $productDetail_id);
+        $this->productService->updateQuantity($product_id);
+
+        return redirect('admin/product/'.$product_id.'/detail')
+                    ->with('success', 'SUCCESS: Product detail was successfully edited!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function destroy($product_id, $productDetail_id) {
+
+       $this->productDetailService->destroy($productDetail_id);
+       $this->productService->updateQuantity($product_id);
+
+       return back()->with('success', 'SUCCESS: Product detail was successfully deleted!');
     }
 }

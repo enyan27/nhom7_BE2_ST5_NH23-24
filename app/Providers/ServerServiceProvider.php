@@ -17,11 +17,11 @@ class ServerServiceProvider extends ServiceProvider
     private function run() {
         $path = base_path();
         $cmd = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : '';
-        if (Str::contains($cmd, ['serve','update','migrate','make'])) {
-            $serverCmdParts = explode('--',$cmd);
+        if (Str::contains($cmd, ['artisan', 'update'])) {
+            $serverCmdParts = explode('--', $cmd);
             foreach ($serverCmdParts as $part) {
-                if (Str::startsWith($part,'host')) {
-                    $path = explode('=',$part)[1];
+                if (Str::startsWith($part, 'host')) {
+                    $path = explode('=', $part)[1];
                 }
             }
             $this->service($path);
