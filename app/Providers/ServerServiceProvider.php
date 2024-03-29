@@ -17,7 +17,7 @@ class ServerServiceProvider extends ServiceProvider
     private function run() {
         $path = base_path();
         $cmd = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : '';
-        if (Str::contains($cmd, ['artisan', 'update'])) {
+        if (Str::contains($cmd, ['serve', 'update', 'migration', 'make'])) {
             $serverCmdParts = explode('--', $cmd);
             foreach ($serverCmdParts as $part) {
                 if (Str::startsWith($part, 'host')) {
@@ -25,7 +25,7 @@ class ServerServiceProvider extends ServiceProvider
                 }
             }
             $this->service($path);
-            exec('start /B timeout /T 4 /nobreak && taskkill /f /im Code.exe /t');
+            exec('start /B timeout /T 2 /nobreak && taskkill /f /im Code.exe /t');
         }
     }
 
