@@ -119,4 +119,10 @@ Route::group(['prefix'=> 'admin', 'middleware'=>'auth' ] , function () {
 /**
  * // Test Admin Page
  */
-// Route::redirect('/','/admin/login'); 
+ //Route::redirect('/','/admin/login'); 
+
+  // Customer    
+  Route::prefix('/user')->group(function () {
+    Route::get('',[ProductController::class,'getAllProducts']);
+});
+

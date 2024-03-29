@@ -76,4 +76,10 @@ class ProductController extends Controller
             return back()->with('success','SUCCESS: Product was successfully deleted!');
         }
     }
+
+
+    public function getAllProducts() {
+        $products = Product::paginate(2);
+        return view('users.home', ['products'=> $products ]);
+    }
 }
