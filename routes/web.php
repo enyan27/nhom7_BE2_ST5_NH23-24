@@ -131,14 +131,10 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
 /**
  * // Test Admin Page
  */
-<<<<<<< HEAD
- //Route::redirect('/','/admin/login'); 
+Route::redirect('/','/admin/login'); 
 
-  // Customer    
-  Route::prefix('/user')->group(function () {
-    Route::get('',[ProductController::class,'getAllProducts']);
+   // Customer    
+   Route::prefix('/user')->group(function() {
+    Route::get('/home', [ProductController::class,'getAllProducts']);
 });
 
-=======
-Route::redirect('/','/admin/login'); 
->>>>>>> bdb936636526b2268ab97b51557c0e75f42ba74d
