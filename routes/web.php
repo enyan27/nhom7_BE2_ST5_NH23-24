@@ -138,6 +138,6 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
 
 // ---------------------------------- Customer Page ----------------------------------
   
-   Route::prefix('/user')->group(function() {
-    Route::get('/home', [ProductController::class,'getAllProducts']);
+Route::prefix('/')->group(function() {
+    Route::get('', [ProductController::class,'getAllProducts']);
 });

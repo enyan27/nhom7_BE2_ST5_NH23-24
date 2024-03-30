@@ -14,7 +14,7 @@
                                 <div class="col-lg-6 offset-lg-6">
                                     <div class="hero__slider--items__inner">
                                         <div class="slider__content text-center">
-                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/users/images/text-shape-icon.png')}}" alt="C"> New Collection</p>
+                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/customer/images/text-shape-icon.png')}}" alt="C"> New Collection</p>
                                             <h2 class="slider__content--maintitle h1">The Great Fashion <br>
                                                 Collection 2022</h2>
                                             <p class="slider__content--desc desc2 d-sm-2-none mb-40">Up To 40% Off Final Sale Items. <br>
@@ -39,7 +39,7 @@
                                 <div class="row row-cols-1">
                                     <div class="col">
                                         <div class="slider__content">
-                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/users/images/text-shape-icon.png')}}" alt="text-shape-icon"> New Collection</p>
+                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/customer/images/text-shape-icon.png')}}" alt="text-shape-icon"> New Collection</p>
                                             <h2 class="slider__content--maintitle h1">The Great Fashion <br>
                                                 Collection 2022</h2>
                                             <p class="slider__content--desc desc2 d-sm-2-none mb-40">Up To 40% Off Final Sale Items. <br>
@@ -63,7 +63,7 @@
                                 <div class="col">
                                     <div class="hero__slider--items__inner">
                                         <div class="slider__content">
-                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/users/images/text-shape-icon.png')}}" alt="text-shape-icon"> New Collection</p>
+                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/customer/images/text-shape-icon.png')}}" alt="text-shape-icon"> New Collection</p>
                                             <h2 class="slider__content--maintitle h1">The Great Fashion <br>
                                                 Collection 2022</h2>
                                             <p class="slider__content--desc desc2 d-sm-2-none mb-40 ">Up To 40% Off Final Sale Items. <br>
@@ -87,7 +87,7 @@
                                 <div class="col-lg-6 offset-lg-6">
                                     <div class="hero__slider--items__inner">
                                         <div class="slider__content text-center">
-                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/users/images/text-shape-icon.png')}}" alt="text-shape-icon"> New Collection</p>
+                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/customer/images/text-shape-icon.png')}}" alt="text-shape-icon"> New Collection</p>
                                             <h2 class="slider__content--maintitle h1">The Great Fashion <br>
                                                 Collection 2022</h2>
                                             <p class="slider__content--desc desc2 d-sm-2-none mb-40">Up To 40% Off Final Sale Items. <br>
@@ -112,7 +112,7 @@
                                 <div class="row row-cols-1">
                                     <div class="col">
                                         <div class="slider__content">
-                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/users/images/text-shape-icon.png')}}" alt="text-shape-icon"> New Collection</p>
+                                            <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="{{asset('/customer/images/text-shape-icon.png')}}" alt="text-shape-icon"> New Collection</p>
                                             <h2 class="slider__content--maintitle h1">The Great Fashion <br>
                                                 Collection 2022</h2>
                                             <p class="slider__content--desc desc2 d-sm-2-none mb-40">Up To 40% Off Final Sale Items. <br>
@@ -143,7 +143,7 @@
             <div class="row mb--n28">
                 <div class="col-lg-5 col-md-order mb-28">
                     <div class="banner__items">
-                        <a class="banner__items--thumbnail position__relative" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img" src="{{asset('/users/images/banner1.png')}}" alt="banner-img">
+                        <a class="banner__items--thumbnail position__relative" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img" src="{{asset('/customer/images/banner1.png')}}" alt="banner-img">
                             <div class="banner__items--content">
                                 <span class="banner__items--content__subtitle">17% Discount</span>
                                 <h2 class="banner__items--content__title h3">Spring Collection <br>
@@ -161,7 +161,7 @@
                     <div class="row row-cols-lg-2 row-cols-sm-2 row-cols-1">
                         <div class="col mb-28">
                             <div class="banner__items">
-                                <a class="banner__items--thumbnail position__relative" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img" src="{{asset('/users/images/banner2.png')}}" alt="banner-img">
+                                <a class="banner__items--thumbnail position__relative" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img" src="{{asset('/customer/images/banner2.png')}}" alt="banner-img">
                                     <div class="banner__items--content">
                                         <span class="banner__items--content__subtitle text__secondary">Shop Women</span>
                                         <h2 class="banner__items--content__title h3">Up to 70% Off &amp; <br>
@@ -177,7 +177,7 @@
                         </div>
                         <div class="col mb-28">
                             <div class="banner__items">
-                                <a class="banner__items--thumbnail position__relative" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img" src="{{asset('/users/images/banner3.png')}}" alt="banner-img">
+                                <a class="banner__items--thumbnail position__relative" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img" src="{{asset('/customer/images/banner3.png')}}" alt="banner-img">
                                     <div class="banner__items--content">
                                         <span class="banner__items--content__subtitle">Shop Women</span>
                                         <h2 class="banner__items--content__title h3">Free Shipping Over <br>
@@ -193,7 +193,7 @@
                         </div>
                     </div>
                     <div class="banner__items">
-                        <a class="banner__items--thumbnail position__relative" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img banner__img--max__height" src="{{asset('/users/images/banner4.png')}}" alt="banner-img">
+                        <a class="banner__items--thumbnail position__relative" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img banner__img--max__height" src="{{asset('/customer/images/banner4.png')}}" alt="banner-img">
                             <div class="banner__items--content">
                                 <span class="banner__items--content__subtitle">25% Discount</span>
                                 <h2 class="banner__items--content__title h3">Leather Saddle <br>
@@ -1845,7 +1845,7 @@
             <div class="row row-cols-md-2 row-cols-1 mb--n28">
                 <div class="col mb-28">
                     <div class="banner__items position__relative">
-                        <a class="banner__items--thumbnail " href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img banner__img--max__height" src="{{asset('/users/images/banner5.png')}}" alt="banner-img">
+                        <a class="banner__items--thumbnail " href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img banner__img--max__height" src="{{asset('/customer/images/banner5.png')}}" alt="banner-img">
                             <div class="banner__items--content">
                                 <span class="banner__items--content__subtitle d-none d-lg-block">Pick Your Items</span>
                                 <h2 class="banner__items--content__title h3">Up to 25% Off Order Now</h2>
@@ -1856,7 +1856,7 @@
                 </div>
                 <div class="col mb-28">
                     <div class="banner__items position__relative">
-                        <a class="banner__items--thumbnail " href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img banner__img--max__height" src="{{asset('/users/images/banner6.png')}}" alt="banner-img">
+                        <a class="banner__items--thumbnail " href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img banner__img--max__height" src="{{asset('/customer/images/banner6.png')}}" alt="banner-img">
                             <div class="banner__items--content">
                                 <span class="banner__items--content__subtitle d-none d-lg-block">Special offer</span>
                                 <h2 class="banner__items--content__title h3">Up to 35% Off Order Now</h2>
@@ -1876,7 +1876,7 @@
             <div class="row row-cols-1">
                 <div class="col">
                     <div class="banner__section--inner position__relative">
-                        <a class="banner__items--thumbnail display-block" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img banner__img--height__md display-block" src="{{asset('/users/images/banner-bg2.png')}}" alt="banner-img">
+                        <a class="banner__items--thumbnail display-block" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html"><img class="banner__items--thumbnail__img banner__img--height__md display-block" src="{{asset('/customer/images/banner-bg2.png')}}" alt="banner-img">
                             <div class="banner__content--style2">
                                 <h2 class="banner__content--style2__title text-white">Need Winter Boots? </h2>
                                 <p class="banner__content--style2__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exercitation </p>
@@ -1905,7 +1905,7 @@
                     <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog2.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog2.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -1918,7 +1918,7 @@
                     <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog3.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog3.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -1931,7 +1931,7 @@
                     <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog4.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog4.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -1944,7 +1944,7 @@
                     <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog2.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog2.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -1957,7 +1957,7 @@
                     <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog1.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog1.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -1970,7 +1970,7 @@
                     <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog2.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog2.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -1983,7 +1983,7 @@
                     <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog3.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog3.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -1996,7 +1996,7 @@
                     <div class="swiper-slide" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog4.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog4.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -2009,7 +2009,7 @@
                     <div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="4" role="group" aria-label="5 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog2.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog2.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -2022,7 +2022,7 @@
                     <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group" aria-label="1 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog1.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog1.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -2035,7 +2035,7 @@
                     <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" role="group" aria-label="2 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog2.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog2.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -2048,7 +2048,7 @@
                     <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" role="group" aria-label="3 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog3.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog3.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>
@@ -2061,7 +2061,7 @@
                     <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" aria-label="4 / 5" style="width: 363.75px; margin-right: 30px;">
                         <div class="blog__items">
                             <div class="blog__thumbnail">
-                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/users/images/blog4.png')}}" alt="blog-img"></a>
+                                <a class="blog__thumbnail--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/blog-details.html"><img class="blog__thumbnail--img" src="{{asset('/customer/images/blog4.png')}}" alt="blog-img"></a>
                             </div>
                             <div class="blog__content">
                                 <span class="blog__content--meta">February 03, 2022</span>

@@ -10,15 +10,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/favicon.ico">
 
     <!-- ======= All CSS Plugins here ======== -->
-    <link rel="stylesheet" href="{{asset('/users/css/swiper-bundle.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/users/css/glightbox.min.css')}}">
-    <link href="{{asset('/users/css/css2')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('/customer/css/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/customer/css/glightbox.min.css')}}">
+    <link href="{{asset('/customer/css/css2')}}" rel="stylesheet">
 
     <!-- Plugin css -->
-    <link rel="stylesheet" href="{{asset('/users/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/customer/css/bootstrap.min.css')}}">
 
     <!-- Custom Style CSS -->
-    <link rel="stylesheet" href="{{asset('/users/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('/customer/css/style.css')}}">
 
 </head>
 
@@ -73,15 +73,15 @@
                     <div class="header__shipping">
                         <ul class="header__shipping--wrapper d-flex">
                             <li class="header__shipping--text text-white">Welcome to Netmark online Store</li>
-                            <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="{{asset('/users/images/bus.png')}}" alt="bus-icon"> Track Your Order</li>
-                            <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="{{asset('/users/images/email.png')}}" alt="email-icon"> <a class="header__shipping--text__link" href="mailto:demo@gmail.com">demo@gmail.com</a></li>
+                            <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="{{asset('/customer/images/bus.png')}}" alt="bus-icon"> Track Your Order</li>
+                            <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="{{asset('/customer/images/email.png')}}" alt="email-icon"> <a class="header__shipping--text__link" href="mailto:demo@gmail.com">demo@gmail.com</a></li>
                         </ul>
                     </div>
                     <div class="language__currency d-none d-lg-block">
                         <ul class="d-flex align-items-center">
                             <li class="language__currency--list">
                                 <a class="language__switcher text-white" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html#">
-                                    <img class="language__switcher--icon__img" src="{{asset('/users/images/language-icon.png')}}" alt="currency">
+                                    <img class="language__switcher--icon__img" src="{{asset('/customer/images/language-icon.png')}}" alt="currency">
                                     <span>English</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"></path>
@@ -97,7 +97,7 @@
                             </li>
                             <li class="language__currency--list">
                                 <a class="account__currency--link text-white" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html#">
-                                    <img src="{{asset('/users/images/usd-icon.png')}}" alt="currency">
+                                    <img src="{{asset('/customer/images/usd-icon.png')}}" alt="currency">
                                     <span>$ US Dollar</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"></path>
@@ -129,7 +129,7 @@
                         </a>
                     </div>
                     <div class="main__logo">
-                        <h1 class="main__logo--title"><a class="main__logo--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html"><img class="main__logo--img" src="{{asset('/users/images/nav-log.png')}}" alt="logo-img"></a></h1>
+                        <h1 class="main__logo--title"><a class="main__logo--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html"><img class="main__logo--img" src="{{asset('/customer/images/nav-log.png')}}" alt="logo-img"></a></h1>
                     </div>
                     <div class="header__search--widget header__sticky--none d-none d-lg-block">
                         <form class="d-flex header__search--form" action="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html#">
@@ -452,7 +452,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <p class="header__discount--text"><img class="header__discount--icon__img" src="{{asset('/users/images/lamp.png')}}" alt="lamp-img"> Special up to 60% Off all item</p>
+                    <p class="header__discount--text"><img class="header__discount--icon__img" src="{{asset('/customer/images/lamp.png')}}" alt="lamp-img"> Special up to 60% Off all item</p>
                 </div>
             </div>
         </div>
@@ -881,24 +881,24 @@
                     <div class="footer__instagram footer__widget--inner">
                         <div class="footer__instagram--list d-flex">
                             <div class="instagram__thumbnail">
-                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkF3TLBTT7"><img src="{{asset('/users/images/instagram1.webp')}}" alt="instagram"></a>
+                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkF3TLBTT7"><img src="{{asset('/customer/images/instagram1.webp')}}" alt="instagram"></a>
                             </div>
                             <div class="instagram__thumbnail">
-                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkF60sBxhN"><img src="{{asset('/users/images/instagram2.webp')}}" alt="instagram"></a>
+                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkF60sBxhN"><img src="{{asset('/customer/images/instagram2.webp')}}" alt="instagram"></a>
                             </div>
                             <div class="instagram__thumbnail">
-                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkF90ZB6HG"><img src="{{asset('/users/images/instagram3.webp')}}" alt="instagram"></a>
+                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkF90ZB6HG"><img src="{{asset('/customer/images/instagram3.webp')}}" alt="instagram"></a>
                             </div>
                         </div>
                         <div class="footer__instagram--list d-flex">
                             <div class="instagram__thumbnail">
-                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkGAe6BQeu"><img src="{{asset('/users/images/instagram4.webp')}}" alt="instagram"></a>
+                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkGAe6BQeu"><img src="{{asset('/customer/images/instagram4.webp')}}" alt="instagram"></a>
                             </div>
                             <div class="instagram__thumbnail">
-                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkGCWcBbv9"><img src="{{asset('/users/images/instagram5.webp')}}" alt="instagram"></a>
+                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkGCWcBbv9"><img src="{{asset('/customer/images/instagram5.webp')}}" alt="instagram"></a>
                             </div>
                             <div class="instagram__thumbnail">
-                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkGFDMhoid"><img src="{{asset('/users/images/instagram6.webp')}}" alt="instagram"></a>
+                                <a class="instagram__thumbnail--img" target="_blank" href="https://www.instagram.com/p/CZkGFDMhoid"><img src="{{asset('/customer/images/instagram6.webp')}}" alt="instagram"></a>
                             </div>
                         </div>
                     </div>
@@ -1292,7 +1292,7 @@
             </button>
             <div class="box newsletter__popup--box d-flex align-items-center">
                 <div class="newsletter__popup--thumbnail">
-                    <img class="newsletter__popup--thumbnail__img display-block" src="{{asset('/users/images/newsletter-popup-thumb2.png')}}" alt="newsletter-popup-thumb">
+                    <img class="newsletter__popup--thumbnail__img display-block" src="{{asset('/customer/images/newsletter-popup-thumb2.png')}}" alt="newsletter-popup-thumb">
                 </div>
                 <div class="newsletter__popup--box__right">
                     <h2 class="newsletter__popup--title">Join Our Newsletter</h2>
@@ -1322,14 +1322,14 @@
 
 
     <!-- All Script JS Plugins here  -->
-    <script src="{{asset('/users/js/popper.js')}}" defer="defer"></script>
-    <script src="{{asset('/users/js/bootstrap.min.js')}}" defer="defer"></script>
-    <script src="{{asset('/users/js/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('/users/js/glightbox.min.js')}}"></script>
+    <script src="{{asset('/customer/js/popper.js')}}" defer="defer"></script>
+    <script src="{{asset('/customer/js/bootstrap.min.js')}}" defer="defer"></script>
+    <script src="{{asset('/customer/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('/customer/js/glightbox.min.js')}}"></script>
 
     <!-- Customscript js -->
-    <script src="{{asset('/users/js/script.js')}}"></script>
-    <script src="{{asset('/users/js/custom.js')}}"></script>
+    <script src="{{asset('/customer/js/script.js')}}"></script>
+    <script src="{{asset('/customer/js/custom.js')}}"></script>
 </body>
 
 </html>
