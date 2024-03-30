@@ -772,14 +772,14 @@
 
     </header>
     <!-- End header area -->
-    
+
     <!-- content -->
 
 
-    <main>
+    <div>
         @yield('content')
-    </main>
-    
+    </div>
+
 
     <!-- Start footer section -->
     <footer class="footer__section bg__black">
@@ -1329,7 +1329,6 @@
 
     <!-- Customscript js -->
     <script src="{{asset('/customer/js/script.js')}}"></script>
-    <script src="{{asset('/customer/js/custom.js')}}"></script>
 </body>
 
 </html>

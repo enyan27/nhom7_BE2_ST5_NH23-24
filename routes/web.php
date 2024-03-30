@@ -143,3 +143,7 @@ Route::prefix('/customer')->group(function() {
     Route::get('/home', [ProductCustomerController::class,'getAllProducts']);
     Route::get('/product/details/{id}', [ProductCustomerController::class,'getProductById']);
 });
+
+Route::get('/test',function ()  {
+    return view('customer/details-test');
+});

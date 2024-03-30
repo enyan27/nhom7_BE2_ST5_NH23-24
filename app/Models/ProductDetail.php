@@ -28,4 +28,6 @@ class ProductDetail extends Model
     public function cartItems() {
         return $this->belongsToMany(CartItem::class, 'product_detail_id','id');
     }
+
+    protected $color;
 }

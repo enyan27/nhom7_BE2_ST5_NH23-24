@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductDetail;
 use Illuminate\Http\Request;
 
 class ProductCustomerController extends Controller
@@ -102,6 +103,7 @@ class ProductCustomerController extends Controller
     }
     public function getProductById($id){
         $product = Product::findOrFail($id);
-        return view('customer.details', ['product'=> $product]);
+        $productDetails = ProductDetail::where('product_id', $id)->get();
+        return view('customer.details', ['product'=> $product,'productDetails'=> $productDetails]);
     }
 }
