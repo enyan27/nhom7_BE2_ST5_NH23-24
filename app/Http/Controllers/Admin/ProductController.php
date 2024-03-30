@@ -75,28 +75,5 @@ class ProductController extends Controller
         if($result) {
             return back()->with('success','SUCCESS: Product was successfully deleted!');
         }
-    }
-
-
-    public function getAllProducts() {
-        // Lấy danh sách sản phẩm mới
-        $productsNewArrial = Product::where('newarrival', 1)->get();
-    
-        // Lấy danh sách sản phẩm đang hot (trending)
-        $productsTrending = Product::where('trending', 1)->get();
-    
-        // Lấy danh sách sản phẩm thông thường
-        $products = Product::all();
-    
-        return view('customer.home', [
-            'productsNewArrial' => $productsNewArrial,
-            'productsTrending' => $productsTrending,
-            'products' => $products
-        ]);
-    }
-    public function getProductById($id){
-        $product = Product::findOrFail($id);
-        return view('customer.details', ['product'=> $product]);
-    }
-    
+    }    
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\StatisticController;
+use App\Http\Controllers\Customer\ProductCustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -139,6 +140,6 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
 // ---------------------------------- Customer Page ----------------------------------
 Route::redirect('/','customer/home'); 
 Route::prefix('/customer')->group(function() {
-    Route::get('/home', [ProductController::class,'getAllProducts']);
-    Route::get('/product/details/{id}', [ProductController::class,'getProductById']);
+    Route::get('/home', [ProductCustomerController::class,'getAllProducts']);
+    Route::get('/product/details/{id}', [ProductCustomerController::class,'getProductById']);
 });
