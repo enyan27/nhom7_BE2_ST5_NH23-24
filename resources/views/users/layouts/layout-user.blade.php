@@ -1329,7 +1329,7 @@
 
     <!-- Customscript js -->
     <script src="{{asset('/users/js/script.js')}}"></script>
-
+    <script src="{{asset('/users/js/custom.js')}}"></script>
 </body>
 
 </html>

@@ -79,7 +79,20 @@ class ProductController extends Controller
 
 
     public function getAllProducts() {
-        $products = Product::paginate(2);
-        return view('users.home', ['products'=> $products ]);
+        // Lấy danh sách sản phẩm mới
+        $productsNewArrial = Product::where('newarrival', 1)->get();
+    
+        // Lấy danh sách sản phẩm đang hot (trending)
+        $productsTrending = Product::where('trending', 1)->get();
+    
+        // Lấy danh sách sản phẩm thông thường
+        $products = Product::all();
+    
+        return view('users.home', [
+            'productsNewArrial' => $productsNewArrial,
+            'productsTrending' => $productsTrending,
+            'products' => $products
+        ]);
     }
+    
 }
