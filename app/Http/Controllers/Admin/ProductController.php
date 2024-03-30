@@ -88,11 +88,15 @@ class ProductController extends Controller
         // Lấy danh sách sản phẩm thông thường
         $products = Product::all();
     
-        return view('users.home', [
+        return view('customer.home', [
             'productsNewArrial' => $productsNewArrial,
             'productsTrending' => $productsTrending,
             'products' => $products
         ]);
+    }
+    public function getProductById($id){
+        $product = Product::findOrFail($id);
+        return view('customer.details', ['product'=> $product]);
     }
     
 }

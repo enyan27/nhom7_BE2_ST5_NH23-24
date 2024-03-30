@@ -137,7 +137,8 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
 
 
 // ---------------------------------- Customer Page ----------------------------------
-  
-Route::prefix('/')->group(function() {
-    Route::get('', [ProductController::class,'getAllProducts']);
+Route::redirect('/','customer/home'); 
+Route::prefix('/customer')->group(function() {
+    Route::get('/home', [ProductController::class,'getAllProducts']);
+    Route::get('/product/details/{id}', [ProductController::class,'getProductById']);
 });

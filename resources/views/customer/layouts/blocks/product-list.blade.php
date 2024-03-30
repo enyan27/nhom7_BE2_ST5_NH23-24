@@ -4,7 +4,7 @@
             <div class="col mb-30">
                 <div class="product__items ">
                     <div class="product__items--thumbnail">
-                        <a class="product__items--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/product-details.html">
+                        <a class="product__items--link" href="{{url('customer/product/details/'.$product->id)}}">
                             <img class="product__items--img product__primary--img" src="{{ asset("/$product->image_1") }}" alt="product-img">
                             <img class="product__items--img product__secondary--img" src="{{ asset("/$product->image_2") }}" alt="product-img">
                         </a>

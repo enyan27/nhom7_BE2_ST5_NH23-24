@@ -1,4 +1,4 @@
-@extends('users.layouts.layout-user')
+@extends('customer.layouts.layout-user')
 
 @section('content')
 
@@ -225,13 +225,13 @@
             </ul>
             <div class="tab_content">
                 <div id="featured" class="tab_pane active show">
-                    @include('users.layouts.blocks.product-list',['products'=>$products])
+                    @include('customer.layouts.blocks.product-list',['products'=>$products])
                 </div>
                 <div id="trending" class="tab_pane">
-                    @include('users.layouts.blocks.product-list',['products'=>$productsTrending])
+                    @include('customer.layouts.blocks.product-list',['products'=>$productsTrending])
                 </div>
                 <div id="newarrival" class="tab_pane">
-                    @include('users.layouts.blocks.product-list',['products'=>$productsNewArrial])
+                    @include('customer.layouts.blocks.product-list',['products'=>$productsNewArrial])
                 </div>
             </div>
         </div>
