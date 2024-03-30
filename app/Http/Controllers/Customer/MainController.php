@@ -4,82 +4,41 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Services\Category\CategoryService;
+use App\Http\Services\Product\ProductService;
+use App\Http\Services\Main\MainService;
 
 class MainController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    protected $categoryService;
+    protected $mainService;
+
+    public function __construct(CategoryService $categoryService, MainService $mainService) {
+
+        $this->categoryService = $categoryService;
+        $this->mainService = $mainService;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function index() {
+
+        $categories = $this->categoryService->getParent();
+        $products = $this->mainService->getProductByNote();
+        $productBestSolds = $this->mainService->getProductBestSold();
+
+        return view('customer.main.index', compact('categories', 'products', 'productBestSolds'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function aboutUs() {
+
+        $categories = $this->categoryService->getParent();
+
+        return view('customer.main.aboutus', compact('categories'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    public function contact() {
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $categories = $this->categoryService->getParent();
+        
+        return view('customer.main.contact', compact('categories'));
     }
 }

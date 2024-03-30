@@ -28,7 +28,7 @@ use App\Http\Controllers\Admin\StatisticController;
 
 
 
-//Admin Page
+// ---------------------------------- Admin Page ----------------------------------
 Route::prefix('admin')->group(function() {
     Route::get('login', [LoginController::class,'index'])->name('login');
     Route::post('login', [LoginController::class,'store']);
@@ -127,14 +127,17 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
 // });
 // Route::get('/customer-action', [CustomerController::class, 'action']);
 
-
 /**
  * // Test Admin Page
  */
 //Route::redirect('/','/admin/login'); 
 
-   // Customer    
+
+
+
+
+// ---------------------------------- Customer Page ----------------------------------
+  
    Route::prefix('/user')->group(function() {
     Route::get('/home', [ProductController::class,'getAllProducts']);
 });
-
