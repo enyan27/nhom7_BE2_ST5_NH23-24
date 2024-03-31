@@ -4,82 +4,60 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Services\Category\CategoryService;
+use App\Http\Services\Account\AccountService;
+use App\Http\Services\Checkout\CheckoutService;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    protected $categoryService;
+    protected $accountService;
+    protected $checkoutService;
+
+    public function __construct(CategoryService $categoryService, 
+                                AccountService $accountService,
+                                CheckoutService $checkoutService) 
     {
-        //
+        $this->categoryService = $categoryService;
+        $this->accountService = $accountService;
+        $this->checkoutService = $checkoutService;
+    }
+        
+    public function index() {
+
+        $categories = $this->categoryService->getParent();
+        
+        return view('customer.main.profile', compact('categories'));
+    }
+    public function update(Request $request) {
+        
+        $result = $this->accountService->update($request);
+
+        if($result) {
+            return back()->with('success','Update profile successfully');
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function orderHistory() {
+
+        $categories = $this->categoryService->getParent();
+        $orders = Order::where('user_id', Auth::id())->orderByDesc('id')->paginate(5);
+
+        return view('customer.main.order', compact('categories','orders'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function orderDetail($order_id) {
+        
+        $categories = $this->categoryService->getParent();
+        $order = Order::find($order_id);
+
+        return view('customer.main.orderDetail', compact('categories','order'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function updateOrderStatus(Request $request) {
+        
+        $this->accountService->updateOrderStatus($request);
     }
 }
