@@ -87,6 +87,7 @@ class LoginController extends Controller
             return redirect('login')->with('success', 'Your account created successfully!');
         }
     }
+    
     public function logout(Request $request) {
 
         Auth::logout();

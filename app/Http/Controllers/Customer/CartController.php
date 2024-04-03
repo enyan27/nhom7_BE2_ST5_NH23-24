@@ -4,82 +4,56 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Services\Cart\CartService;
+use App\Http\Services\Product\ProductService;
+use App\Http\Services\Category\CategoryService;
+use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    protected $cartService;
+    protected $productService;
+    protected $categoryService;
+
+    public function __construct(CartService $cartService,
+                                ProductService $productService,
+                                CategoryService $categoryService)
     {
-        //
+        $this->cartService = $cartService;
+        $this->productService = $productService;
+        $this->categoryService = $categoryService;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function view() {
+
+        $categories = $this->categoryService->getParent();
+        $productBestSolds = $this->cartService->getProductBestSold();
+        $cartItems = $this->cartService->view();
+        
+        return view('customer.main.cart', compact('cartItems','categories','productBestSolds'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function addCart(Request $request) {
+
+        $result = $this->cartService->addCart($request);
+        return $result;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function removeCart(Request $request) {
+
+        $result = $this->cartService->removeCart($request);
+        return $result;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function updateCart(Request $request) {
+
+        $result = $this->cartService->updateCart($request);
+        return $result;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    public function clearCart(Request $request) {
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $result = $this->cartService->clearCart($request);
+        return $result;
     }
 }

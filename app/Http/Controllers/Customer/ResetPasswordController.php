@@ -15,7 +15,7 @@ class ResetPasswordController extends Controller
 {
     public function forgotPassword() {
 
-        $categories = Category::where('parent_id', 0)->get();
+        $categories = Category::where('parent_id', 0)->get(); //*
 
         if(Auth::check()) {
             return redirect('/');
