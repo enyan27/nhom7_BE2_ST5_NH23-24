@@ -129,7 +129,7 @@
                         </a>
                     </div>
                     <div class="main__logo">
-                        <h1 class="main__logo--title"><a class="main__logo--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html"><img class="main__logo--img" src="{{asset('/customer/images/nav-log.png')}}" alt="logo-img"></a></h1>
+                        <h1 class="main__logo--title"><a class="main__logo--link" href="{{url("/")}}"><img class="main__logo--img" src="{{asset('/customer/images/nav-log.png')}}" alt="logo-img"></a></h1>
                     </div>
                     <div class="header__search--widget header__sticky--none d-none d-lg-block">
                         <form class="d-flex header__search--form" action="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html#">
@@ -196,16 +196,9 @@
                         <nav class="header__menu--navigation">
                             <ul class="d-flex">
                                 <li class="header__menu--items style2">
-                                    <a class="header__menu--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html">Home
-                                        <svg class="menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41">
-                                            <path d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"></path>
-                                        </svg>
+                                    <a class="header__menu--link" href="{{url("/")}}">Home
                                     </a>
-                                    <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html" class="header__sub--menu__link">Home One</a></li>
-                                        <li class="header__sub--menu__items"><a href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index-2.html" class="header__sub--menu__link">Home Two</a></li>
-                                        <li class="header__sub--menu__items"><a href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index-3.html" class="header__sub--menu__link">Home Three</a></li>
-                                    </ul>
+                                   
                                 </li>
                                 <li class="header__menu--items mega__menu--items style2">
                                     <a class="header__menu--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html">Shop
@@ -273,7 +266,7 @@
                                     </ul>
                                 </li>
                                 <li class="header__menu--items style2 d-none d-xl-block">
-                                    <a class="header__menu--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html">Categories </a>
+                                    <a class="header__menu--link" href="{{ url('customer/products/categories') }}">Categories </a>
                                 </li>
                                 <li class="header__menu--items style2">
                                     <a class="header__menu--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html#">Pages
@@ -351,16 +344,9 @@
                         <nav class="header__menu--navigation">
                             <ul class="d-flex">
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html">Home
-                                        <svg class="menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41">
-                                            <path d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"></path>
-                                        </svg>
+                                    <a class="header__menu--link" href="{{url("/")}}">Home
                                     </a>
-                                    <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html" class="header__sub--menu__link">Home One</a></li>
-                                        <li class="header__sub--menu__items"><a href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index-2.html" class="header__sub--menu__link">Home Two</a></li>
-                                        <li class="header__sub--menu__items"><a href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index-3.html" class="header__sub--menu__link">Home Three</a></li>
-                                    </ul>
+                                  
                                 </li>
                                 <li class="header__menu--items mega__menu--items">
                                     <a class="header__menu--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html">Shop
@@ -428,7 +414,7 @@
                                     </ul>
                                 </li>
                                 <li class="header__menu--items d-none d-xl-block">
-                                    <a class="header__menu--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/shop.html">Categories </a>
+                                    <a class="header__menu--link" href="{{ url('customer/products/categories') }}">Categories </a>
                                 </li>
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html#">Pages
@@ -461,7 +447,7 @@
         <div class="offcanvas__header">
             <div class="offcanvas__inner">
                 <div class="offcanvas__logo">
-                    <a class="offcanvas__logo_link" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html">
+                    <a class="offcanvas__logo_link" href="{{url("/")}}">
                         <img src="./Suruchi - Fashion eCommerce HTML Template_files/nav-log.png" alt="Grocee Logo" width="158" height="36">
                     </a>
                     <button class="offcanvas__close--btn" data-offcanvas="">close</button>
@@ -469,13 +455,7 @@
                 <nav class="offcanvas__menu">
                     <ul class="offcanvas__menu_ul">
                         <li class="offcanvas__menu_li">
-                            <a class="offcanvas__menu_item" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html">Home</a>
-                            <ul class="offcanvas__sub_menu">
-                                <li class="offcanvas__sub_menu_li"><a href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html" class="offcanvas__sub_menu_item">Home One</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index-2.html" class="offcanvas__sub_menu_item">Home Two</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index-3.html" class="offcanvas__sub_menu_item">Home Three</a></li>
-                            </ul>
-                            <button class="offcanvas__sub_menu_toggle"></button>
+                            <a class="offcanvas__menu_item" href="{{url("/")}}">Home</a>
                         </li>
                         <li class="offcanvas__menu_li">
                             <a class="offcanvas__menu_item" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html#">Shop</a>

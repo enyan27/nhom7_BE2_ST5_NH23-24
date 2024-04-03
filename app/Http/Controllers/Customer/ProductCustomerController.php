@@ -92,8 +92,8 @@ class ProductCustomerController extends Controller
         // Lấy danh sách sản phẩm đang hot (trending)
         $productsTrending = Product::where('trending', 1)->get();
     
-        // Lấy danh sách sản phẩm thông thường
-        $products = Product::all();
+        // Lấy danh sách sản phẩm nổi bật
+        $products = Product::where('featured', 1)->get();
     
         return view('customer.home', [
             'productsNewArrial' => $productsNewArrial,
@@ -106,4 +106,7 @@ class ProductCustomerController extends Controller
         $productDetails = ProductDetail::where('product_id', $id)->get();
         return view('customer.details', ['product'=> $product,'productDetails'=> $productDetails]);
     }
+    
+
+    
 }

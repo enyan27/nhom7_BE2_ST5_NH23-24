@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\UserController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\StatisticController;
+use App\Http\Controllers\Customer\CategoryCustomerController;
 use App\Http\Controllers\Customer\ProductCustomerController;
 
 /*
@@ -142,6 +144,8 @@ Route::redirect('/','customer/home');
 Route::prefix('/customer')->group(function() {
     Route::get('/home', [ProductCustomerController::class,'getAllProducts']);
     Route::get('/product/details/{id}', [ProductCustomerController::class,'getProductById']);
+    Route::get('/about', [AboutUsController::class,'index']);
+    Route::get('/products/categories', [CategoryCustomerController::class,'index']);
 });
 
 Route::get('/test',function ()  {
