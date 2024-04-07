@@ -1,0 +1,164 @@
+.header-section{
+    width: 100%;
+}
+.header-topbar{
+    padding: 12px 0;
+    width: 100%;
+}
+li{
+    list-style: none;
+}
+.border-left{
+    border-left: 2px solid #fff;
+}
+.language-currency-list,
+.header-shipping-text{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.language-currency-list-icon,
+.header-shipping-text-icon{
+    margin-right: 10px;
+    display: inline-block;
+}
+.main-header{
+    width: 100%;
+    padding: 20px 0;
+    color: #606060;
+}
+.header-search{
+    width: 590px;
+    height: 53px;
+}
+.header-select-categories{
+    height: 100%;
+    width: 192px;
+    border: 1px solid #e7e7e7;
+}
+.header-select-inner{
+    height: 100%;
+    width: 100%;
+    border: unset;
+    color: #606060;
+    padding: 0 43px 0 20px;
+    cursor: pointer;
+}
+.header-select-inner:focus{
+    outline: none;
+}
+.header-search-box{
+    height: 100%;
+    width: calc(100% - 192px);
+    border: 1px solid #e7e7e7;
+    border-left: none;
+    border-right: none;
+    position: relative;
+}
+.header-search-input{
+    height: 100%;
+    outline: none;
+    border: unset;
+    padding: 0 70px 0 22px;
+    width: 100%;
+}
+.header-search-button{
+    width: 57px;
+    height: 100%;
+    border: unset;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+}
+.header-search-button:hover{
+    background-color: #061738;
+}
+.header-account-item{
+    margin-right: 30px;
+}
+
+.header-account-item:last-child{
+    margin-right: 0;
+}
+.header-account-btn{
+    color:#606060;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+}
+.header-account-btn:hover{
+    color: #ee2761;
+}
+.header-account-btn-text{
+    display: block;
+    margin-top: 5px;
+}
+.items-count{
+    font-size: 10px;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    text-align: center;
+    border-radius: 50%;
+    top: -10px;
+    right: 5px;
+}
+.wishlist{
+    top: -10px;
+    right: 2px;
+}
+.header-bottom{
+    border-top: 1px solid #e7e7e7;
+    
+}
+.header-menu-items{
+    margin-right: 40px;
+    position: relative;
+}
+.header-menu-items.active{
+    color: #ee2761;
+}
+.header-menu-link{
+    font-size: 17px;
+    padding: 16px 0;
+    text-transform: uppercase;
+}
+
+.header-menu-items:hover .header-menu-link{
+    color: #ee2761;
+}
+.header-menu-items:hover .header-sub-menu{
+    visibility: visible;
+    margin-top: 0px;
+    opacity: 1;
+}
+.header__discount-icon{
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.header-discount-text{
+    font-size: 17px;
+}
+.header-sub-menu{
+    position: absolute;
+    width: 180px;
+    padding: 20px;
+    margin-top: 20px;
+    left: 0;
+    top: 100%;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 15%);
+    transition:  all 0.3s ease;
+}
+.header-sub-menu li a{
+    color: #000;
+    padding: 10px 0;
+}
+.header-sub-menu li a:hover{
+    color: #ee2761;
+}

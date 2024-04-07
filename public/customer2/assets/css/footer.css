@@ -1,0 +1,99 @@
+footer{
+    background-color: #1d1c1c;    
+}
+.main-footer{
+    padding: 70px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+.col-3{
+    padding: 0;
+}
+
+.footer-widget-title{
+    font-size: 22px;
+    padding-bottom: 10px;
+    position: relative;
+    color: #fff;
+}
+.footer-widget-title::before{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 60px;
+    background: #909090;
+    left: 0;
+    bottom: 0;
+}
+.footer-widget-text{
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+.footer-social h3{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+.social-shear-list{
+    margin-right: 13px;
+}
+.social-shear-list:hover a{
+    color: #ee2761;
+}
+.footer-widget-menu a {
+    line-height: 30px;
+}
+.footer-widget-menu a:hover{
+    color: #ee2761;
+}
+.instagram-thumbnail{
+    margin-right: 10px;
+}
+.instagram-thumbnail a{
+    display: block;
+}
+.instagram-thumbnail a img{
+    width: 80px;
+}
+.footer-instagram-list{
+    padding-bottom: 10px;   
+}
+.footer-instagram-list:last-child{
+    padding-bottom: 0px;   
+}
+.footer-widget-inner{
+    line-height: 28px;
+}
+.newsletter-subscribe{
+    margin-top: 20px;
+}
+.newsletter-subscribe-input{
+    padding: 0 15px;
+    width: 100%;
+    height: 45px;
+    background-color: #f2f2f2;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+.newsletter-subscribe-button{
+    font-size: 20px;
+    width: 100%;
+    height: 45px;
+    background-color: #ee2761;
+    font-weight: 600;
+    border: none;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+.newsletter-subscribe-button:hover{
+    color: #ee2761;
+    background-color: #f2f2f2;
+}
+.footer-bottom{
+    padding: 25px 0;
+}
+.footer-bottom p a:hover {
+    color: #ee2761;
+}

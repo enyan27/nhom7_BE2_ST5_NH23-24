@@ -1,0 +1,441 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike   , sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+select,button{
+    outline: none;
+    border: none;
+    padding: 0;
+}
+ol, ul {
+	list-style: none;
+}
+h1, h2, h3, h4{
+    color: #000;
+}
+h2{
+    font-size: 30px;
+    line-height: 35px;
+    font-family: Jost-Bold;
+
+}
+h3, .h3{
+    font-size: 22px;
+    line-height: 28px;
+    font-family: Jost-SemiBold;
+}
+h4, .h4{
+    font-size: 16px;
+    line-height: 26px;
+    font-family: Jost-SemiBold;
+}
+ul:last-child{
+    margin-bottom: 0;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    font-size: 16px;
+    font-family: Jost-Regular;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    color: #606060;
+	box-sizing: border-box;
+    line-height: 28px;
+}
+
+@font-face {
+    font-family: Jost-Regular;
+    src: url(../font/static/Jost-Regular.ttf);
+}
+
+@font-face {
+    font-family: Jost-Bold;
+    src: url(../font/static/Jost-Bold.ttf);
+}
+@font-face {
+    font-family: Jost-SemiBold;
+    src: url(../font/static/Jost-SemiBold.ttf);
+}
+.color-main{
+    background-color: #ee2761;
+}
+.text-main-color{
+    color: #ee2761;
+}
+.text-right{
+    text-align: right;
+}
+.my-container{
+    padding: 0 40px;
+    width: 100%;
+}
+.my-container2{
+    margin: 0px 160px;
+    /* width: 100%; */
+}
+.w-100{
+    width: 100%;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+label{
+    display: block;
+}
+a{
+    display: inline-block;
+    /* max-width: 100%; */
+	text-decoration: none;
+    color: inherit;
+}
+a, textarea, input, img, button{
+    transition: all 0.3s ease;
+}
+a:hover{
+    color:#ee2761;
+}
+span{
+    display: inline-block;
+}
+.mb-15{
+    margin-bottom: 15px;
+}
+.mb-8{
+    margin-bottom: 8px;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.mb-30{
+    margin-bottom: 30px;
+}
+.mb--30{
+    margin-bottom: -30px;
+}
+.mr-30{
+    margin-right: 30px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.mb-25{
+    margin-bottom: 25px;
+}
+.bg-grey{
+    background-color: #f9f9f9;
+}
+.disable-m{
+    background: #f7f7f7;
+    color: #b2b2b2 !important;
+    border-color: #d6d6d6 !important;
+    pointer-events: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.text-ofwhite{
+    color: #f2f2f2;    
+}
+.primary-btn{
+    line-height: 48px;
+    display: inline-block;
+    height: 48px;
+    letter-spacing: 0.2px;
+    border-radius: 3px;
+    background: #ee2761;
+    color: #ffffff;
+    border: 0;
+    font-size: 17px;
+    padding: 0 23px;
+}
+.primary-btn:hover{
+    background-color: #061738;
+    color:#fff;
+}
+.mb--28{
+    margin-bottom: -28px;
+}
+.mb-28{
+    margin-bottom: 28px;
+}
+.section-padding{
+    padding: 90px 0;
+}
+/* Product list */
+.product-items:hover .product-secondary-img{
+    opacity: 1;
+    visibility: visible;
+}
+.product-items-thumbnail {
+    position: relative;
+}
+.product-items-thumbnail a{
+    display: block;
+}
+/* .product-items-img{
+    width: 260px;
+    height: 260px;
+} */
+.product-secondary-img{
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.product-badge{
+    position: relative;
+}
+.product-badge{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.product-badge-items{
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0 7px;
+    border-radius: 6px 0;
+    line-height: 20px;
+}
+.product-items-content{
+    padding-top: 12px;
+}
+.product-items-content-subtitle{
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.product-items-content-title a{
+    color: #000;
+    font-weight: 600;
+    font-size: 17px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.product-items-content-title a:hover{
+    color:#ee2761;
+}
+.current-price{
+    font-size: 17px;
+    font-weight: 600;
+    color: #ee2761;
+}
+.old-price{
+    font-size: 15px;
+    text-decoration: line-through;
+}
+.price-divided{
+    height: 1px;
+    width: 12px;
+    background-color: #606060;
+    margin: 0 3px;
+    vertical-align: middle;
+}
+.product-rating{
+    margin-bottom: 16px;
+}
+.rating-list{
+    margin-right: 8px;
+}
+.rating-list-icon{
+    color: #ffc107;
+}
+.product-items-action li:first-child{
+    padding-right: 10px;
+}
+.product-items-action li button{
+    background-color: #fff;
+    width: 100%;
+    color: inherit;
+}
+.product-items-action li a, 
+.product-items-action li button{
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    font-size: 15px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-items-action li span{
+    margin-left: 5px;
+}
+.product-items-action li a:hover,
+.product-items-action li button:hover{
+    color: #fff;
+    background-color: #ee2761;
+    border-color: #ee2761;
+}
+.product-items-action li button.added{
+    color: #fff;
+    background-color: #ee2761;
+    border-color: #ee2761;
+}
+    /* Shipping Section */
+
+.shipping-style3-inner{
+    box-shadow: 0 -4px 27px rgb(62 70 120 / 16%);
+    padding: 35px;
+    align-items: center;
+}
+.shipping-items2-content{
+    padding-left: 15px;
+}
+.shipping-items2-content-title{
+    font-size: 18px;
+    /* font-weight: 700; */
+    font-family: Jost-Bold;
+    color: #000;
+    margin-bottom: 5px;
+    line-height: 22px;
+}
+.shipping-items2-content-desc{
+    font-size: 12px;
+    color: #647589;
+}
+
+/* Breadcrumb */
+
+.breadcrumb-bg{
+    background-position: center center;
+    background-image: url(../img/breadcrumb-bg.png);
+    background-size: cover;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+.breadcrumb-content-title{
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-family: Jost-Bold;
+    line-height: 50px;
+}
+.breadcrumb-content-menu-items{
+    font-size: 18px;
+    line-height: 18px;
+}
+.breadcrumb-divider{
+    height: 20px;
+    width: 3px;
+    content: "";
+    background-color: #ee2761;
+    border-radius: 5px;
+    transform: rotate(30deg);
+    margin: 0 22px;
+}
+/* Slide Product */
+.section-heading{
+    margin-bottom: 30px;
+}
+.section-heading-title{
+    position: relative;
+    padding-bottom: 20px;
+    color: #000;
+    font-size: 30px;
+    font-family: Jost-Bold;
+    line-height: 35px;
+}
+.section-heading-title::before{
+    background-image: url(../img/heading-shape.png);
+    text-align: center;
+    content: "";
+    width: 174px;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) ;
+}
+.product-tab-primary{
+    font-size: 18px;
+    margin-right: 45px;
+    font-family: Jost-Bold;
+    color: #000;
+    border: none;
+    padding: 0;
+    background-color: unset;
+    margin-bottom: 50px;
+}
+.product-tab-primary.active{
+    color: #ee2761;
+}
+.product-tab-primary:hover{
+    color: #ee2761;
+}
+.swiper-nav-btn{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.swiper-button-next{
+    right: 0;
+}
+.swiper-button-prev{
+    left: 0;
+}
+.swiper-button-next::after{
+    background-image: url(../img/right-arrow-angle.png);
+    width: 9px;
+    height: 17px;
+    font-size: 0;
+}
+.swiper-button-prev::after{
+    background-image: url(../img/left-arrow-angle.png);
+    width: 9px;
+    height: 17px;
+    font-size: 0;
+}
+.swiper-nav-btn:hover{
+    background-color:#061738;
+}
+.swiper:hover .swiper-nav-btn{
+    opacity: 1;
+    visibility:visible;
+}
+

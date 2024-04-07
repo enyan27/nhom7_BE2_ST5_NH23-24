@@ -1,0 +1,147 @@
+.account-welcome-text{
+    font-size: 18px;
+}
+
+.my-account-section-inner{
+    padding: 50px 40px;
+    box-shadow: 0 2px 22px rgb(0 0 0 / 16%);
+    background-color: #fff;
+}
+.account-left-sidebar{
+    border-right: 1px solid #e4e4e4;
+    width: 200px;
+    padding-right: 50px;
+    margin-right: 50px;
+}
+.account-menu-list{
+    color: #000;
+    font-family: Jost-Bold;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+.account-menu-list button{
+    background-color: #fff;
+}
+.account-menu-list>*{
+    cursor: pointer;
+}
+.account-menu-list>*:hover{
+    color: #ee2761;
+}
+.account-menu-list>*.active{
+    color: #ee2761;
+}
+.account-wrapper{
+    width: calc(100% - 230px);
+}
+/* Profile */
+.info-account{
+    margin-bottom: 10px;
+}
+.info-account label {
+    padding-right: 10px;
+}
+.info-account input + select{
+    width: 80%;
+}
+
+.account-table{
+    width: 100%;
+    border: 1px solid #e4e4e4;
+}
+.account-table thead th{
+    font-family: Jost-Bold;
+}
+.account-table thead th,
+.account-table tbody tr{
+    padding: 17px 15px;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: center;
+    color:#000;
+}
+.account-table th:last-child,
+.account-table td:last-child{
+    text-align: right;
+}
+.account-table td{
+    padding: 17px 20px;
+    border-bottom: 1px solid #e4e4e4;
+}
+.account-details-title{
+    margin-bottom: 10px;
+}
+.account-details-desc{
+    font-size: 15px;
+    line-height: 30px;
+}
+.info-account-btn{
+    margin-top: 20px;
+}
+.info-account-btn button{
+    color: #ee2761;
+    border: 1px solid #ee2761;
+    border-radius: 25px;
+    padding: 0 25px;
+    background-color: #fff;
+    height: 40px;
+    line-height: 38px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+.info-account-btn button:hover{
+    background-color: #ee2761;
+    color: #fff;
+}
+/* avatar */
+.user-avatar-img img{
+    border-radius: 50%;
+    border: 1px solid #e4e4e4;
+    width: 180px;
+    height: 180px;
+}
+.user-avatar-btn{
+    margin: 30px 20px 0;
+}
+.user-avatar-btn label{
+    border: 1px solid #e4e4e4;
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 3%);
+    text-align: center;
+    cursor: pointer;
+}
+.user-avatar-btn input{
+    display: none;
+}
+.user-avatar-btn label:hover{
+    background-color: #e4e4e4;
+}
+/* --- Order Page ---- */
+
+/* Order Status */
+.status.delivered{
+    color: #6fce00;
+    font-size: 16px;
+    font-weight: 600;
+}
+.status.pending{
+    color: #f9bf13;
+    font-size: 16px;
+    font-weight: 600;
+}
+.status.return{
+    color: #f00;
+    font-size: 16px;
+    font-weight: 600;
+}
+.status.cancel{
+    color: #7d7c7c;
+    font-size: 16px;
+    font-weight: 600;
+}
+.status.inprogress{
+    color: #1795ce;
+    font-size: 16px;
+    font-weight: 600;
+}

@@ -1,0 +1,144 @@
+/* Common CSS */
+@import url(../css/common.css);
+/* Header CSS */
+@import url(../css/header.css);
+/* Content Main CSS */
+@import url(../css/content.css);
+/* Footer CSS */
+@import url(../css/footer.css);
+/* Shop CSS */
+@import url(../css/shop.css);
+/* Product Details CSS */
+@import url(../css/product-details.css);
+/* Wishlist CSS */
+@import url();
+/* Account CSS */
+@import url(../css/account.css);
+/* Cart CSS */
+@import url(../css/cart.css);
+/* Contact CSS */
+@import url(../css/contact.css);
+/* Login Reg CSS */
+@import url(../css/login.css);
+/* Checkout CSS */
+@import url(../css/checkout.css);
+
+/* WishList CSS */
+
+/* wishlist cart button */
+
+.wishlist-cart-btn{
+    font-size: 15px;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 18px;
+}
+
+/* wishlist cart button */
+
+/* WishList CSS */
+
+
+
+/* About Us CSS */
+
+/* Why Choose Us */
+
+.about-thumb-items img{
+    border-radius: 5px;
+}
+.about-thumb-items:first-child{
+    margin-top: 50px;
+    margin-right: 20px;
+}
+.about-thumb-items{
+    width: 50%;
+}
+.about-content-title{
+    font-size: 20px;
+    font-family: Jost-SemiBold;
+    line-height: 22px;
+    color: #ee2761;
+}
+.about-author-left span{
+    color: #000;
+}
+.about-author img{
+    margin-left: 15px;
+}
+
+/* Why Choose Us */
+
+/* Count up banner */
+
+.counterup-banner-bg{
+    background-image: url(../img/banner-bg4.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    position: relative;
+}
+.counterup-banner-bg::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    left: 0;
+    top: 0;
+}
+.counterup-banner-inner{
+    padding: 100px 0;
+    position: relative;
+}
+.counterup-banner-items h2{
+    font-size: 20px;
+    line-height: 32px;
+    font-family: inherit;
+    margin-bottom: 11px;
+}
+.counterup-banner-items span{
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: 600;
+}
+/* Count up banner */
+
+/* About Us CSS */
+
+
+/* FAQ CSS */
+.face-step{
+    margin-bottom: 35px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dee2e6;
+}
+.faq-accordion-btn{
+    font-size: 17px;
+    font-family: Jost-Regular;
+    font-weight: 500;
+    background-color: #fff;
+    box-shadow: 0 2px 22px rgb(0 0 0 / 10%);
+    padding: 18px 20px;
+    border-radius: 5px !important;
+    width: 100%;
+    color: #000;
+    text-align: left;
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.accordion-items-button-icon{
+    position: absolute;
+    right: 15px;
+    transition: transform 0.3s ease;
+
+}
+.faq-accordion-btn:not(.collapsed) .accordion-items-button-icon{
+    transform: rotate(-180deg);
+}
+/* FAQ CSS */

@@ -29,5 +29,5 @@ class ProductDetail extends Model
         return $this->belongsToMany(CartItem::class, 'product_detail_id','id');
     }
 
-    protected $color;
+    protected $color; //*x
 }

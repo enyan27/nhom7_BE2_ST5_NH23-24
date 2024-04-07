@@ -1,0 +1,125 @@
+.login-section{
+    background-color: #f9f9f9;
+}
+.account-login{
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 5px 30px rgb(0 0 0 / 10%);
+    max-width: 570px;
+    margin: 0 auto;
+}
+.account-login-header{
+    text-align: center;
+}
+.account-login-header-title{
+    text-transform: uppercase;
+}
+.account-login-header-desc{
+    font-size: 15px;
+    font-family: Jost-SemiBold;
+}
+.account-login-input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #e7e7e7;
+    font-size: 15px;
+    height: 52px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 0 15px;
+}
+.account-login-input:focus{
+    border-color: #ee2761;
+}
+.checkout-checkbox-input{
+    height: 18px;
+    width: 18px;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    cursor: pointer;
+}
+.checkout-checkbox-label{
+    padding-left: 30px;
+    font-size: 15px;
+    color: #000;
+    font-family: Jost-SemiBold;
+    cursor: pointer;
+}
+.account-login-forgot{
+    color: #ee2761;
+    font-size: 15px;
+    font-family: Jost-SemiBold;
+    background-color: inherit;
+}
+.account-login-forgot:hover{
+    color: #061738;
+}
+.account-login-btn{
+    width: 100%;
+    border-radius: 5px;
+}
+.account-login-divide{
+    position: relative;
+    text-align: center;
+    padding: 10px 0;
+}
+.account-login-divide::before{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    content: "";
+    left: 0;
+    top: 50%;
+    background-color: #e4e4e4;
+    transform: translateY(-50%);
+}
+.account-login-divide-text{
+    font-size: 15px;
+    padding: 0 8px;
+    background-color: #fff;
+    position: relative;
+    color: #e4e4e4;
+}
+.account-social-link.facebook{
+    background-color: #4267B2;
+}
+.account-social-link.google{
+    background-color: #DB4437;
+}
+.account-social-link.twitter{
+    background-color: #1DA1F2;
+}
+.account-social-link{
+    height: 42px;
+    line-height: 42px;
+    color: #fff;
+    font-family: Jost-SemiBold;
+    margin-right: 20px;
+    padding: 0 45px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.account-social-link:hover{
+    color: #fff;
+    background-color: #ee2761;
+}
+.account-login-signup-text{
+    text-align: center;
+    font-size: 15px;
+    font-family: Jost-SemiBold;
+    color: #606060;
+}
+.account-login-signup-text a{
+    background-color: inherit;
+    color: #ee2761;
+}
+.account-login-signup-text a:hover{
+    color:#061738;
+}

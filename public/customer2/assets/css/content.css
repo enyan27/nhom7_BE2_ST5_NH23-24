@@ -1,0 +1,75 @@
+.carousel-item{
+    height: 438px;
+}
+.banner-items-thumbnail{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+}
+.banner-items-thumbnail img{
+    transition: all 0.5s ease;
+    width: 100%;
+}
+.banner-items-thumbnail:hover img{
+    transform: scale(1.05);
+}
+.banner-items-content{
+    top: 30px;
+    left: 30px;
+}
+.banner-items-content-subtitle{
+    font-size: 18px;
+    color: #606060;
+    line-height: 24px;
+    padding-bottom: 8px;
+}
+.banner-items-content-title{
+    color: #061738;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 12px;
+}
+.banner-items-content-link{
+    font-size: 16px;
+    color: #606060;
+}
+.banner-items-content-link:hover{
+    color: #ee2761;
+}
+.banner-items-content-arrow-icon{
+    margin-left: 5px;
+    vertical-align: middle;
+    color: #ee2761;
+}
+
+/* CSS Blog */
+.blog-content{
+    padding-top: 9px;
+}
+.blog-content-meta{
+    padding-bottom: 9px;
+}
+.blog-content-title{
+    font-size: 19px;
+    line-height: 27px;
+    color: #000;
+    font-family: Jost-Bold;
+    padding-bottom: 20px;
+}
+.blog-content-title:hover a{
+    color:#ee2761;
+}
+.blog-content-btn{
+    padding: 0 30px;
+    border: 1px solid #e7e7e7;
+    height: 44px;
+    line-height: 42px;
+    font-size: 17px ;
+    border-radius: 3px;
+}
+.blog-content-btn:hover{
+    color: #fff;
+    background-color: #ee2761;
+}
