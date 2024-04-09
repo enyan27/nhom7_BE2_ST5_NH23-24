@@ -120,8 +120,28 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     });
 });
 
+// ---------------------------------- Customer Page 2 ----------------------------------
+Route::get('', [App\Http\Controllers\Customer\MainController::class, 'index']);
+Route::get('/aboutus', [App\Http\Controllers\Customer\MainController::class, 'aboutUs']);
+Route::get('/contact', [App\Http\Controllers\Customer\MainController::class, 'contact']);
+Route::get('/shop', [App\Http\Controllers\Customer\ShopController::class, 'index']);
 
+Route::get('/my-account/profile', [App\Http\Controllers\Customer\AccountController::class, 'index']);
+Route::post('/my-account/profile', [App\Http\Controllers\Customer\AccountController::class, 'update']);
+Route::get('/my-account/order', [App\Http\Controllers\Customer\AccountController::class, 'orderHistory']);
+Route::get('/my-account/order/{id}', [App\Http\Controllers\Customer\AccountController::class, 'orderDetail']);
+Route::post('/my-account/order/updateOrderStatus', [App\Http\Controllers\Customer\AccountController::class, 'updateOrderStatus']);
 
+Route::get('login', [App\Http\Controllers\Customer\LoginController::class, 'login']);
+Route::post('login', [App\Http\Controllers\Customer\LoginController::class, 'checkLogin']);
+Route::get('register', [App\Http\Controllers\Customer\LoginController::class, 'register']);
+Route::post('register', [App\Http\Controllers\Customer\LoginController::class, 'checkRegister']);
+Route::post('logout', [App\Http\Controllers\Customer\LoginController::class, 'logout']);
+
+Route::get('/forgot-password', [App\Http\Controllers\Customer\ResetPasswordController::class, 'forgotPassword']);
+Route::post('/forgot-password', [App\Http\Controllers\Customer\ResetPasswordController::class, 'forgotPasswordPost']);
+Route::get('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPassword']);
+Route::post('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPasswordPost']);
 /**
  * // Test Customer Page
  */
