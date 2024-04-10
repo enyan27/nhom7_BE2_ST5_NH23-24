@@ -120,7 +120,22 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     });
 });
 
-// ---------------------------------- Customer Page 2 ----------------------------------
+/**
+ * // Test Customer Page
+ */
+// Route::get('test', function() {
+//     Artisan::call('storage:link');
+// });
+// Route::get('/customer-action', [CustomerController::class, 'action']);
+
+/**
+ * // Test Admin Page
+ */
+//Route::redirect('/','/admin/login'); 
+
+
+
+// ---------------------------------- Customer Page ----------------------------------
 Route::get('', [App\Http\Controllers\Customer\MainController::class, 'index']);
 Route::get('/aboutus', [App\Http\Controllers\Customer\MainController::class, 'aboutUs']);
 Route::get('/contact', [App\Http\Controllers\Customer\MainController::class, 'contact']);
@@ -142,32 +157,20 @@ Route::get('/forgot-password', [App\Http\Controllers\Customer\ResetPasswordContr
 Route::post('/forgot-password', [App\Http\Controllers\Customer\ResetPasswordController::class, 'forgotPasswordPost']);
 Route::get('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPassword']);
 Route::post('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPasswordPost']);
-/**
- * // Test Customer Page
- */
-// Route::get('test', function() {
-//     Artisan::call('storage:link');
+
+
+
+
+
+// ---------------------------------- Customer Page - Khai ----------------------------------
+// Route::redirect('/','customer/home'); 
+// Route::prefix('/customer')->group(function() {
+//     Route::get('/home', [ProductCustomerController::class,'getAllProducts']);
+//     Route::get('/product/details/{id}', [ProductCustomerController::class,'getProductById']);
+//     Route::get('/about', [AboutUsController::class,'index']);
+//     Route::get('/products/categories', [CategoryCustomerController::class,'index']);
 // });
-// Route::get('/customer-action', [CustomerController::class, 'action']);
 
-/**
- * // Test Admin Page
- */
-//Route::redirect('/','/admin/login'); 
-
-
-
-
-
-// ---------------------------------- Customer Page ----------------------------------
-Route::redirect('/','customer/home'); 
-Route::prefix('/customer')->group(function() {
-    Route::get('/home', [ProductCustomerController::class,'getAllProducts']);
-    Route::get('/product/details/{id}', [ProductCustomerController::class,'getProductById']);
-    Route::get('/about', [AboutUsController::class,'index']);
-    Route::get('/products/categories', [CategoryCustomerController::class,'index']);
-});
-
-Route::get('/test',function ()  {
-    return view('customer/details-test');
-});
+// Route::get('/test',function ()  {
+//     return view('customer/details-test');
+// });
