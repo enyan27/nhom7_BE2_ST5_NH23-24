@@ -1,3 +1,10 @@
+:root{
+    --pink: #EB3349;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
 .form-group{
     margin-bottom: 20px;
 }
@@ -14,16 +21,16 @@
 }
 .form-group input:hover,
 .form-group select:hover {
-    border-color: #ee2761;
+    border-color: var(--pink);;
 }
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #ee2761;
+    border-color: var(--pink);;
 }
 .return-cart{
     margin-top: 20px;
     font-size: 18px;
-    color:#ee2761;
+    color:var(--pink);;
     display: flex;
     align-items: center;
 }
@@ -122,7 +129,7 @@
   }
 
 .payment-method input:checked + span  {
-    outline: 2px solid #ee2761;
+    outline: 2px solid var(--pink);;
 }
 .order-btn{
     margin-top: 40px;

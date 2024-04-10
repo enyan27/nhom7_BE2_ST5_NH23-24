@@ -18,6 +18,13 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+:root{
+    --pink: #EB3349;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -91,10 +98,10 @@ body{
     src: url(../font/static/Jost-SemiBold.ttf);
 }
 .color-main{
-    background-color: #ee2761;
+    background-color: var(--pink);;
 }
 .text-main-color{
-    color: #ee2761;
+    color: var(--pink);;
 }
 .text-right{
     text-align: right;
@@ -128,7 +135,7 @@ a, textarea, input, img, button{
     transition: all 0.3s ease;
 }
 a:hover{
-    color:#ee2761;
+    color:var(--pink);;
 }
 span{
     display: inline-block;
@@ -179,7 +186,7 @@ input::-webkit-inner-spin-button {
     height: 48px;
     letter-spacing: 0.2px;
     border-radius: 3px;
-    background: #ee2761;
+    background: var(--pink);;
     color: #ffffff;
     border: 0;
     font-size: 17px;
@@ -254,12 +261,12 @@ input::-webkit-inner-spin-button {
     width: 100%;
 }
 .product-items-content-title a:hover{
-    color:#ee2761;
+    color:var(--pink);;
 }
 .current-price{
     font-size: 17px;
     font-weight: 600;
-    color: #ee2761;
+    color: var(--pink);;
 }
 .old-price{
     font-size: 15px;
@@ -305,13 +312,13 @@ input::-webkit-inner-spin-button {
 .product-items-action li a:hover,
 .product-items-action li button:hover{
     color: #fff;
-    background-color: #ee2761;
-    border-color: #ee2761;
+    background-color: var(--pink);;
+    border-color: var(--pink);;
 }
 .product-items-action li button.added{
     color: #fff;
-    background-color: #ee2761;
-    border-color: #ee2761;
+    background-color: var(--pink);;
+    border-color: var(--pink);;
 }
     /* Shipping Section */
 
@@ -361,7 +368,7 @@ input::-webkit-inner-spin-button {
     height: 20px;
     width: 3px;
     content: "";
-    background-color: #ee2761;
+    background-color: var(--pink);;
     border-radius: 5px;
     transform: rotate(30deg);
     margin: 0 22px;
@@ -400,10 +407,10 @@ input::-webkit-inner-spin-button {
     margin-bottom: 50px;
 }
 .product-tab-primary.active{
-    color: #ee2761;
+    color: var(--pink);;
 }
 .product-tab-primary:hover{
-    color: #ee2761;
+    color: var(--pink);;
 }
 .swiper-nav-btn{
     height: 40px;

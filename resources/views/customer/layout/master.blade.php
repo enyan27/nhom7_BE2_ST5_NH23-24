@@ -56,7 +56,7 @@
         <div class="main-header-inner d-flex justify-content-between align-items-center">
           <div class="main-logo">
             <a href="/">
-              <img src="/customer/assets/img/nav-log-stable.png" alt="logo-img" />
+              <img src="/customer/assets/img/nav-log-stable.png" alt="logo-img" style="width: 140px; margin: -60px 0;"/>
             </a>
           </div>
 
@@ -387,7 +387,7 @@
       </div>
       <div class="footer-bottom d-flex justify-content-between align-items-center">
         <p class="copyright-content text-ofwhite m-0">
-          Copyright © 2022 <a href="/">Stable</a> . All Rights Reserved.Design By Stable
+          Copyright © 2024 <a href="/">Stable</a> . All Rights Reserved.Design By Stable
         </p>
         <div class="footer-payment text-right">
           <img class="" src="/customer/assets/img/payment-visa-card.png" alt="visa-card">

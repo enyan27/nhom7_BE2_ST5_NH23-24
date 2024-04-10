@@ -1,3 +1,11 @@
+:root{
+    --pink: #EB3349;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
 .account-welcome-text{
     font-size: 18px;
 }
@@ -26,10 +34,10 @@
     cursor: pointer;
 }
 .account-menu-list>*:hover{
-    color: #ee2761;
+    color: var(--pink);;
 }
 .account-menu-list>*.active{
-    color: #ee2761;
+    color: var(--pink);;
 }
 .account-wrapper{
     width: calc(100% - 230px);
@@ -78,8 +86,8 @@
     margin-top: 20px;
 }
 .info-account-btn button{
-    color: #ee2761;
-    border: 1px solid #ee2761;
+    color: var(--pink);;
+    border: 1px solid var(--pink);;
     border-radius: 25px;
     padding: 0 25px;
     background-color: #fff;
@@ -89,7 +97,7 @@
     font-size: 15px;
 }
 .info-account-btn button:hover{
-    background-color: #ee2761;
+    background-color: var(--pink);;
     color: #fff;
 }
 /* avatar */

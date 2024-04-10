@@ -158,8 +158,11 @@ Route::post('/forgot-password', [App\Http\Controllers\Customer\ResetPasswordCont
 Route::get('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPassword']);
 Route::post('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPasswordPost']);
 
+Route::get('/{slug}.html', [App\Http\Controllers\Customer\ShopController::class, 'showProductDetail']);
+Route::get('/{categroy_slug}.htm', [App\Http\Controllers\Customer\ShopController::class, 'showProductByCategory']);
 
-
+Route::post('/get-size' , [App\Http\Controllers\Customer\ShopController::class, 'getSize']);
+Route::post('/buy-now' , [App\Http\Controllers\Customer\ShopController::class, 'buyNow']);
 
 
 // ---------------------------------- Customer Page - Khai ----------------------------------
