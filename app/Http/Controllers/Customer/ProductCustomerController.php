@@ -7,7 +7,7 @@ use App\Models\Product;
 use App\Models\ProductDetail;
 use Illuminate\Http\Request;
 
-class ProductCustomerController extends Controller
+class ProductCustomerController extends Controller // Khai*
 {
     /**
      * Display a listing of the resource.

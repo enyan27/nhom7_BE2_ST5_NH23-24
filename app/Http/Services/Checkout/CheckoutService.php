@@ -36,7 +36,7 @@ class CheckoutService
             $data = [
                 'vnp_TxnRef' => $order->id,
                 'vnp_OrderInfo' => 'Order Payment No.' .$order->id,
-                'vnp_Amount' => $order->total_price * 23450,
+                'vnp_Amount' => $order->total_price * 25000, // (1 USD = 25000 VND) 4/13/2024
 
             ];
 

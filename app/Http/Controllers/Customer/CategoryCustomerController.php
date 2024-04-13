@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class CategoryCustomerController extends Controller
+class CategoryCustomerController extends Controller // Khai*
 {
     //
     public function index() {
