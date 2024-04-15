@@ -27,15 +27,11 @@ class LoginService
         $email = $request->input('email');
         $password = $request->input('password');
         $remember = $request->remember;
-
-        if(Auth::attempt([
-            'email' => $email, 
-            'password' => $password,
-            'level' => 2,
-            'active' => 0
-        ], $remember)) {
-
-            return true;
+    
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'active' => 0], $remember)) {
+            return Auth::user()->level;
         }
+
+        return false;
     }
 }

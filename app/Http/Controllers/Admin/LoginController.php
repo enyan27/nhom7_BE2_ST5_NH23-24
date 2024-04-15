@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index() {
+        
+        if (Auth::check() && Auth::user()->level <= 1) {
+            return redirect('/admin/home');
+        }
 
         return view('admin.user.login');
     }

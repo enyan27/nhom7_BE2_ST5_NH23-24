@@ -557,8 +557,9 @@
                                                     width="1"
                                                     style="mso-line-height-rule: exactly; border-bottom-width: 2px; border-bottom-color: #dadada; border-bottom-style: solid; padding: 13px 13px 13px 0;"
                                                     bgcolor="#ffffff" valign="middle">
+                                                                                                <!-- Test lai product image-->
                                                     <img width="140" class="product-image"
-                                                      src="https://cdn.shopify.com/s/files/1/1070/9630/products/Case-2_140x140_cropped@2x.jpg?v=1527243096"
+                                                      src="{{$orderDetail->productDetail->product->image_1}}" 
                                                       alt="Product Image"
                                                       style="vertical-align: middle; text-align: center; width: 140px; max-width: 140px; height: auto !important; border-radius: 1px; padding: 0px;">
                                                   </th>
@@ -1003,10 +1004,10 @@
                                                     style="mso-line-height-rule: exactly; padding-left: 5%; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,'Karla'; font-size: 14px; line-height: 24px; font-weight: 400; color: #a3a1a1; text-transform: none;"
                                                     align="center" bgcolor="#ffffff" valign="top">
                                                     Stable<br style="text-align: center;">
-                                                    175 Tay Son, Dong Da<br style="text-align: center;">
-                                                    Ha Noi, Viet Nam<br style="text-align: center;">
+                                                    53 Vo Van Ngan, Linh Chieu, <br style="text-align: center;">
+                                                    Thu Duc City, Ho Chi Minh City<br style="text-align: center;">
                                                     <br style="text-align: center;">
-                                                    Copyright © 2022
+                                                    Copyright © 2024
                                                   </th>
                                                 </tr>
                                                 <!-- Store Address : END -->

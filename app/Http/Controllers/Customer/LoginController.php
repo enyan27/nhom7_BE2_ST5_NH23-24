@@ -38,17 +38,21 @@ class LoginController extends Controller
             'email' => 'required|email:filter',
             'password' => 'required'
         ]);
-
+    
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
         
-        $result = $this->loginService->checkLogin($request);
-
-        if($result == true) {
-            return redirect('/');
+        $level = $this->loginService->checkLogin($request);
+    
+        if($level !== false) {
+            if ($level == 0 || $level == 1) {
+                return redirect('/admin/home');
+            } else if ($level == 2) {
+                return redirect('/');
+            }
         }
-
+    
         return back()->with('error','ERORR: Incorrect email or password, or your account has been locked ');
     }
 
