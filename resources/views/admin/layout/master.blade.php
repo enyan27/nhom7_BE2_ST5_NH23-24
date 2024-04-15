@@ -61,6 +61,12 @@
                             <span class="title">Orders</span>
                         </a>
                     </li>
+                    <li  class="{{(request()->segment(2) == 'blog') ? 'hovered' : ''}}">
+                        <a href="./admin/blog">
+                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                            <span class="title">Blogs</span>
+                        </a>
+                    </li>
                     <li  class="{{(request()->segment(2) == 'user') ? 'hovered' : ''}}">
                         <a href="./admin/user">
                             <span class="icon"><ion-icon name="person-outline"></ion-icon></span>

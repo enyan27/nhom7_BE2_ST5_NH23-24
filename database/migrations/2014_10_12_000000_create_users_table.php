@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('active')->default(0);
             $table->string('country')->nullable();
             $table->integer('postcode')->nullable();
-
+            
             $table->timestamps();
         });
     }

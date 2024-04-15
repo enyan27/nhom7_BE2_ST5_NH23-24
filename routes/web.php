@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\Admin\BlogController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\UserController;
@@ -109,6 +110,10 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
         Route::post('action', [CustomerController::class,'action']);
     });
 
+    // Blog
+    Route::prefix('blog')->group(function() {
+        Route::get('', [BlogController::class,'index']);
+    });
     // Profile
     Route::get('profile', [ProfileController::class,'index']);
     Route::post('profile', [ProfileController::class,'update']);
