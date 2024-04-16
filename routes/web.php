@@ -113,6 +113,9 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
     // Blog
     Route::prefix('blog')->group(function() {
         Route::get('', [BlogController::class,'index']);
+        Route::get('create', [BlogController::class,'create']);
+        Route::post('store', [BlogController::class,'store']);
+        Route::delete('destroy/{id}', [BlogController::class,'destroy'])->name('blog.destroy');
     });
     // Profile
     Route::get('profile', [ProfileController::class,'index']);
