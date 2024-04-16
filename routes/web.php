@@ -173,6 +173,17 @@ Route::post('/get-size' , [App\Http\Controllers\Customer\ShopController::class, 
 Route::post('/buy-now' , [App\Http\Controllers\Customer\ShopController::class, 'buyNow']);
 
 
+// Cart
+Route::get('/cart', [App\Http\Controllers\Customer\CartController::class, 'view']);
+Route::post('/add-to-cart', [App\Http\Controllers\Customer\CartController::class, 'addCart']);
+Route::post('/remove-cart', [App\Http\Controllers\Customer\CartController::class, 'removeCart']);
+Route::post('/update-cart', [App\Http\Controllers\Customer\CartController::class, 'updateCart']);
+Route::post('/clear-cart', [App\Http\Controllers\Customer\CartController::class, 'clearCart']);
+//Wishlist
+Route::get('/wishlist', [App\Http\Controllers\Customer\WishListController::class, 'index']);
+Route::post('/add-to-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'addWishList']);
+Route::post('/remove-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'removeWishList']);
+
 // ---------------------------------- Customer Page - Khai ----------------------------------
 // Route::redirect('/','customer/home'); 
 // Route::prefix('/customer')->group(function() {
