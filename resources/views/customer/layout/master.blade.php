@@ -178,7 +178,7 @@
               </li>
               @endforeach
               <li class="header-menu-items">
-                <a class="header-menu-link" href="#">Blog</a>
+                <a class="header-menu-link" href="/blog">Blog</a>
               </li>
               <li class="header-menu-items">
                 <a class="header-menu-link" href="/aboutus">About US</a>

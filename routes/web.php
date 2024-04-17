@@ -149,6 +149,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
 
 // ---------------------------------- Customer Page ----------------------------------
 Route::get('', [App\Http\Controllers\Customer\MainController::class, 'index']);
+Route::get('/blog', [App\Http\Controllers\Customer\MainController::class, 'blog']);
 Route::get('/aboutus', [App\Http\Controllers\Customer\MainController::class, 'aboutUs']);
 Route::get('/contact', [App\Http\Controllers\Customer\MainController::class, 'contact']);
 Route::get('/shop', [App\Http\Controllers\Customer\ShopController::class, 'index']);
@@ -187,6 +188,10 @@ Route::post('/clear-cart', [App\Http\Controllers\Customer\CartController::class,
 Route::get('/wishlist', [App\Http\Controllers\Customer\WishListController::class, 'index']);
 Route::post('/add-to-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'addWishList']);
 Route::post('/remove-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'removeWishList']);
+
+
+
+
 
 // ---------------------------------- Customer Page - Khai ----------------------------------
 // Route::redirect('/','customer/home'); 

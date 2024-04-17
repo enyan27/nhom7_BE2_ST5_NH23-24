@@ -31,14 +31,18 @@ class MainController extends Controller
     public function aboutUs() {
 
         $categories = $this->categoryService->getParent();
-
         return view('customer.main.aboutus', compact('categories'));
     }
 
     public function contact() {
 
         $categories = $this->categoryService->getParent();
-        
         return view('customer.main.contact', compact('categories'));
+    }
+
+    public function blog() {
+
+        $categories = $this->categoryService->getParent();
+        return view('customer.main.blog', compact('categories'));
     }
 }
