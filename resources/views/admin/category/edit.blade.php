@@ -17,7 +17,7 @@
                                 <label for="categoryname">Category Name
                                     <span class="text-danger">*</span>
                                 </label>
-                                <input class="form-controll" type="text" value="{{$category->categoryname}}" name="categoryname" placeholder="Category Name" id="categoryname">
+                                <input class="form-control" type="text" value="{{$category->categoryname}}" name="categoryname" placeholder="Category Name" id="categoryname" required>
                                 <div class="invalid-feedback">Please type a category name valid</div>
                                 @error('categoryname')
                                     <p class="text-danger">{{ $message }}</p>
@@ -39,7 +39,7 @@
                                 <label for="description">Description
                                     <span class="text-danger">*</span>
                                 </label>
-                                <textarea class="textarea-category"name="description" id="description" cols="30" rows="10">{{$category->description}}</textarea>
+                                <textarea class="textarea-category"name="description" id="description" cols="30" rows="10" required>{{$category->description}}</textarea>
                                 <div class="invalid-feedback">Please enter a description category</div>
                                 @error('description')
                                     <p class="text-danger">{{ $message }}</p>

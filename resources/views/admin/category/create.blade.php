@@ -40,7 +40,7 @@
                                 <label for="description">Description
                                     <span class="text-danger">*</span>
                                 </label>
-                                <textarea class="textarea-category" name="description" id="description" cols="30" rows="10"></textarea>
+                                <textarea class="textarea-category" name="description" id="description" cols="30" rows="10" required></textarea>
                                 <div class="invalid-feedback">Please enter a description category</div>
                                 @error('description')
                                     <p class="text-danger">{{ $message }}</p>

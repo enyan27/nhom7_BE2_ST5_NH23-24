@@ -5,42 +5,50 @@
 @section('body')
         <!-- cards -->
         <div class="cardBox">
-            <div class="card">
-                <div>
-                    <div class="numbers">{{$count['product']}}</div>
-                    <div class="cardName">Products</div>
+            <a href="./admin/product">
+                <div class="card">
+                    <div>
+                        <div class="numbers">{{$count['product']}}</div>
+                        <div class="cardName">Products</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                    </div>
                 </div>
-                <div class="iconBx">
-                    <ion-icon name="file-tray-stacked-outline"></ion-icon>
+            </a>
+            <a href="./admin/customer">
+                <div class="card">
+                    <div>
+                        <div class="numbers">{{$count['customer']}}</div>
+                        <div class="cardName">Customers</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">{{$count['customer']}}</div>
-                    <div class="cardName">Customers</div>
+            </a>
+            <a href="./admin/order">
+                <div class="card">
+                    <div>
+                        <div class="numbers">{{$count['order']}}</div>
+                        <div class="cardName">Orders</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="document-text-outline"></ion-icon>   
+                    </div>
                 </div>
-                <div class="iconBx">
-                    <ion-icon name="person-circle-outline"></ion-icon>
+            </a>
+            <a href="./admin/statistic">
+                <div class="card">
+                    <div>
+                        <div class="numbers">${{number_format($earn, 0)}}</div>
+                        <div class="cardName">Earning</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">{{$count['order']}}</div>
-                    <div class="cardName">Orders</div>
-                </div>
-                <div class="iconBx">
-                    <ion-icon name="document-text-outline"></ion-icon>   
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">${{number_format($earn, 0)}}</div>
-                    <div class="cardName">Earning</div>
-                </div>
-                <div class="iconBx">
-                    <ion-icon name="cash-outline"></ion-icon>
-                </div>
-            </div>
+            </a>
         </div>
         
         <div class="details">

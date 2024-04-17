@@ -113,9 +113,11 @@
                             </form>
                         </div>
                         @endif
-                        <div class="user-img">
-                            <img src="{{Auth::user()->avatar ?? '/storage/uploads/user/no_avatar.png'}}">
-                        </div>
+                        <a href="admin/profile">
+                            <div class="user-img">    
+                                <img src="{{Auth::user()->avatar ?? '/storage/uploads/user/no_avatar.png'}}">
+                            </div>
+                        </a>
                     </div>
                 </div>
 

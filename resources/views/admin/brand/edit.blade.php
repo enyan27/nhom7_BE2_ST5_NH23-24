@@ -17,7 +17,7 @@
                                 <label for="brandname">Brand Name
                                     <span class="text-danger">*</span>
                                 </label>
-                                <input class="form-controll" type="text" value="{{$brand->brandname}}" name="brandname" placeholder="Brand Name" id="brandname">
+                                <input class="form-control" type="text" value="{{$brand->brandname}}" name="brandname" placeholder="Brand Name" id="brandname" required>
                                 <div class="invalid-feedback">Please type a brand name valid</div>
                                 @error('brandname')
                                     <p class="text-danger">{{ $message }}</p>
@@ -27,7 +27,7 @@
                                 <label for="description">Description
                                     <span class="text-danger">*</span>
                                 </label>
-                                <textarea class="textarea-category"name="description" id="description" cols="30" rows="10">{{$brand->description}}</textarea>
+                                <textarea class="textarea-category"name="description" id="description" cols="30" rows="10" required>{{$brand->description}}</textarea>
                                 <div class="invalid-feedback">Please enter a description brand</div>
                                 @error('description')
                                     <p class="text-danger">{{ $message }}</p>

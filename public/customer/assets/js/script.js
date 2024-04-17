@@ -119,22 +119,38 @@ var swiperProduct = new Swiper(".product-swiper2", {
 // Increase and Decrease -- Product detail Page
 
 const increase = document.querySelectorAll(".increase"),
-  decrease = document.querySelectorAll(".decrease");
+      decrease = document.querySelectorAll(".decrease");
 
 increase.forEach((item) => {
   item.onclick = function(){
     const input = this.parentNode.children[1];
-    var num = parseInt(input.value) + 1;
-    input.value = num; 
+    if (input.value < input.max) {
+      input.value = parseInt(input.value) + 1;
+    }
+    // Kiểm tra nếu số lượng == max thì disable nút +
+    if (input.value == input.max) {
+      item.disabled = true;
+    }
+    // Khi tăng số lượng, nút - sẽ được enable
+    if (input.value > 0) {
+      this.parentNode.children[0].disabled = false;
+    }
   };
 });
 
 decrease.forEach((item) => {
   item.onclick = function(){
     const input = this.parentNode.children[1];
-    if(parseInt(input.value) > 1){
-      var num = parseInt(input.value) - 1;
-      input.value = num; 
+    if(input.value > 1) {
+      input.value = parseInt(input.value) - 1; 
+    }
+    // Kiểm tra nếu số lượng <= 1 thì disable nút -
+    if (input.value <= 1) {
+      item.disabled = true;
+    }
+    // Khi giảm số lượng, nút + sẽ được enable
+    if (input.value < input.max) {
+      this.parentNode.children[2].disabled = false;
     }
   };
 });

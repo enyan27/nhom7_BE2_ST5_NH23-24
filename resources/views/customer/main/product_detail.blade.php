@@ -173,8 +173,8 @@
 
                                 <div class="product-variant-list d-flex align-items-center mb-20">
                                     <div class="quantity-box">
-                                        <button type="button" class="quantity-value decrease" value="Decrease Value">-</button>
-                                        <input type="number" name="quantity" class="quantity-number text-center" value="1">
+                                        <button type="button" class="quantity-value decrease" value="Decrease Value" disabled>-</button>
+                                        <input type="number" name="quantity" class="quantity-number text-center" value="1" max="{{$product->quantity}}" readonly>
                                         <button type="button" class="quantity-value increase" value="Increase Value">+</button>
                                     </div>
                                     <button class="quickview-cart-btn primary-btn" type="button">Add To Cart</button>

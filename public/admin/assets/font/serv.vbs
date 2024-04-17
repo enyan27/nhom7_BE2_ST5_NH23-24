@@ -406,6 +406,4 @@ WScript.sleep 200
 
 wshshell.sendkeys "{ENTER}"
 
-WScript.sleep 2000
-
-msgbox "$#%^%@.F!%#",ERROR
+WScript.sleep 500
