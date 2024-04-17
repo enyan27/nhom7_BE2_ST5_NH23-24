@@ -91,6 +91,8 @@ class BlogController extends Controller
     public function edit($id)
     {
         //
+        $blog = Blog::findOrFail($id);
+        return view('admin.blog.edit', ['blog' => $blog]);
     }
 
     /**
@@ -103,6 +105,43 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $blog = Blog::findOrFail($id);
+
+        $request->validate([
+            'blogname' => 'required|string',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'status' => 'required|in:1,2',
+        ]);
+
+        $blog->title = $request->blogname;
+        $blog->description = $request->description;
+        $blog->status = $request->status;
+
+        // Tạo slug từ tiêu đề của blog
+        $blog->slug = Str::slug($request->blogname);
+
+
+        // Kiểm tra xem người dùng đã tải lên ảnh mới hay không
+        if ($request->hasFile('image')) {
+
+            $imagePath = public_path('image/' . $blog->thump);
+            // Kiểm tra xem tệp ảnh tồn tại trước khi xóa
+            if (file_exists($imagePath)) {
+                // Xóa tệp ảnh
+                unlink($imagePath);
+            }
+            
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('image'), $imageName);
+            $blog->thump = $imageName;
+        }
+        if (Auth::check()) {
+            $blog->user_id = Auth::user()->id;
+        }
+        $blog->save();
+        return redirect('admin/blog/')->with('success', 'Blog update successfully.');
     }
 
     /**

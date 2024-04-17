@@ -46,9 +46,9 @@
                         </td>
                         <td style="width: 500px">{{ $blog->create_at }}</td>
                         <td class="d-flex justify-content-end">
-                            <a href="/admin/blog/edit/{{$blog->id}}" class="btn mr-10">Edit</a>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteBrand-{{$blog->id}}">Delete</button>
-                            <div class="modal fade" id="modalDeleteBrand-{{$blog->id}}" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                            <a href="{{url("admin/blog/edit/$blog->id")}}" class="btn mr-10">Edit</a>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteBlog-{{$blog->id}}">Delete</button>
+                            <div class="modal fade" id="modalDeleteBlog-{{$blog->id}}" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
                                 tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -57,7 +57,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body text-start">
-                                            <strong>Are you sure you want to delete <span class="text-danger">{{$blog->brandname}}</span> brand?</strong>
+                                            <strong>Are you sure you want to delete <span class="text-danger">{{$blog->title}}</span> blog?</strong>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btnNo" data-bs-dismiss="modal">No</button>
