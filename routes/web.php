@@ -149,7 +149,7 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
 
 // ---------------------------------- Customer Page ----------------------------------
 Route::get('', [App\Http\Controllers\Customer\MainController::class, 'index']);
-Route::get('/blog', [App\Http\Controllers\Customer\MainController::class, 'blog']);
+//Route::get('/blog', [App\Http\Controllers\Customer\MainController::class, 'blog']);
 Route::get('/aboutus', [App\Http\Controllers\Customer\MainController::class, 'aboutUs']);
 Route::get('/contact', [App\Http\Controllers\Customer\MainController::class, 'contact']);
 Route::get('/shop', [App\Http\Controllers\Customer\ShopController::class, 'index']);
@@ -189,6 +189,20 @@ Route::get('/wishlist', [App\Http\Controllers\Customer\WishListController::class
 Route::post('/add-to-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'addWishList']);
 Route::post('/remove-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'removeWishList']);
 
+// CheckOut
+Route::prefix('checkout')->group( function(){
+    Route::get('', [App\Http\Controllers\Customer\CheckoutController::class, 'index']);
+    Route::post('', [App\Http\Controllers\Customer\CheckoutController::class, 'addOrder']);
+    Route::get('/vnPayCheck', [App\Http\Controllers\Customer\CheckoutController::class, 'vnPayCheck']);
+    Route::get('/noti', [App\Http\Controllers\Customer\CheckoutController::class, 'noti']);
+
+});
+
+
+// Blog
+Route::get('/blog', [App\Http\Controllers\Customer\BlogController::class, 'index']);
+Route::get('/blog/detail/{id}', [App\Http\Controllers\Customer\BlogController::class, 'show']);
+Route::post('/blog/store', [App\Http\Controllers\Customer\BlogCommentController::class, 'store']);
 
 
 

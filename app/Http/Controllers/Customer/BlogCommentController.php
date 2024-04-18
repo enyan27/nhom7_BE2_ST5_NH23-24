@@ -3,15 +3,11 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
 use App\Models\BlogComment;
 use Illuminate\Http\Request;
 
-use App\Models\Category;
-
-class BlogController extends Controller
+class BlogCommentController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -20,9 +16,6 @@ class BlogController extends Controller
     public function index()
     {
         //
-        $categories = Category::where('parent_id',0)->get();
-        $blogs = Blog::paginate(3);
-        return view('customer.main.blog',compact('categories','blogs'));
     }
 
     /**
@@ -44,6 +37,13 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         //
+        $comment = new BlogComment();
+        $comment->blog_id = $request->blog_id;
+        $comment->name = $request->name;
+        $comment->email = $request->email;
+        $comment->content = $request->content;
+        $comment->save();
+        return redirect('/blog/detail/'.$request->blog_id)->with('success','Comment success!');
     }
 
     /**
@@ -55,12 +55,6 @@ class BlogController extends Controller
     public function show($id)
     {
         //
-        $blog = Blog::findOrFail($id);
-        $blog->view = $blog->view + 1;
-        $categories = Category::where('parent_id',0)->get();
-        $blog->save();
-        $comments = BlogComment::where('blog_id',$id)->get();
-        return view('customer.main.blog-detail',compact('blog','categories','comments'));
     }
 
     /**
