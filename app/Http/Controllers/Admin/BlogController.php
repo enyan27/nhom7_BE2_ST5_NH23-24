@@ -140,6 +140,7 @@ class BlogController extends Controller
         if (Auth::check()) {
             $blog->user_id = Auth::user()->id;
         }
+        $blog->updated_at = now();
         $blog->save();
         return redirect('admin/blog/')->with('success', 'Blog update successfully.');
     }

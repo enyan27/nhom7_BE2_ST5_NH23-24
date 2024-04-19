@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\OrderController;
@@ -121,6 +122,17 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
         Route::post('update/{id}', [BlogController::class, 'update'])->name('blog.update');
 
     });
+    // Coupon
+
+    Route::prefix('coupon')->group(function() {
+        Route::get('', [CouponController::class,'index']);
+        Route::get('create', [CouponController::class,'create']);
+        Route::post('store', [CouponController::class,'store']);
+        // Route::get('edit/{id}', [CouponController::class,'edit']);
+        // Route::post('update/{id}', [CouponController::class,'update']);
+        // Route::delete('delete/{id}', [CouponController::class,'destroy']);
+    });
+
     // Profile
     Route::get('profile', [ProfileController::class,'index']);
     Route::post('profile', [ProfileController::class,'update']);
@@ -203,6 +215,7 @@ Route::prefix('checkout')->group( function(){
 Route::get('/blog', [App\Http\Controllers\Customer\BlogController::class, 'index']);
 Route::get('/blog/detail/{id}', [App\Http\Controllers\Customer\BlogController::class, 'show']);
 Route::post('/blog/store', [App\Http\Controllers\Customer\BlogCommentController::class, 'store']);
+// Coupon
 
 
 

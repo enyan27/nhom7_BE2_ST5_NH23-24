@@ -31,7 +31,7 @@
                     <div class="entry__blog">
                         <div class="blog__post--header mb-30">
                             <h2 class="post__header--title mb-15">{{$blog->title}}</h2>
-                            <p class="blog__post--meta">Posted by : {{$blog->user->fullname}} / On :{{$blog->update_at = date('d/m/Y', strtotime($blog->update_at))}}</p>
+                            <p class="blog__post--meta">Posted by : {{$blog->user->fullname}} / On :{{$blog->updated_at = date('d/m/Y', strtotime($blog->updated_at))}}</p>
                             <p class="blog__post--meta">View : {{$blog->view}} </p>
                         </div>
                         <div class="blog__thumbnail mb-30">
