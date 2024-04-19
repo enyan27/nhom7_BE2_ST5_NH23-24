@@ -212,9 +212,6 @@ input[type="submit"] {
     font-weight: var(--body-font-weight);
     line-height: var(--body-line-height);
 }
-input[type="number"] {
-    -moz-appearance: textfield;
-}
 img {
     max-width: 100%;
     height: auto;

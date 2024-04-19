@@ -161,35 +161,15 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
 
 // ---------------------------------- Customer Page ----------------------------------
 Route::get('', [App\Http\Controllers\Customer\MainController::class, 'index']);
-//Route::get('/blog', [App\Http\Controllers\Customer\MainController::class, 'blog']);
 Route::get('/aboutus', [App\Http\Controllers\Customer\MainController::class, 'aboutUs']);
 Route::get('/contact', [App\Http\Controllers\Customer\MainController::class, 'contact']);
 Route::get('/shop', [App\Http\Controllers\Customer\ShopController::class, 'index']);
-
-Route::get('/my-account/profile', [App\Http\Controllers\Customer\AccountController::class, 'index']);
-Route::post('/my-account/profile', [App\Http\Controllers\Customer\AccountController::class, 'update']);
-Route::get('/my-account/order', [App\Http\Controllers\Customer\AccountController::class, 'orderHistory']);
-Route::get('/my-account/order/{id}', [App\Http\Controllers\Customer\AccountController::class, 'orderDetail']);
-Route::post('/my-account/order/updateOrderStatus', [App\Http\Controllers\Customer\AccountController::class, 'updateOrderStatus']);
-
-Route::get('login', [App\Http\Controllers\Customer\LoginController::class, 'login']);
-Route::post('login', [App\Http\Controllers\Customer\LoginController::class, 'checkLogin']);
-Route::get('register', [App\Http\Controllers\Customer\LoginController::class, 'register']);
-Route::post('register', [App\Http\Controllers\Customer\LoginController::class, 'checkRegister']);
-Route::post('logout', [App\Http\Controllers\Customer\LoginController::class, 'logout']);
-
-Route::get('/forgot-password', [App\Http\Controllers\Customer\ResetPasswordController::class, 'forgotPassword']);
-Route::post('/forgot-password', [App\Http\Controllers\Customer\ResetPasswordController::class, 'forgotPasswordPost']);
-Route::get('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPassword']);
-Route::post('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPasswordPost']);
-
+// Get ProudctDetail
 Route::get('/{slug}.html', [App\Http\Controllers\Customer\ShopController::class, 'showProductDetail']);
 Route::get('/{categroy_slug}.htm', [App\Http\Controllers\Customer\ShopController::class, 'showProductByCategory']);
-
+// Get Product Size
 Route::post('/get-size' , [App\Http\Controllers\Customer\ShopController::class, 'getSize']);
 Route::post('/buy-now' , [App\Http\Controllers\Customer\ShopController::class, 'buyNow']);
-
-
 // Cart
 Route::get('/cart', [App\Http\Controllers\Customer\CartController::class, 'view']);
 Route::post('/add-to-cart', [App\Http\Controllers\Customer\CartController::class, 'addCart']);
@@ -200,15 +180,38 @@ Route::post('/clear-cart', [App\Http\Controllers\Customer\CartController::class,
 Route::get('/wishlist', [App\Http\Controllers\Customer\WishListController::class, 'index']);
 Route::post('/add-to-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'addWishList']);
 Route::post('/remove-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'removeWishList']);
-
 // CheckOut
 Route::prefix('checkout')->group( function(){
     Route::get('', [App\Http\Controllers\Customer\CheckoutController::class, 'index']);
     Route::post('', [App\Http\Controllers\Customer\CheckoutController::class, 'addOrder']);
     Route::get('/vnPayCheck', [App\Http\Controllers\Customer\CheckoutController::class, 'vnPayCheck']);
     Route::get('/noti', [App\Http\Controllers\Customer\CheckoutController::class, 'noti']);
-
 });
+// My Account
+Route::get('/my-account/profile', [App\Http\Controllers\Customer\AccountController::class, 'index']);
+Route::post('/my-account/profile', [App\Http\Controllers\Customer\AccountController::class, 'update']);
+Route::get('/my-account/order', [App\Http\Controllers\Customer\AccountController::class, 'orderHistory']);
+Route::get('/my-account/order/{id}', [App\Http\Controllers\Customer\AccountController::class, 'orderDetail']);
+Route::post('/my-account/order/updateOrderStatus', [App\Http\Controllers\Customer\AccountController::class, 'updateOrderStatus']);
+// Paypal
+Route::get('/create-transaction', [App\Http\Controllers\Customer\PaypalController::class, 'createTransaction']);
+Route::get('/process-transaction', [App\Http\Controllers\Customer\PaypalController::class, 'processTransaction']);
+Route::get('/success-transaction/{order_id}', [App\Http\Controllers\Customer\PaypalController::class, 'successTransaction']);
+Route::get('/cancel-transaction/{order_id}', [App\Http\Controllers\Customer\PaypalController::class, 'cancelTransaction']);
+// Login
+Route::get('login', [App\Http\Controllers\Customer\LoginController::class, 'login']);
+Route::post('login', [App\Http\Controllers\Customer\LoginController::class, 'checkLogin']);
+Route::get('register', [App\Http\Controllers\Customer\LoginController::class, 'register']);
+Route::post('register', [App\Http\Controllers\Customer\LoginController::class, 'checkRegister']);
+Route::post('logout', [App\Http\Controllers\Customer\LoginController::class, 'logout']);
+// Reset Password
+Route::get('/forgot-password', [App\Http\Controllers\Customer\ResetPasswordController::class, 'forgotPassword']);
+Route::post('/forgot-password', [App\Http\Controllers\Customer\ResetPasswordController::class, 'forgotPasswordPost']);
+Route::get('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPassword']);
+Route::post('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPasswordPost']);
+
+
+
 
 
 // Blog
