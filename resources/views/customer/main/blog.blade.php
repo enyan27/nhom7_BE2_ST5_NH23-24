@@ -1,10 +1,9 @@
-
-<!-- @extends('customer.layout.master') -->
+@extends('customer.layout.master')
 
 @section('title',  'Blog - Online Shopping' )
 
 @section('body') 
- 
+<link rel="stylesheet" href="/customer/assets/css/blog.css" />
      
 <!-- Start breadcrumb section -->
 <section class="breadcrumb__section breadcrumb__bg bg-warning">

@@ -3,6 +3,7 @@
 @section('title', 'Blog Detail')
 
 @section('body')
+<link rel="stylesheet" href="/customer/assets/css/blog.css" />
 
 <!-- Start breadcrumb section -->
 <section class="breadcrumb__section breadcrumb__bg bg-warning">
