@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Customer\ReviewController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\UserController;
@@ -218,7 +219,11 @@ Route::post('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPassw
 Route::get('/blog', [App\Http\Controllers\Customer\BlogController::class, 'index']);
 Route::get('/blog/detail/{id}', [App\Http\Controllers\Customer\BlogController::class, 'show']);
 Route::post('/blog/store', [App\Http\Controllers\Customer\BlogCommentController::class, 'store']);
-// Coupon
+// Review
+Route::post('/reviews',[ReviewController::class,'store'])->name('reviews.store');
+Route::post('/calculate-average-rating', 'ReviewController@calculateAverageRating');
+
+
 
 
 

@@ -9,6 +9,7 @@ use App\Http\Services\Product\ProductService;
 use App\Http\Services\Brand\BrandService;
 use App\Models\ProductDetail;
 use App\Models\Product;
+use App\Models\Review;
 
 class ShopController extends Controller
 {
@@ -62,8 +63,9 @@ class ShopController extends Controller
         }
         //loại bỏ những phần tử trùng nhau trong mảng đa chiều
         $productDetails = array_map("unserialize", array_unique(array_map("serialize", $productDetails)));
-        
-        return view('customer.main.product_detail', compact( 'categories','product','relatedProducts','productDetails'));
+        $reviews = Review::where('product_id', $product->id)->orderBy('created_at', 'desc')->get();
+        $averageRating = $reviews->avg('rating');
+        return view('customer.main.product_detail', compact( 'categories','product','relatedProducts','productDetails','reviews','averageRating'));
     }
 
     public function getSize(Request $request){

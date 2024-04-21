@@ -202,3 +202,33 @@
     font-family: Jost-Bold;
     color: #000;
 }
+
+.star.selected {
+    color: #EEEE00;
+}
+
+.review-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.review-author {
+    font-weight: bold;
+}
+
+.review-content {
+    font-size: 16px;
+    color: #333;
+}
+
+.review-rating {
+    font-weight: bold;
+}
+
+.review-rating .star {
+    color: #f1c40f; /* Màu của sao */
+}
+
+.review-comment {
+    margin-top: 5px;
+}

@@ -108,7 +108,7 @@
                                         <div class="comment__content--topbar d-flex justify-content-between">
                                             <div class="comment__content--topbar__left">
                                                 <h4 class="reviews__comment--content__title2">{{$comment->name}}</h4>
-                                                <span class="reviews__comment--content__date2">{{$comment->create_at = date('d/m/Y', strtotime($blog->create_at))}}</span>
+                                                <span class="reviews__comment--content__date2">{{$comment->created_at = date('d/m/Y', strtotime($blog->created_at))}}</span>
                                             </div>
                                             <!-- <button class="comment__reply--btn primary__btn" type="submit">Reply</button> -->
                                         </div>
