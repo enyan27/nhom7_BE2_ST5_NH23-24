@@ -565,48 +565,48 @@ function updateStatus(order_id, status) {
     });
 }
 
-//
+// Customer's Reviews
 $(document).ready(function () {
-  $(".star").on("click", function () {
-      var rating = $(this).data("rating");
-      $("#ratingValue").val(rating);
-      $(".star").removeClass("selected");
-      $(this).addClass("selected");
-      $(this).prevAll(".star").addClass("selected");
-  });
+    $(".star").on("click", function () {
+        var rating = $(this).data("rating");
+        $("#ratingValue").val(rating);
+        $(".star").removeClass("selected");
+        $(this).addClass("selected");
+        $(this).prevAll(".star").addClass("selected");
+    });
 
-  $("#ratingFormAjax").on("submit", function (e) {
-      e.preventDefault();
+    $("#ratingFormAjax").on("submit", function (e) {
+        e.preventDefault();
 
-      // Lấy giá trị số sao đã chọn
-      var rating = $("#ratingValue").val();
+        // Lấy giá trị số sao đã chọn
+        var rating = $("#ratingValue").val();
 
-      var user_name = $("#user_name").val();
+        var user_name = $("#user_name").val();
 
-      // Lấy thời gian hiện tại
-      var currentDate = new Date();
+        // Lấy thời gian hiện tại
+        var currentDate = new Date();
 
-      // Định dạng ngày theo dd/mm/yyyy
-      var formattedDate = currentDate.toLocaleDateString("vi-VN", {
-          day: "2-digit",
-          month: "2-digit",
-          year: "numeric",
-      });
+        // Định dạng ngày theo dd/mm/yyyy
+        var formattedDate = currentDate.toLocaleDateString("vi-VN", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+        });
 
-      // Gán giá trị created_at cho trường input ẩn
-      $("#created_at_input").val(formattedDate);
+        // Gán giá trị created_at cho trường input ẩn
+        $("#created_at_input").val(formattedDate);
 
-      // Thêm giá trị số sao vào dữ liệu gửi
-      var formData = $(this).serialize() + "&rating=" + rating;
+        // Thêm giá trị số sao vào dữ liệu gửi
+        var formData = $(this).serialize() + "&rating=" + rating;
 
-      $.ajax({
-          type: "POST",
-          url: $(this).attr("action"),
-          data: formData,
-          success: function (response) {
-              // Xử lý dữ liệu trả về từ backend
-              var newReview = response.review;
-              var newCommentHTML = `
+        $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: formData,
+            success: function (response) {
+                // Xử lý dữ liệu trả về từ backend
+                var newReview = response.review;
+                var newCommentHTML = `
                   <div class="row mt-4">
                       <div class="col-lg-2">
                           <div class="review-info">
@@ -617,63 +617,76 @@ $(document).ready(function () {
                       <div class="col-lg-10">
                           <div class="review-content">
                               <p class="review-rating">Đánh giá: ${getStars(
-                                  newReview.rating
-                              )}</p>
+                    newReview.rating
+                )}</p>
                               <p class="review-comment">${newReview.comment}</p>
                           </div>
                       </div>
-                  </div>
-              `;
+                  </div>`;
 
-              // Thêm bình luận mới vào phần hiển thị bình luận
-              $(".new-comment").prepend(newCommentHTML);
+                // Thêm bình luận mới vào phần hiển thị bình luận
+                $(".new-comment").prepend(newCommentHTML);
 
-              // Reset nội dung của ô bình luận
-              $("#comment").val("");
-              // Xóa lớp "selected" khỏi tất cả các sao
-              $(".star").removeClass("selected");
+                // Reset nội dung của ô bình luận
+                $("#comment").val("");
+                // Xóa lớp "selected" khỏi tất cả các sao
+                $(".star").removeClass("selected");
 
-              // Gửi yêu cầu AJAX để tính toán số sao trung bình
-              updateAverageRating();
-          },
-          error: function (xhr, status, error) {
-              var errors = xhr.responseJSON.errors;
-              if (errors && errors.comment) {
-                  $("#commentError").text(errors.comment[0]);
-              }
-          },
-      });
-  });
+                // Gửi yêu cầu AJAX để tính toán số sao trung bình
+                // updateAverageRating();
 
-  // Hàm chuyển đổi số sao thành biểu tượng sao
-  function getStars(rating) {
-      var stars = "";
-      for (var i = 1; i <= 5; i++) {
-          if (i <= rating) {
-              stars += '<span class="star selected">&#9733;</span>'; // Dấu sao đầy
-          }
-      }
-      return stars;
-  }
+                var totalStars = 0;
+                var totalReviews = $('.review-rating').length;
+                $('.review-rating').each(function() {
+                    var starCount = $(this).find('.star').length;
+                    totalStars += starCount;
+                });
+                if (totalReviews > 0) {
+                    var averageRating = totalStars / totalReviews;
+                    $('#averageRating').text('Số sao trung bình: ' + averageRating.toFixed(2));
+                }
+                else {
+                    $('#averageRating').text('Chưa có đánh giá');
+                }
+            },
+            error: function (xhr, status, error) {
+                var errors = xhr.responseJSON.errors;
+                if (errors && errors.comment) {
+                    $("#commentError").text(errors.comment[0]);
+                }
+            },
+        });
+    });
 
-  // Hàm gửi yêu cầu AJAX để tính toán số sao trung bình
-  function updateAverageRating() {
-      $.ajax({
-          type: "POST",
-          url: "/calculate-average-rating", // Đường dẫn đến route xử lý tính toán số sao trung bình
-          data: $("#ratingFormAjax").serialize(),
-          success: function (response) {
-              // Cập nhật số sao trung bình trên giao diện người dùng
-              $('#averageRating').text('Số sao trung bình: ' + response.averageRating);
-          },
-          error: function (xhr, status, error) {
-              // Xử lý lỗi nếu có
-          }
-      });
-  }
+    // Hàm chuyển đổi số sao thành biểu tượng sao
+    function getStars(rating) {
+        var stars = "";
+        for (var i = 1; i <= 5; i++) {
+            if (i <= rating) {
+                stars += '<span class="star selected">&#9733;</span>'; // Dấu sao đầy
+            }
+        }
+        return stars;
+    }
 
-  // Gọi hàm updateAverageRating() khi trang được tải
-  updateAverageRating();
+    // Hàm gửi yêu cầu AJAX để tính toán số sao trung bình
+    function updateAverageRating() {
+        $.ajax({
+            type: "POST",
+            url: "/calculate-average-rating", // Đường dẫn đến route xử lý tính toán số sao trung bình
+            data: $("#ratingFormAjax").serialize(),
+            success: function (response) {
+                // Cập nhật số sao trung bình trên giao diện người dùng
+                $('#averageRating').text('Số sao trung bình: ' + response.averageRating);
+            },
+            error: function (xhr, status, error) {
+                // Xử lý lỗi nếu có
+            }
+        });
+    }
+
+    // Gọi hàm updateAverageRating() khi trang được tải
+    // updateAverageRating();
 });
 
 
