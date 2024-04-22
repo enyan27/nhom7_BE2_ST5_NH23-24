@@ -87,6 +87,8 @@ class CouponController extends Controller
     public function edit($id)
     {
         //
+        $coupon = Coupon::findOrFail($id);
+        return view('admin.coupon.edit', compact('coupon'));
     }
 
     /**
@@ -99,6 +101,13 @@ class CouponController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $coupon = Coupon::findOrFail($id);
+        $coupon->status = $request->status;
+        $coupon->start_date = $request->start_date;
+        $coupon->end_date = $request->end_date;
+        $coupon->discount_amount = $request->discount_amount;
+        $coupon->save();
+        return redirect('/admin/coupon/')->with('success', 'Coupon update successfully!');
     }
 
     /**
@@ -110,5 +119,11 @@ class CouponController extends Controller
     public function destroy($id)
     {
         //
+        $coupon = Coupon::find($id);
+        $coupon->delete();
+        return redirect('/admin/coupon/')->with('success', 'Coupon deleted successfully!');
     }
+
+
+    
 }

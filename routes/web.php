@@ -35,112 +35,110 @@ use App\Http\Controllers\Customer\ProductCustomerController;
 
 
 // ---------------------------------- Admin Page ----------------------------------
-Route::prefix('admin')->group(function() {
-    Route::get('login', [LoginController::class,'index'])->name('login');
-    Route::post('login', [LoginController::class,'store']);
-    Route::post('logout', [LoginController::class,'logout']) ->name('logout');
+Route::prefix('admin')->group(function () {
+    Route::get('login', [LoginController::class, 'index'])->name('login');
+    Route::post('login', [LoginController::class, 'store']);
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
 
-Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
-    
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+
     // Home
-    Route::get('home', [HomeController::class,'index'])->name('home');
+    Route::get('home', [HomeController::class, 'index'])->name('home');
 
     // Product
-    Route::prefix('product')->group(function() {
-        Route::get('', [ProductController::class,'index']); 
-        Route::get('create', [ProductController::class,'create']); 
-        Route::post('store', [ProductController::class,'store']);
-        Route::get('edit/{product}', [ProductController::class,'edit']); 
-        Route::post('edit/{product}', [ProductController::class,'update']); 
-        Route::get('{product}', [ProductController::class,'show']); 
-        Route::delete('delete/{product}', [ProductController::class,'destroy']); 
+    Route::prefix('product')->group(function () {
+        Route::get('', [ProductController::class, 'index']);
+        Route::get('create', [ProductController::class, 'create']);
+        Route::post('store', [ProductController::class, 'store']);
+        Route::get('edit/{product}', [ProductController::class, 'edit']);
+        Route::post('edit/{product}', [ProductController::class, 'update']);
+        Route::get('{product}', [ProductController::class, 'show']);
+        Route::delete('delete/{product}', [ProductController::class, 'destroy']);
 
-    // Product detail
-        Route::get('{product}/detail', [ProductDetailController::class,'index']); 
-        Route::get('{product}/detail/create', [ProductDetailController::class,'create']); 
-        Route::post('{product}/detail/create/store', [ProductDetailController::class,'store']); 
-        Route::get('{product}/detail/edit/{productDetail}', [ProductDetailController::class,'edit']); 
-        Route::post('{product}/detail/edit/{productDetail}', [ProductDetailController::class,'update']); 
-        Route::delete('{product}/detail/delete/{productDetail}', [ProductDetailController::class,'destroy']); 
+        // Product detail
+        Route::get('{product}/detail', [ProductDetailController::class, 'index']);
+        Route::get('{product}/detail/create', [ProductDetailController::class, 'create']);
+        Route::post('{product}/detail/create/store', [ProductDetailController::class, 'store']);
+        Route::get('{product}/detail/edit/{productDetail}', [ProductDetailController::class, 'edit']);
+        Route::post('{product}/detail/edit/{productDetail}', [ProductDetailController::class, 'update']);
+        Route::delete('{product}/detail/delete/{productDetail}', [ProductDetailController::class, 'destroy']);
     });
 
     // User
-    Route::middleware(['adminRole'])->group(function() {
-        Route::get('user', [UserController::class,'index']);
-        Route::get('user/create', [UserController::class,'create']);
-        Route::post('user/store', [UserController::class,'store']);
-        Route::get('user/{id}', [UserController::class,'show']);
-        Route::delete('user/delete/{id}', [UserController::class,'destroy']);
+    Route::middleware(['adminRole'])->group(function () {
+        Route::get('user', [UserController::class, 'index']);
+        Route::get('user/create', [UserController::class, 'create']);
+        Route::post('user/store', [UserController::class, 'store']);
+        Route::get('user/{id}', [UserController::class, 'show']);
+        Route::delete('user/delete/{id}', [UserController::class, 'destroy']);
 
-    // Brand
-        Route::prefix('brand')->group(function() {
-            Route::get('', [BrandController::class,'index']);
-            Route::get('create', [BrandController::class,'create']); 
-            Route::post('store', [BrandController::class,'store']);
-            Route::get('edit/{brand}', [BrandController::class,'show']); 
-            Route::post('edit/{brand}', [BrandController::class,'update']); 
-            Route::delete('delete/{id}', [BrandController::class,'destroy']);
+        // Brand
+        Route::prefix('brand')->group(function () {
+            Route::get('', [BrandController::class, 'index']);
+            Route::get('create', [BrandController::class, 'create']);
+            Route::post('store', [BrandController::class, 'store']);
+            Route::get('edit/{brand}', [BrandController::class, 'show']);
+            Route::post('edit/{brand}', [BrandController::class, 'update']);
+            Route::delete('delete/{id}', [BrandController::class, 'destroy']);
         });
 
-    // Category
-        Route::prefix('category')->group(function() {
-            Route::get('', [CategoryController::class,'index']); 
-            Route::get('create', [CategoryController::class,'create']); 
-            Route::post('store', [CategoryController::class,'store']); 
-            Route::get('edit/{category}', [CategoryController::class,'show']); 
-            Route::post('edit/{category}', [CategoryController::class,'update']); 
-            Route::delete('delete/{id}', [CategoryController::class,'destroy']); 
+        // Category
+        Route::prefix('category')->group(function () {
+            Route::get('', [CategoryController::class, 'index']);
+            Route::get('create', [CategoryController::class, 'create']);
+            Route::post('store', [CategoryController::class, 'store']);
+            Route::get('edit/{category}', [CategoryController::class, 'show']);
+            Route::post('edit/{category}', [CategoryController::class, 'update']);
+            Route::delete('delete/{id}', [CategoryController::class, 'destroy']);
         });
 
-    //Statistic
-        Route::get('/statistic', [StatisticController::class,'index']);
-        Route::post('/statistic', [StatisticController::class,'show']);
+        //Statistic
+        Route::get('/statistic', [StatisticController::class, 'index']);
+        Route::post('/statistic', [StatisticController::class, 'show']);
     });
 
     // Order    
-    Route::prefix('order')->group(function() {
-        Route::get('', [OrderController::class,'index']);
-        Route::get('{id}', [OrderController::class,'show']);
-        Route::post('/confirm', [OrderController::class,'confirmOrder']);
+    Route::prefix('order')->group(function () {
+        Route::get('', [OrderController::class, 'index']);
+        Route::get('{id}', [OrderController::class, 'show']);
+        Route::post('/confirm', [OrderController::class, 'confirmOrder']);
     });
 
     // Customer    
-    Route::prefix('customer')->group(function() {
-        Route::get('', [CustomerController::class,'index']);
-        Route::get('{id}', [CustomerController::class,'show']);
-        Route::post('action', [CustomerController::class,'action']);
+    Route::prefix('customer')->group(function () {
+        Route::get('', [CustomerController::class, 'index']);
+        Route::get('{id}', [CustomerController::class, 'show']);
+        Route::post('action', [CustomerController::class, 'action']);
     });
 
     // Blog
-    Route::prefix('blog')->group(function() {
-        Route::get('', [BlogController::class,'index']);
-        Route::get('create', [BlogController::class,'create']);
-        Route::post('store', [BlogController::class,'store']);
-        Route::delete('destroy/{id}', [BlogController::class,'destroy'])->name('blog.destroy');
-        Route::get('edit/{id}', [BlogController::class,'edit']);
+    Route::prefix('blog')->group(function () {
+        Route::get('', [BlogController::class, 'index']);
+        Route::get('create', [BlogController::class, 'create']);
+        Route::post('store', [BlogController::class, 'store']);
+        Route::delete('destroy/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+        Route::get('edit/{id}', [BlogController::class, 'edit']);
 
         Route::post('update/{id}', [BlogController::class, 'update'])->name('blog.update');
-
     });
     // Coupon
-
-    Route::prefix('coupon')->group(function() {
-        Route::get('', [CouponController::class,'index']);
-        Route::get('create', [CouponController::class,'create']);
-        Route::post('store', [CouponController::class,'store']);
-        // Route::get('edit/{id}', [CouponController::class,'edit']);
-        // Route::post('update/{id}', [CouponController::class,'update']);
-        // Route::delete('delete/{id}', [CouponController::class,'destroy']);
+    Route::prefix('coupon')->group(function () {
+        Route::get('', [CouponController::class, 'index']);
+        Route::get('create', [CouponController::class, 'create']);
+        Route::post('store', [CouponController::class, 'store']);
+        Route::get('edit/{id}', [CouponController::class, 'edit']);
+        Route::post('update/{id}', [CouponController::class,'update']);
+        Route::delete('destroy/{id}', [CouponController::class, 'destroy']);
     });
 
     // Profile
-    Route::get('profile', [ProfileController::class,'index']);
-    Route::post('profile', [ProfileController::class,'update']);
-    Route::get('password', [ProfileController::class,'changePassword']);
-    Route::post('password', [ProfileController::class,'changePasswordPost']);
+    Route::get('profile', [ProfileController::class, 'index']);
+    Route::post('profile', [ProfileController::class, 'update']);
+    Route::get('password', [ProfileController::class, 'changePassword']);
+    Route::post('password', [ProfileController::class, 'changePasswordPost']);
 
-    Route::get('403', function() {
+    Route::get('403', function () {
         return view('admin.403');
     });
 });
@@ -169,8 +167,8 @@ Route::get('/shop', [App\Http\Controllers\Customer\ShopController::class, 'index
 Route::get('/{slug}.html', [App\Http\Controllers\Customer\ShopController::class, 'showProductDetail']);
 Route::get('/{categroy_slug}.htm', [App\Http\Controllers\Customer\ShopController::class, 'showProductByCategory']);
 // Get Product Size
-Route::post('/get-size' , [App\Http\Controllers\Customer\ShopController::class, 'getSize']);
-Route::post('/buy-now' , [App\Http\Controllers\Customer\ShopController::class, 'buyNow']);
+Route::post('/get-size', [App\Http\Controllers\Customer\ShopController::class, 'getSize']);
+Route::post('/buy-now', [App\Http\Controllers\Customer\ShopController::class, 'buyNow']);
 // Cart
 Route::get('/cart', [App\Http\Controllers\Customer\CartController::class, 'view']);
 Route::post('/add-to-cart', [App\Http\Controllers\Customer\CartController::class, 'addCart']);
@@ -182,7 +180,7 @@ Route::get('/wishlist', [App\Http\Controllers\Customer\WishListController::class
 Route::post('/add-to-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'addWishList']);
 Route::post('/remove-wishlist', [App\Http\Controllers\Customer\WishListController::class, 'removeWishList']);
 // CheckOut
-Route::prefix('checkout')->group( function(){
+Route::prefix('checkout')->group(function () {
     Route::get('', [App\Http\Controllers\Customer\CheckoutController::class, 'index']);
     Route::post('', [App\Http\Controllers\Customer\CheckoutController::class, 'addOrder']);
     Route::get('/vnPayCheck', [App\Http\Controllers\Customer\CheckoutController::class, 'vnPayCheck']);
@@ -220,7 +218,7 @@ Route::get('/blog', [App\Http\Controllers\Customer\BlogController::class, 'index
 Route::get('/blog/detail/{id}', [App\Http\Controllers\Customer\BlogController::class, 'show']);
 Route::post('/blog/store', [App\Http\Controllers\Customer\BlogCommentController::class, 'store']);
 // Review
-Route::post('/reviews',[ReviewController::class,'store'])->name('reviews.store');
+Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
 Route::post('/calculate-average-rating', 'ReviewController@calculateAverageRating');
 
 

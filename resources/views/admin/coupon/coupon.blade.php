@@ -36,8 +36,8 @@
                         <td>#{{$coupon->id }}</td>
                         <td>{{ $coupon->coupon_code }}</td>
                         <td style="width: 500px">{{ $coupon->discount_amount }}%</td>
-                        <td style="padding-left: 20px">{{ $coupon->start_date = date('d/m/Y',strtotime($coupon->start_date))}}</td>
-                        <td>{{ $coupon->end_date = date('d/m/Y',strtotime($coupon->end_date)) }}</td>
+                        <td style="padding-left: 20px">{{ $coupon->start_date = date('m/d/Y',strtotime($coupon->start_date))}}</td>
+                        <td>{{ $coupon->end_date = date('m/d/Y',strtotime($coupon->end_date)) }}</td>
                         <td>
                             @if($coupon->status == 1) 
                             Active
@@ -46,7 +46,7 @@
                             @endif
                         </td>
                         <td class="d-flex justify-content-end">
-                            <a href="/admin/brand/edit/{{$coupon->id}}" class="btn mr-10">Edit</a>
+                            <a href="{{url('admin/coupon/edit',$coupon->id)}}" class="btn mr-10">Edit</a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDeleteBrand-{{$coupon->id}}">Delete</button>
                             <div class="modal fade" id="modalDeleteBrand-{{$coupon->id}}" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
                                 tabindex="-1">
@@ -57,11 +57,11 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body text-start">
-                                            <strong>Are you sure you want to delete <span class="text-danger">{{$coupon->brandname}}</span> brand?</strong>
+                                            <strong>Are you sure you want to delete <span class="text-danger"></span>coupon?</strong>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btnNo" data-bs-dismiss="modal">No</button>
-                                            <form action="/admin/brand/delete/{{$coupon->id}}" method="POST">
+                                            <form action="{{url('admin/coupon/destroy',$coupon->id)}}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn">Yes</button>
