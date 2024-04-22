@@ -6,10 +6,72 @@
             <img class="product-items-img product-secondary-img" src="{{$product->image_2}}"
                 alt="{{$product->productname}}">
         </a>
+        <!-- badge left -->
         <div class="product-badge">
             <span class="product-badge-items text-white color-main">Sale</span>
         </div>
+        <!-- /badge left -->
+
+        <!-- badge right -->
+        <div class="product-badge2">
+            <ul class="product-items-action d-flex flex-column align-items-end">
+            <li class="product-items-action-list mb-2">
+                @if(Auth::check())    
+                @if(in_array($product->id, array_column(Auth::user()->wishListItems->toArray(), 'product_id')))
+                <button type="button" class="add-to-wishlist {{$product->id}}" onclick="removeWishList('{{$product->id}}')" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18.5" viewBox="0 0 512 512">
+                    <path
+                    d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
+                    fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="32"></path>
+                </svg>
+                <span></span>
+                </button>
+                @else
+                <button type="button" class="add-to-wishlist {{$product->id}}" onclick="addWishList('{{$product->id}}')" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18.5" viewBox="0 0 512 512">
+                    <path
+                    d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
+                    fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="32"></path>
+                </svg>
+                <span></span>
+                </button>
+                @endif
+                @else
+                <button type="button" class="add-to-wishlist {{$product->id}}" onclick="addWishList('{{$product->id}}')" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18.5" viewBox="0 0 512 512">
+                    <path
+                    d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
+                    fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="32"></path>
+                </svg>
+                <span></span>
+                </button>
+                @endif    
+            </li>
+
+            <!-- View btn -->
+            <li class="product-items-action-list">
+                <a href="/{{$product->slug}}.html">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
+                    <path
+                        d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z"
+                        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="32"></path>
+                    <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10"
+                        stroke-width="32"></circle>
+                    </svg>
+                    <span></span>
+                </button>
+                </a>
+            </li>
+            </ul>
+        </div>
     </div>
+
+
     <div class="product-items-content">
         <span class="product-items-content-subtitle ">{{$product->brand->brandname}}</span>
         <div class="product-items-content-title">
@@ -79,56 +141,19 @@
                 </span>
             </li>
         </ul>
-        <ul class="product-items-action d-flex">
-            <li class="product-items-action-list col-5">
-                <a href="/{{$product->slug}}.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512">
-                        <path
-                            d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z"
-                            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="32"></path>
-                        <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10"
-                            stroke-width="32"></circle>
-                    </svg>
-                    <span>View</span>
-                </a>
-            </li>
 
-            <li class="product-items-action-list col-7">
-            @if(Auth::check())    
-                @if(in_array($product->id, array_column(Auth::user()->wishListItems->toArray(), 'product_id')))
-                    <button type="button" class="add-to-wishlist {{$product->id}} added" onclick="removeWishList('{{$product->id}}')" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512">
-                            <path
-                                d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
-                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="32"></path>
-                        </svg>
-                        <span>Added to wishlist</span>
-                    </button>
-                @else
-                        <button type="button" class="add-to-wishlist {{$product->id}}" onclick="addWishList('{{$product->id}}')" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512">
-                            <path
-                                d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
-                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="32"></path>
-                        </svg>
-                        <span>Add to wishlist</span>
-                    </button>
-                @endif
-            @else
-                        <button type="button" class="add-to-wishlist {{$product->id}}" onclick="addWishList('{{$product->id}}')" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512">
-                            <path
-                                d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
-                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="32"></path>
-                        </svg>
-                        <span>Add to wishlist</span>
-                    </button>
-            @endif    
-            </li>
-        </ul>
+        <!-- Color -->
+        <div class="product-variant-list">
+            <fieldset class="variant-input-fieldset">
+            <div class="d-flex">
+                @foreach($product->productDetail->pluck('color')->unique() as $color)
+                <label class="variant-color-value" for="{{$color}}-color" title="{{$color}}">
+                    <span style="background: {{$color}}"></span>
+                </label>
+                @endforeach
+            </div>
+            </fieldset>
+        </div>
+
     </div>
 </div>

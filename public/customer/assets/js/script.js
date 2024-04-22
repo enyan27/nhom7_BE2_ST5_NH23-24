@@ -458,7 +458,6 @@ function addWishList(product_id) {
             var btnAdd = $(".add-to-wishlist." + product_id);
             btnAdd.attr("onclick", "removeWishList(" + product_id + ")");
             btnAdd.addClass("added");
-            btnAdd.children("span").text("Added to wishlist");
 
             // Button add WishList on Product Detail
             var btnAdd_PD = $(".variant-wishlist-btn." + product_id);
@@ -489,7 +488,7 @@ function removeWishList(product_id) {
             btnAdd = $(".add-to-wishlist." + product_id);
             btnAdd.attr("onclick", "addWishList(" + product_id + ")");
             btnAdd.removeClass("added");
-            btnAdd.children("span").text("Add to wishlist");
+            // btnAdd.children("span").text("Add to wishlist");
 
             // Button add WishList on Product Detail
             var btnAdd_PD = $(".variant-wishlist-btn." + product_id);

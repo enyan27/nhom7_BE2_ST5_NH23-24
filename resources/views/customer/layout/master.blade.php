@@ -11,13 +11,14 @@
   <link rel="stylesheet" href="/customer/assets/css/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css" />
   <link rel="stylesheet" href="/customer/assets/css/style.css" />
+  <link data-n-head="ssr" rel="icon" type="image/x-icon" href="https://pjsekai.sega.jp/assets/img/favicon.ico">
 </head>
 
 <body>
   <header class="header-section">
     <div class="header-topbar color-main">
-      <div class="my-container">
-        <div class="my-container-inner d-flex align-items-center justify-content-between">
+      <div class="container">
+        <div class="container-inner d-flex align-items-center justify-content-between">
           <div class="header-shipping">
             <div class="header-shipping-wrapper d-flex">
               <div class="header-shipping-text text-white">
@@ -52,7 +53,7 @@
       </div>
     </div>
     <div class="main-header">
-      <div class="my-container">
+      <div class="container">
         <div class="main-header-inner d-flex justify-content-between align-items-center">
           <div class="main-logo">
             <a href="/">
@@ -147,7 +148,7 @@
       </div>
     </div>
     <div class="header-bottom">
-      <div class="my-container">
+      <div class="container">
         <div class="header-bottom-inner d-flex justify-content-between align-items-center">
           <div class="header-menu">
             <div class="header-menu-navigation d-flex align-items-center">
@@ -203,7 +204,7 @@
 
   </main>
   <footer class="footer-section">
-    <div class="my-container">
+    <div class="container">
       <div class="main-footer d-flex justify-content-between">
         <div class="footer-widget text-ofwhite  mr-30">
           <h2 class="footer-widget-title mb-30">About Us</h2>

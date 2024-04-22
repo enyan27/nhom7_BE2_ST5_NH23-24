@@ -35,7 +35,7 @@
       <!-- Banner Collection  -->
 
     <section class="banner-section section-padding">
-      <div class="my-container">
+      <div class="container">
         <div class="row mb--28">
           <div class="col-5 mb-28">
             <div class="banner-items">

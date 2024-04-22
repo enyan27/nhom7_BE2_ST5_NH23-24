@@ -1,6 +1,6 @@
 <!-- Start section product -->
 <section class="product-section section-padding pt-0">
-  <div class="my-container">
+  <div class="container">
     <div class="section-heading text-center">
       <h2 class="section-heading-title">New Products</h2>
     </div>
@@ -72,7 +72,7 @@
 
 <!-- Start section banner -->
 <section class="banner-section section-padding pt-0">
-  <div class="my-container">
+  <div class="container">
     <div class="row row-cols-md-2 row-cols-1">
       <div class="col-6">
         <div class="banner-items">

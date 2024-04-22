@@ -25,6 +25,7 @@ class MainController extends Controller
         $products = $this->mainService->getProductByNote();
         $productBestSolds = $this->mainService->getProductBestSold();
 
+
         return view('customer.main.index', compact('categories', 'products', 'productBestSolds'));
     }
 

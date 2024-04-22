@@ -1,7 +1,7 @@
     <!-- Slide product  -->
     <!-- Start section best seller product -->
     <section class="product-section section-padding pt-0">
-      <div class="my-container">
+      <div class="container">
         <div class="section-heading text-center">
           <h2 class="section-heading-title">Our Best Seller</h2>
         </div>
