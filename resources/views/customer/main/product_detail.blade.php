@@ -339,8 +339,13 @@
             @for($i = 1; $i <= 5; $i++) <span class="star" data-rating="{{ $i }}">&#9733;</span>
                 @endfor
         </div>
+        @auth
         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         <input type="hidden" name="user_name" id="user_name" value="{{ auth()->user()->fullname }}">
+        @else
+        <input type="hidden" name="user_id" value="">
+        <input type="hidden" name="user_name" id="user_name" value="">
+        @endauth
         <input type="hidden" name="created_at" id="created_at_input" value="">
         <input type="hidden" name="product_id" value="{{ $product->id }}">
         <input type="hidden" name="rating" id="ratingValue" value="">
@@ -364,15 +369,15 @@
                 </div>
             </div>
             <div class="col-lg-10">
-            <div class="review-content">
-                <p class="review-rating">Đánh giá: 
-                    @for ($i = 0; $i < $review->rating; $i++)
-                        <span class="star">★</span>
-                    @endfor
-                </p>
-                <p class="review-comment">{{$review->comment}}</p>
+                <div class="review-content">
+                    <p class="review-rating">Đánh giá:
+                        @for ($i = 0; $i < $review->rating; $i++)
+                            <span class="star">★</span>
+                            @endfor
+                    </p>
+                    <p class="review-comment">{{$review->comment}}</p>
+                </div>
             </div>
-        </div>
         </div>
         @endforeach
     </div>

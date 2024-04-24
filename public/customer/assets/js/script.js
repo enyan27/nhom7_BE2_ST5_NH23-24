@@ -564,6 +564,14 @@ function updateStatus(order_id, status) {
     });
 }
 
+// Hàm kiểm tra trạng thái đăng nhập
+function isLoggedIn() {
+    // Kiểm tra xem có thông tin đăng nhập trong session hay không
+    // Đây là một ví dụ cơ bản, bạn cần điều chỉnh phù hợp với logic đăng nhập của ứng dụng
+    var loggedInUser = localStorage.getItem('loggedInUser'); // Giả sử thông tin đăng nhập được lưu trong localStorage
+    return loggedInUser ? true : false;
+}
+
 // Customer's Reviews
 $(document).ready(function () {
     $(".star").on("click", function () {
@@ -576,6 +584,13 @@ $(document).ready(function () {
 
     $("#ratingFormAjax").on("submit", function (e) {
         e.preventDefault();
+
+        if (!isLoggedIn()) {
+            // Chuyển hướng đến trang đăng nhập
+            window.location.href = "/login";
+            return;
+        }
+        
 
         // Lấy giá trị số sao đã chọn
         var rating = $("#ratingValue").val();

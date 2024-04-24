@@ -5,24 +5,6 @@
 @section('body')
 <link rel="stylesheet" href="/customer/assets/css/blog.css" />
 
-<!-- Start breadcrumb section -->
-<section class="breadcrumb__section breadcrumb__bg bg-warning">
-    <div class="container">
-        <div class="row row-cols-1">
-            <div class="col">
-                <div class="breadcrumb__content text-center">
-                    <h1 class="breadcrumb__content--title text-white mb-25">Blog Details</h1>
-                    <ul class="breadcrumb__content--menu d-flex justify-content-center">
-                        <li class="breadcrumb__content--menu__items"><a class="text-white" href="https://risingtheme.com/html/demo-suruchi-v1/suruchi/index.html">Home</a></li>
-                        <li class="breadcrumb__content--menu__items"><span class="text-white">Blog Details</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End breadcrumb section -->
-
 <!-- Start blog details section -->
 <section class="blog__details--section section--padding">
     <div class="container-fluid">
@@ -36,14 +18,11 @@
                             <p class="blog__post--meta">View : {{$blog->view}} </p>
                         </div>
                         <div class="blog__thumbnail mb-30">
-                            <img class="blog__thumbnail--img border-radius-10" src="{{asset("/image/$blog->thump")}}" alt="blog-img">
+                            <img style="width: 70%; height: 700px;" class="blog__thumbnail--img border-radius-10 img-fluid" src="{{asset("/image/$blog->thump")}}" alt="blog-img">
                         </div>
                         <div class="blog__details--content">
-                            <?php
-                            $description = strip_tags($blog->description);
-                            ?>
-                            <p class="blog__details--content__desc mb-20">{{$description}}</p>
-
+                            
+                        <p class="blog__details--content__desc mb-20">{!! $blog->description !!}</p>
                         </div>
                     </div>
                     <div class="blog__tags--social__media d-flex align-items-center justify-content-between">
