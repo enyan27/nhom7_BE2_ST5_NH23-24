@@ -36,10 +36,10 @@
                     <td>${{number_format($order->total_price,2)}}</td>
                     <td>
                         @if($order->status == 0)
-                        <button class="btn btn-secondary cancel" onclick="updateStatus({{$order->id}},4)">Cancel</button>
+                        <button class="btn btn-secondary cancel" onclick="updateStatus('{{$order->id}}',4)">Cancel</button>
                         @elseif($order->status == 1)
-                        <button class="btn btn-secondary return" onclick="updateStatus({{$order->id}},3)">Return</button>
-                        <button class="btn btn-danger received" onclick="updateStatus({{$order->id}},2)">Received</button>
+                        <button class="btn btn-secondary return" onclick="updateStatus('{{$order->id}}',3)">Return</button>
+                        <button class="btn btn-danger received" onclick="updateStatus('{{$order->id}}',2)">Received</button>
                         @endif
                         <a href="/my-account/order/{{$order->id}}" class="btn btn-primary detail">Detail</a>
                     </td>

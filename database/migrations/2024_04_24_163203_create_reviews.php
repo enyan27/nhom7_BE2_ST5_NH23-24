@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_details', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
-            $table->string('color');
-            $table->string('size');
-            $table->integer('quantity');
-            $table->string('colorImg_1')->nullable();
-            $table->string('colorImg_2')->nullable();
-
+            $table->integer('rating');
+            $table->string('comment');
+            
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_details');
+        Schema::dropIfExists('reviews');
     }
 };

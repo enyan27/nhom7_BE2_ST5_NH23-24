@@ -1,6 +1,8 @@
 @extends('customer.layout.master')
 
-@section('title', 'SURUCHI' )
+@section('title')
+    {{ $product->productname }}
+@endsection
 
 @section('body')
 <section class="breadcrumb-section breadcrumb-bg">
@@ -119,7 +121,7 @@
                                         @foreach($productDetails as $productDetail)
                                         <input class="getColor" value="{{$productDetail['color']}}" type="radio" name="color" id="{{$productDetail['color']}}-color" hidden>
                                         <label class="variant-color-value" for="{{$productDetail['color']}}-color" title="{{$productDetail['color']}}">
-                                            <span style="background: {{$productDetail['color']}} "></span>
+                                            <span style="background: <?php echo $productDetail['color'] ?> "></span>
                                         </label>
                                         @endforeach
                                     </div>
@@ -167,7 +169,7 @@
                             <div class="product-variant-list mb-15">
                                 @if(Auth::check())
                                 @if(in_array($product->id, array_column(Auth::user()->wishListItems->toArray(), 'product_id')))
-                                <button type="button" class="variant-wishlist-btn {{$product->id}} added" onclick="removeWishList({{$product->id}})">
+                                <button type="button" class="variant-wishlist-btn {{$product->id}} added" onclick="removeWishList('{{$product->id}}')">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                         <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32">
                                         </path>
@@ -175,7 +177,7 @@
                                     <span>Added to Wishlist</span>
                                 </button>
                                 @else
-                                <button type="button" class="variant-wishlist-btn {{$product->id}}" onclick="addWishList({{$product->id}})">
+                                <button type="button" class="variant-wishlist-btn {{$product->id}}" onclick="addWishList('{{$product->id}}')">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                         <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32">
                                         </path>
@@ -184,7 +186,7 @@
                                 </button>
                                 @endif
                                 @else
-                                <button type="button" class="variant-wishlist-btn {{$product->id}}" onclick="addWishList({{$product->id}})">
+                                <button type="button" class="variant-wishlist-btn {{$product->id}}" onclick="addWishList('{{$product->id}}')">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                         <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32">
                                         </path>

@@ -1,6 +1,6 @@
 @extends('customer.layout.master')
 
-@section('title',  'About Us' )
+@section('title',  'About Us - Online Shopping' )
 
 @section('body')
 

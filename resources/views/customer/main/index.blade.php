@@ -1,6 +1,6 @@
 @extends('customer.layout.master')
 
-@section('title','STABLE')
+@section('title','FURIN')
 
 @section('body')
 

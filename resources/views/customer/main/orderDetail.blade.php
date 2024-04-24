@@ -1,6 +1,6 @@
 @extends('customer.layout.master')
 
-@section('title', 'Check Out')
+@section('title', 'Check Out - Online Shopping')
  
 @section('body')
     <section class="checkout-section section-padding">

@@ -1,3 +1,5 @@
+<?php use Illuminate\Support\Facades\Auth; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +13,6 @@
   <link rel="stylesheet" href="/customer/assets/css/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css" />
   <link rel="stylesheet" href="/customer/assets/css/style.css" />
-  <link data-n-head="ssr" rel="icon" type="image/x-icon" href="https://pjsekai.sega.jp/assets/img/favicon.ico">
 </head>
 
 <body>
@@ -22,13 +23,13 @@
           <div class="header-shipping">
             <div class="header-shipping-wrapper d-flex">
               <div class="header-shipping-text text-white">
-                Welcome to Stable online Store
+                Welcome to Furin online Store
               </div>
               <div class="header-shipping-text text-white border-left">
                 <img class="header-shipping-text-icon" src="/customer/assets/img/bus.png" alt="bus-icon" />Track Your Order
               </div>
               <div class="header-shipping-text text-white border-left">
-                <img class="header-shipping-text-icon" src="/customer/assets/img/email.png" alt="email-icon" />stablefashion@gmail.com
+                <img class="header-shipping-text-icon" src="/customer/assets/img/email.png" alt="email-icon" />furinshop@gmail.com
               </div>
             </div>
           </div>
@@ -211,7 +212,7 @@
           <div class="footer-widget-inner">
             <div class="footer-widget-text text-ofwhite">
               <p>
-                Stable both spreads the luxurious-wearing culture as well
+                Furin both spreads the luxurious-wearing culture as well
                 <br>
                 as delivers a value driven, customer focused and responsible
                 <br>
@@ -364,7 +365,7 @@
       </div>
       <div class="footer-bottom d-flex justify-content-between align-items-center">
         <p class="copyright-content text-ofwhite m-0">
-          Copyright © 2024 <a href="/">Stable</a> . All Rights Reserved.Design By Stable
+          Copyright © 2024 <a href="/">Furin</a> . All Rights Reserved.Design By Furin
         </p>
         <div class="footer-payment text-right">
           <img class="" src="/customer/assets/img/payment-visa-card.png" alt="visa-card">

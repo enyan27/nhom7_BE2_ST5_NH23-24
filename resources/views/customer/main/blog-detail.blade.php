@@ -1,6 +1,6 @@
 @extends('customer.layout.master')
 
-@section('title', 'Blog Detail')
+@section('title', 'Blog Detail - Online Shopping')
 
 @section('body')
 <link rel="stylesheet" href="/customer/assets/css/blog.css" />
