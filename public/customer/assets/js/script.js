@@ -576,10 +576,13 @@ $(document).ready(function () {
 
     $("#ratingFormAjax").on("submit", function (e) {
         e.preventDefault();
-
-       
-            // Lấy giá trị số sao đã chọn
-        var rating = $("#ratingValue").val();
+        var userId = $("#user_id").val();
+        console.log(userId);
+        if (userId==undefined) {
+           window.location.href = "/login";
+            return;
+        }else {
+            var rating = $("#ratingValue").val();
 
         var user_name = $("#user_name").val();
 
@@ -657,6 +660,11 @@ $(document).ready(function () {
                 }
             },
         });
+        }
+       
+       
+            // Lấy giá trị số sao đã chọn
+        
         
     });
 
