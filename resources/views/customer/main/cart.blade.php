@@ -1,6 +1,6 @@
 @extends('customer.layout.master')
 
-@section('title', 'Cart')
+@section('title', 'Cart - Online Shopping')
  
 @section('body')
 <style>
@@ -51,7 +51,7 @@
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary border-0" data-bs-dismiss="modal">No</button>
-                                                                    <button type="button" onclick="removeCart({{$cartItem->id}})" data-bs-dismiss="modal" class="btn btn-primary color-main border-0" >Yes</button>
+                                                                    <button type="button" onclick="removeCart('{{$cartItem->id}}')" data-bs-dismiss="modal" class="btn btn-primary color-main border-0" >Yes</button>
                                                                 </div>
                                                             </div>
                                                         </div>

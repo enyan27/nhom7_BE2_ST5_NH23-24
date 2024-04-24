@@ -12,8 +12,8 @@
                       alt="blog-img"></a>
                 </div>
                 <div class="blog-content">
-                  <span class="blog-content-meta">February 03, 2022</span>
-                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2021 Styles, Colors, Accessories</a>
+                  <span class="blog-content-meta">February 28, 2024</span>
+                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2024 Styles, Colors, Accessories</a>
                   </h3>
                   <a class="blog-content-btn" href="#">Read more</a>
                 </div>
@@ -26,8 +26,8 @@
                       alt="blog-img"></a>
                 </div>
                 <div class="blog-content">
-                  <span class="blog-content-meta">February 03, 2022</span>
-                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2021 Styles, Colors, Accessories</a>
+                  <span class="blog-content-meta">February 28, 2024</span>
+                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2024 Styles, Colors, Accessories</a>
                   </h3>
                   <a class="blog-content-btn" href="#">Read more</a>
                 </div>
@@ -40,8 +40,8 @@
                       alt="blog-img"></a>
                 </div>
                 <div class="blog-content">
-                  <span class="blog-content-meta">February 03, 2022</span>
-                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2021 Styles, Colors, Accessories</a>
+                  <span class="blog-content-meta">February 28, 2024</span>
+                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2024 Styles, Colors, Accessories</a>
                   </h3>
                   <a class="blog-content-btn" href="#">Read more</a>
                 </div>
@@ -54,8 +54,8 @@
                       alt="blog-img"></a>
                 </div>
                 <div class="blog-content">
-                  <span class="blog-content-meta">February 03, 2022</span>
-                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2021 Styles, Colors, Accessories</a>
+                  <span class="blog-content-meta">February 28, 2024</span>
+                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2024 Styles, Colors, Accessories</a>
                   </h3>
                   <a class="blog-content-btn" href="#">Read more</a>
                 </div>
@@ -68,8 +68,8 @@
                       alt="blog-img"></a>
                 </div>
                 <div class="blog-content">
-                  <span class="blog-content-meta">February 03, 2022</span>
-                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2021 Styles, Colors, Accessories</a>
+                  <span class="blog-content-meta">February 28, 2024</span>
+                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2024 Styles, Colors, Accessories</a>
                   </h3>
                   <a class="blog-content-btn" href="#">Read more</a>
                 </div>
@@ -82,8 +82,8 @@
                       alt="blog-img"></a>
                 </div>
                 <div class="blog-content">
-                  <span class="blog-content-meta">February 03, 2022</span>
-                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2021 Styles, Colors, Accessories</a>
+                  <span class="blog-content-meta">February 28, 2024</span>
+                  <h3 class="blog-content-title"><a href="#">Fashion Trends In 2024 Styles, Colors, Accessories</a>
                   </h3>
                   <a class="blog-content-btn" href="#">Read more</a>
                 </div>

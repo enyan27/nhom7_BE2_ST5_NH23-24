@@ -3,15 +3,15 @@
     <section class="slider-section">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./customer/assets/img/slider1.png" class="d-block w-100" alt="slider1" />
+          <div class="carousel-item active" style="height: 700px;">
+            <img src="./customer/assets/img/slider7.png" class="d-block w-100" alt="slider1"/>
           </div>
-          <div class="carousel-item">
+          <!-- <div class="carousel-item">
             <img src="./customer/assets/img/slider2.png" class="d-block w-100" alt="slider2" />
           </div>
           <div class="carousel-item">
             <img src="./customer/assets/img/slider3.png" class="d-block w-100" alt="slider3" />
-          </div>
+          </div> -->
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
           data-bs-slide="prev">
