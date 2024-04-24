@@ -579,7 +579,12 @@ $(document).ready(function () {
         var userId = $("#user_id").val();
         console.log(userId);
         if (userId==undefined) {
-           window.location.href = "/login";
+            // Hiển thị hộp thoại xác nhận
+            if (confirm("Bạn cần đăng nhập để thực hiện đánh giá. Bạn có muốn đăng nhập ngay bây giờ không?")) {
+                // Nếu người dùng nhấn "OK", chuyển hướng đến trang /login
+                window.location.href = "/login";
+            }
+            // Nếu người dùng nhấn "Cancel" hoặc hủy hộp thoại, không làm gì cả
             return;
         }else {
             var rating = $("#ratingValue").val();
