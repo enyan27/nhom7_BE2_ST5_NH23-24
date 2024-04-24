@@ -44,7 +44,7 @@ class ReviewController extends Controller
 
         // Lưu đánh giá vào cơ sở dữ liệu
 
-        if (Auth::check()) {
+        
             $review = new Review();
             $review->user_id = $request->user_id;
             $review->product_id = $request->product_id;
@@ -54,13 +54,6 @@ class ReviewController extends Controller
         
             // Trả về phản hồi JSON chứa dữ liệu mới
             return response()->json(['success' => true, 'review' => $review]);
-        } else {
-            // Chuyển hướng đến trang đăng nhập
-            return redirect()->route('login');
-        }
-        
-
-        
     }
 
     /**

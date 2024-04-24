@@ -564,14 +564,6 @@ function updateStatus(order_id, status) {
     });
 }
 
-// Hàm kiểm tra trạng thái đăng nhập
-function isLoggedIn() {
-    // Kiểm tra xem có thông tin đăng nhập trong session hay không
-    // Đây là một ví dụ cơ bản, bạn cần điều chỉnh phù hợp với logic đăng nhập của ứng dụng
-    var loggedInUser = localStorage.getItem('loggedInUser'); // Giả sử thông tin đăng nhập được lưu trong localStorage
-    return loggedInUser ? true : false;
-}
-
 // Customer's Reviews
 $(document).ready(function () {
     $(".star").on("click", function () {
@@ -585,14 +577,8 @@ $(document).ready(function () {
     $("#ratingFormAjax").on("submit", function (e) {
         e.preventDefault();
 
-        if (!isLoggedIn()) {
-            // Chuyển hướng đến trang đăng nhập
-            window.location.href = "/login";
-            return;
-        }
-        
-
-        // Lấy giá trị số sao đã chọn
+       
+            // Lấy giá trị số sao đã chọn
         var rating = $("#ratingValue").val();
 
         var user_name = $("#user_name").val();
@@ -631,8 +617,8 @@ $(document).ready(function () {
                       <div class="col-lg-10">
                           <div class="review-content">
                               <p class="review-rating">Đánh giá: ${getStars(
-                    newReview.rating
-                )}</p>
+                                  newReview.rating
+                              )}</p>
                               <p class="review-comment">${newReview.comment}</p>
                           </div>
                       </div>
@@ -650,17 +636,18 @@ $(document).ready(function () {
                 // updateAverageRating();
 
                 var totalStars = 0;
-                var totalReviews = $('.review-rating').length;
-                $('.review-rating').each(function() {
-                    var starCount = $(this).find('.star').length;
+                var totalReviews = $(".review-rating").length;
+                $(".review-rating").each(function () {
+                    var starCount = $(this).find(".star").length;
                     totalStars += starCount;
                 });
                 if (totalReviews > 0) {
                     var averageRating = totalStars / totalReviews;
-                    $('#averageRating').text('Số sao trung bình: ' + averageRating.toFixed(2));
-                }
-                else {
-                    $('#averageRating').text('Chưa có đánh giá');
+                    $("#averageRating").text(
+                        "Số sao trung bình: " + averageRating.toFixed(2)
+                    );
+                } else {
+                    $("#averageRating").text("Chưa có đánh giá");
                 }
             },
             error: function (xhr, status, error) {
@@ -670,6 +657,7 @@ $(document).ready(function () {
                 }
             },
         });
+        
     });
 
     // Hàm chuyển đổi số sao thành biểu tượng sao
@@ -691,43 +679,43 @@ $(document).ready(function () {
             data: $("#ratingFormAjax").serialize(),
             success: function (response) {
                 // Cập nhật số sao trung bình trên giao diện người dùng
-                $('#averageRating').text('Số sao trung bình: ' + response.averageRating);
+                $("#averageRating").text(
+                    "Số sao trung bình: " + response.averageRating
+                );
             },
             error: function (xhr, status, error) {
                 // Xử lý lỗi nếu có
-            }
+            },
         });
     }
 
     // Gọi hàm updateAverageRating() khi trang được tải
     // updateAverageRating();
 
-    // Coupon 
+    // Coupon
     function applyCoupon() {
-        var couponCode = $('.coupon-code-field-input').val();
+        var couponCode = $(".coupon-code-field-input").val();
         $.ajax({
             type: "POST",
             url: "/apply-coupon",
             data: {
-                coupon_code: couponCode
+                coupon_code: couponCode,
             },
-            success: function(response) {
+            success: function (response) {
                 //alert(response.message);
                 // Cập nhật tổng giảm giá và tổng cộng trong HTML
-                $('.subTotal').text('$' + response.total);
-                $('.grandTotal').text('$' + response.total);
+                $(".subTotal").text("$" + response.total);
+                $(".grandTotal").text("$" + response.total);
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 alert(xhr.responseJSON.error);
-            }
+            },
         });
     }
 
-    const btnCoupon = document.querySelector('#btn-coupon');
-    btnCoupon.addEventListener('click', function(){
+    const btnCoupon = document.querySelector("#btn-coupon");
+    btnCoupon.addEventListener("click", function () {
         applyCoupon();
-});
-
-
+    });
 });
 // TODO: - Test lai tat ca truong hop ajax
