@@ -686,8 +686,33 @@ $(document).ready(function () {
 
     // Gọi hàm updateAverageRating() khi trang được tải
     // updateAverageRating();
+
+    // Coupon 
+    function applyCoupon() {
+        var couponCode = $('.coupon-code-field-input').val();
+        $.ajax({
+            type: "POST",
+            url: "/apply-coupon",
+            data: {
+                coupon_code: couponCode
+            },
+            success: function(response) {
+                //alert(response.message);
+                // Cập nhật tổng giảm giá và tổng cộng trong HTML
+                $('.subTotal').text('$' + response.total);
+                $('.grandTotal').text('$' + response.total);
+            },
+            error: function(xhr, status, error) {
+                alert(xhr.responseJSON.error);
+            }
+        });
+    }
+
+    const btnCoupon = document.querySelector('#btn-coupon');
+    btnCoupon.addEventListener('click', function(){
+        applyCoupon();
 });
 
 
-
+});
 // TODO: - Test lai tat ca truong hop ajax

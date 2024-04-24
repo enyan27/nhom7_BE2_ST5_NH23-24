@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\StatisticController;
+use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\CategoryCustomerController;
 use App\Http\Controllers\Customer\ProductCustomerController;
 
@@ -128,7 +129,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('create', [CouponController::class, 'create']);
         Route::post('store', [CouponController::class, 'store']);
         Route::get('edit/{id}', [CouponController::class, 'edit']);
-        Route::post('update/{id}', [CouponController::class,'update']);
+        Route::post('update/{id}', [CouponController::class, 'update']);
         Route::delete('destroy/{id}', [CouponController::class, 'destroy']);
     });
 
@@ -210,20 +211,15 @@ Route::get('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswo
 Route::post('/reset-password/{token}', [App\Http\Controllers\Customer\ResetPasswordController::class, 'resetPasswordPost']);
 
 
-
-
-
 // Blog
 Route::get('/blog', [App\Http\Controllers\Customer\BlogController::class, 'index']);
 Route::get('/blog/detail/{id}', [App\Http\Controllers\Customer\BlogController::class, 'show']);
 Route::post('/blog/store', [App\Http\Controllers\Customer\BlogCommentController::class, 'store']);
 // Review
 Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
-Route::post('/calculate-average-rating', 'ReviewController@calculateAverageRating');
 
-
-
-
+// Coupon
+Route::post('/apply-coupon', [CartController::class, 'applyCoupon']);
 
 
 // ---------------------------------- Customer Page - Khai ----------------------------------
