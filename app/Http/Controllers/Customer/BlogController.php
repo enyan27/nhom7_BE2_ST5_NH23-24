@@ -21,7 +21,7 @@ class BlogController extends Controller
     {
         //
         $categories = Category::where('parent_id',0)->get();
-        $blogs = Blog::where('status',1)->paginate(1);
+        $blogs = Blog::where('status',1)->paginate(3);
         return view('customer.main.blog',compact('categories','blogs'));
     }
 

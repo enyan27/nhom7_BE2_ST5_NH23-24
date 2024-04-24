@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class ReviewController extends Controller
@@ -42,15 +43,17 @@ class ReviewController extends Controller
         //Log::info($request->all());
 
         // Lưu đánh giá vào cơ sở dữ liệu
-        $review = new Review();
-        $review->user_id = $request->user_id;
-        $review->product_id = $request->product_id;
-        $review->rating = $request->rating;
-        $review->comment = $request->comment;
-        $review->save();
 
-        // Trả về phản hồi JSON chứa dữ liệu mới
-        return response()->json(['success' => true, 'review' => $review]);
+        
+            $review = new Review();
+            $review->user_id = $request->user_id;
+            $review->product_id = $request->product_id;
+            $review->rating = $request->rating;
+            $review->comment = $request->comment;
+            $review->save();
+        
+            // Trả về phản hồi JSON chứa dữ liệu mới
+            return response()->json(['success' => true, 'review' => $review]);
     }
 
     /**

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 16, 2024 lúc 04:49 PM
+-- Thời gian đã tạo: Th4 21, 2024 lúc 02:57 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -36,19 +36,51 @@ CREATE TABLE `blogs` (
   `slug` varchar(255) NOT NULL,
   `view` smallint(11) NOT NULL DEFAULT 0,
   `status` tinyint(4) NOT NULL DEFAULT 0,
-  `create_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `update_at` datetime NOT NULL DEFAULT current_timestamp()
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `blogs`
 --
 
-INSERT INTO `blogs` (`id`, `user_id`, `title`, `description`, `thump`, `slug`, `view`, `status`, `create_at`, `update_at`) VALUES
-(1, 8, 'Tiêu đề bài viết 1', 'Nội dung bài viết 1', 'thumbnail1.png', 'tieu-de-bai-viet-1', 100, 1, '2024-04-15 16:57:44', '2024-04-15 16:57:44'),
-(2, 1, 'Tiêu đề bài viết 2', 'Nội dung bài viết 2', 'thumbnail2.png', 'tieu-de-bai-viet-2', 150, 1, '2024-04-15 16:57:44', '2024-04-15 16:57:44'),
+INSERT INTO `blogs` (`id`, `user_id`, `title`, `description`, `thump`, `slug`, `view`, `status`, `created_at`, `updated_at`) VALUES
+(1, 8, 'Tiêu đề bài viết 1', 'Nội dung bài viết 1', 'thumbnail1.png', 'tieu-de-bai-viet-1', 111, 1, '2024-04-15 16:57:44', '2024-04-15 16:57:44'),
+(2, 1, 'Tiêu đề bài viết 2', 'Nội dung bài viết 2', 'thumbnail2.png', 'tieu-de-bai-viet-2', 153, 1, '2024-04-15 16:57:44', '2024-04-15 16:57:44'),
 (3, 8, 'Tiêu đề bài viết 3', 'Nội dung bài viết 3', 'thumbnail3.png', 'tieu-de-bai-viet-3', 120, 2, '2024-04-15 16:57:44', '2024-04-15 16:57:44'),
-(6, 6, 'Blog_Test', '<p>DuyKhai</p>', '1713238371.jpg', 'blog-test', 0, 2, '2024-04-16 10:32:51', '2024-04-16 10:32:51');
+(7, 8, 'Theme blogspot bán hàng thời trang', '<p>Blogspot bán hàng là mẫu template có giao diện đơn giản tập trung vào tốc độ tải trang và thân thiện với mobile rất thích hợp cho cửa hàng vừa và nhỏ, đây là mẫu mới có giao diện đẹp, tốc độ tải trang rất nhanh, dữ liệu có cấu trúc đầy đủ, seo friendly và mobile friendly, bố cục tiện ích gọn gàng dễ dàng cài đặt không phải can thiệp quá nhiều vào theme, v.v..</p><p><a href=\"https://themepoloshop.blogspot.com/\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFyqOWakh80vZtTTPLH2Tx3KZVOe6udauVTCWmD6-VijT0bz99Ahzrdh5NnLTmHg6R1kCbr7B0AoQ7nc5DKbEuIrYeFUldIKCRcnOlreyoK8uJN4sdhCEsL1NSgeXyJqmKhbXyfTKMx0A/w1200-h630-p-k-no-nu/theme-blogspot-ban-hang-2021-de-su-dung.webp\" alt=\"Theme blogspot tín tức Ô tô, xe máy đẹp chuẩn seo\"></a></p><p><a href=\"https://themepoloshop.blogspot.com/\"><strong>050</strong></a></p><p><a href=\"https://themepoloshop.blogspot.com/\">Xem trước</a><a href=\"https://zalo.me/0974858395\">Liên hệ</a></p><h3>Template blogspot bán hàng chuẩn seo tải nhanh</h3><p>Template blogspot bán hàng là mẫu template có giao diện đơn giản tập trung vào tốc độ tải trang và thân thiện với mobile rất thích hợp cho cửa hàng vừa và nhỏ, đây là mẫu mới có giao diện đẹp, tốc độ tải trang rất nhanh, dữ liệu có cấu trúc đầy đủ, seo friendly và mobile friendly, bố cục tiện ích gọn gàng dễ dàng cài đặt không phải can thiệp quá nhiều vào theme, v.v..</p><p><a href=\"https://themeblogspotbanhangdep.blogspot.com/\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLmUZWcvUiPY4VqpijIvD_W6BefopLr6VqN-2tCo2zC3Z4eLCF2BbxKdoApm10UH8a0WZBkvGcjkdumraVjPuoyFLwnSk-o1JRFB1QmlrPTGO31Q6_bm_aaPCR7GNer352tsplJSbs8_M/s1600/eshop.webpp\" alt=\"Theme blogspot bán hàng nội thất đẹp chuẩn seo\"></a></p><p><a href=\"https://themeblogspotbanhangdep.blogspot.com/\"><strong>049</strong></a></p><p><a href=\"https://theme049.blogspot.com/\">Xem trước</a><a href=\"https://zalo.me/0974858395\">Liên hệ</a></p><h3>Template blogspot bán hàng nội thất đẹp chuẩn seo</h3><p>Theme blogspot bán hàng nội thất là mẫu template có giao diện đơn giản tập trung vào tốc độ tải trang và thân thiện với mobile rất thích hợp cho cửa hàng vừa và nhỏ, đây là mẫu mới có giao diện đẹp, tốc độ tải trang rất nhanh, dữ liệu có cấu trúc đầy đủ, seo friendly và mobile friendly, bố cục tiện ích gọn gàng dễ dàng cài đặt không phải can thiệp quá nhiều vào theme, v.v..</p><p><a href=\"https://themeblogspotnoithat.blogspot.com/\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsASugOKSIN1y4XCeytK_LfRmm4Cizm8C-RNzjjrMC8VUwEK3PBBXNMrdFWzhgUb1RL1e0L5lxdqyyswr2oBwxZk4nGV1sMHamUCZEpl7AKjzdTxejNZpk5R1CpBXgzDylSkp5qDd-LfE/s1600/theme_noi_that.webp\" alt=\"Theme blogspot bán hàng nội thất đẹp chuẩn seo\"></a></p><p><a href=\"https://themeblogspotnoithat.blogspot.com/\"><strong>042</strong></a></p><p><a href=\"https://theme042.blogspot.com/\">Xem trước</a><a href=\"https://zalo.me/0974858395\">Liên hệ</a></p><h3>Template blogspot bán hàng thời trang balo túi xách, giày dép, bóp ví nữ</h3><p>Theme blogspot bán hàng thời trang balo túi xách, giày dép, bóp ví nữ là mẫu template có giao diện đơn giản tập trung vào tốc độ tải trang và thân thiện với mobile rất thích hợp cho cửa hàng vừa và nhỏ, đây là mẫu mới có giao diện đẹp, tốc độ tải trang rất nhanh, dữ liệu có cấu trúc đầy đủ, seo friendly và mobile friendly, bố cục tiện ích gọn gàng dễ dàng cài đặt không phải can thiệp quá nhiều vào theme, v.v..</p><p><a href=\"https://themevascara.blogspot.com/\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPWGfoVz4WJhnkEpGRYS-Ktngg-D2GLrCSR8fuAeSR0ZxOXlvWM08-_QwVNafs0ozykTTf5OAW2C_EhuID8xV5XzULnMHGx0gfx42rn6J8AhU7d6GRdNaulWSrZV5zva75r4n201tUeb8/s1600/theme_thoi_trang.webp\" alt=\"Theme blogspot tín tức Ô tô, xe máy đẹp chuẩn seo\"></a></p><p><a href=\"https://themevascara.blogspot.com/\"><strong>041</strong></a></p><p><a href=\"https://theme041.blogspot.com/\">Xem trước</a><a href=\"https://zalo.me/0974858395\">Liên hệ</a></p><h3>Tempalte blogspot bán hàng đẹp chuẩn seo tải nhanh</h3><p>Theme blogspot bán hàng là mẫu template có giao diện đơn giản tập trung vào tốc độ tải trang và thân thiện với mobile rất thích hợp cho cửa hàng vừa và nhỏ, đây là mẫu mới có giao diện đẹp, tốc độ tải trang rất nhanh, dữ liệu có cấu trúc đầy đủ, seo friendly và mobile friendly, bố cục tiện ích gọn gàng dễ dàng cài đặt không phải can thiệp quá nhiều vào theme, v.v..</p><p><a href=\"https://shop.themeblogspot.com/\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifyMEoQme9_qbaBYJG33qvhUhyLFktnd6ZhTbyR1rfyjUsRdaspmzJGWIbx5NfcLtZMozgHlBt__4IN25t_Hcy_gWy7gDrnaTmebY1-yQatX1aUF3QN2K6WVTR6H4EmveJdRitOuBgaJ4/s1600/theme_blogspot_ban_hang.webp\" alt=\"Theme blogspot tín tức Ô tô, xe máy đẹp chuẩn seo\"></a></p><p><a href=\"https://shop.themeblogspot.com/\"><strong>039</strong></a></p><p><a href=\"https://theme039.blogspot.com/\">Xem trước</a><a href=\"https://zalo.me/0974858395\">Liên hệ</a></p><h3>Template blogspot bán hàng Việt Designer Shop</h3><p>Ngay từ tên gọi của nó, theme này mình viết chỉ thiết kế tối ưu cho tính năng bán hàng cho dù là bán bất cứ sản phẩm gì. Dưới đây là danh sách các tính năng mình liệt kê được tích hợp vào theme.</p><p><a href=\"https://store.themeblogspot.com/\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfgpw_KQtO9gCptWbp0qkG2-KurqwZqev-ykf5qng17zBOMJBk3Emg1JFy3uuevex51u1bK9SkKcCM7LpbyLFASGToQXv9h62w-U_PKn5wNJh2m2dFEX4KvYqECwuHWBb3ZzJ3l1cL8og/s1600/theme_blogspot_viet_designer_shop.webp\" alt=\"Theme blogspot bán hàng Việt Designer Shop\"></a></p><p><a href=\"https://store.themeblogspot.com/\"><strong>036</strong></a></p><p><a href=\"https://theme036.blogspot.com/\">Xem trước</a><a href=\"https://zalo.me/0974858395\">Liên hệ</a></p><h3>Tempate blogspot bán hàng Flatsome Mega Shop</h3><p>Theme Blogspot Flatsome Mega Shop bán hàng đẹp chuẩn seo thích hợp cho các shop bán hàng. Template được thiết kế tỉ mỉ đảm bảo các yếu tố cần thiết của một template đẹp chuẩn. Tốc độ tải trang tương đối nhanh, reponsive với mọi kích thước màn hình, thân thiện với mobile, dữ liệu có cấu trúc đầy đủ...</p><p><br>&nbsp;</p><p><a href=\"https://megashop-uxthemes.blogspot.com/\"><img src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixyMFoJAPvNsfWPedCWWXKn6MiRqc-6FZHKjqJTGcEarmKp6nCt2dezV0VzlvDhi1xNoVlLX6a9mJJtLW-sJ6mcQBDhFh79awsTnHvO8ZdcYHEXTXjplOxxBJItaDwHYV-SskzDwLZBYA/s1600/flatsome_mega_shop_blogger_theme.webp\" alt=\"Theme blogspot bán hàng Flatsome Mega Shop\"></a></p><p><a href=\"https://megashop-uxthemes.blogspot.com/\"><strong>030</strong></a></p><p><a href=\"https://theme030.blogspot.com/\">Xem trước</a><a href=\"https://zalo.me/0974858395\">Liên hệ</a></p><h3>Template blogspot bán hàng Flatsome Classic Shop</h3><p>Theme Blogspot Flatsome Classic Shop bán hàng đẹp chuẩn seo thích hợp cho các shop bán hàng. Template được thiết kế tỉ mỉ đảm bảo các yếu tố cần thiết của một template đẹp chuẩn. Tốc độ tải trang tương đối nhanh, reponsive với mọi kích thước màn hình, thân thiện với mobile, dữ liệu có cấu trúc đầy đủ...</p>', '1713351334.png', 'theme-blogspot-ban-hang-thoi-trang', 19, 1, '2024-04-17 17:22:28', '2024-04-19 09:34:26');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `blog_comments`
+--
+
+CREATE TABLE `blog_comments` (
+  `id` bigint(20) NOT NULL,
+  `blog_id` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `blog_comments`
+--
+
+INSERT INTO `blog_comments` (`id`, `blog_id`, `name`, `email`, `content`, `created_at`, `updated_at`) VALUES
+(1, 1, 'John Doe', 'john.doe@example.com', 'Quần áo ở đây rất đẹp và chất lượng!', '2024-04-18 19:09:43', '2024-04-18 19:09:43'),
+(2, 1, 'Alice Smith', 'alice.smith@example.com', 'Tôi thích kiểu dáng của sản phẩm này.', '2024-04-18 19:09:43', '2024-04-18 19:09:43'),
+(3, 1, 'Emma Johnson', 'emma.johnson@example.com', 'Giá cả hợp lý và phong cách đa dạng.', '2024-04-18 19:09:43', '2024-04-18 19:09:43'),
+(4, 2, 'Michael Brown', 'michael.brown@example.com', 'Chất lượng sản phẩm tuyệt vời!', '2024-04-18 19:09:43', '2024-04-18 19:09:43'),
+(5, 2, 'Sarah Wilson', 'sarah.wilson@example.com', 'Dịch vụ giao hàng nhanh chóng.', '2024-04-18 19:09:43', '2024-04-18 19:09:43'),
+(6, 2, 'David Martinez', 'david.martinez@example.com', 'Tôi sẽ quay lại mua sắm ở đây lần nữa.', '2024-04-18 19:09:43', '2024-04-18 19:09:43'),
+(7, 3, 'Jessica Taylor', 'jessica.taylor@example.com', 'Cửa hàng này có đủ loại quần áo cho mọi độ tuổi.', '2024-04-18 19:09:43', '2024-04-18 19:09:43'),
+(8, 3, 'Matthew Lee', 'matthew.lee@example.com', 'Nhân viên thân thiện và nhiệt tình.', '2024-04-18 19:09:43', '2024-04-18 19:09:43'),
+(9, 7, 'Emily Anderson', 'emily.anderson@example.com', 'Sản phẩm đáng giá tiền bỏ ra.', '2024-04-18 19:09:43', '2024-04-18 19:09:43'),
+(10, 7, 'Duy Khai', 'khai@gmail.com', 'sss', '2024-04-18 19:36:34', '2024-04-18 19:36:34');
 
 -- --------------------------------------------------------
 
@@ -158,6 +190,38 @@ INSERT INTO `categories` (`id`, `categoryname`, `parent_id`, `description`, `slu
 (12, 'Dress', 6, '<p>Acer</p>', 'dress', 1, '2024-01-22 13:16:04', '2024-03-27 22:00:59'),
 (13, 'Man Blazer', 1, '<p>Huawei</p>', 'man-blazer', 1, '2024-01-22 13:16:04', '2024-03-27 22:01:08'),
 (14, 'Kids Jacket', 1, '<p>Oppo</p>', 'kids-jacket', 1, '2024-01-22 13:16:04', '2024-03-27 22:01:17');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `coupons`
+--
+
+CREATE TABLE `coupons` (
+  `id` bigint(20) NOT NULL,
+  `coupon_code` varchar(255) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `start_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `end_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `discount_amount` double NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `coupons`
+--
+
+INSERT INTO `coupons` (`id`, `coupon_code`, `status`, `start_date`, `end_date`, `discount_amount`, `created_at`, `updated_at`) VALUES
+(1, '45381288', 1, '2024-04-20 00:00:00', '2024-05-20 00:00:00', 100, '2024-04-19 09:58:15', '2024-04-19 09:58:15'),
+(2, '5954d797', 2, '2024-04-21 00:00:00', '2024-05-21 00:00:00', 50, '2024-04-19 09:58:15', '2024-04-19 09:58:15'),
+(3, '2ee30355', 1, '2024-04-22 00:00:00', '2024-05-22 00:00:00', 20, '2024-04-19 09:58:15', '2024-04-19 09:58:15'),
+(4, 'd8d46ccc', 2, '2024-04-23 00:00:00', '2024-05-23 00:00:00', 30, '2024-04-19 09:58:15', '2024-04-19 09:58:15'),
+(5, '0638969e', 1, '2024-04-24 00:00:00', '2024-05-24 00:00:00', 25, '2024-04-19 09:58:15', '2024-04-19 09:58:15'),
+(6, 'a79a52ae', 2, '2024-04-25 00:00:00', '2024-05-25 00:00:00', 75, '2024-04-19 09:58:15', '2024-04-19 09:58:15'),
+(7, 'dadd4d99', 1, '2024-04-26 00:00:00', '2024-05-26 00:00:00', 40, '2024-04-19 09:58:15', '2024-04-19 09:58:15'),
+(8, '665d0171', 2, '2024-04-27 00:00:00', '2024-05-27 00:00:00', 60, '2024-04-19 09:58:15', '2024-04-19 09:58:15'),
+(9, 'OahYKDe1', 1, '2024-04-19 00:00:00', '2024-04-27 00:00:00', 19, '2024-04-19 10:55:59', '2024-04-19 10:55:59');
 
 -- --------------------------------------------------------
 
@@ -314,11 +378,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `brand_id`, `productname`, `price`, `price_sale`, `sku`, `featured`, `slug`, `quantity`, `description`, `created_by`, `view_count`, `trending`, `newarrival`, `image_1`, `image_2`, `sold`, `created_at`, `updated_at`) VALUES
-(1, 13, 5, 'Comfort Jacket (Wool Like)', 300, 249, 'UNI980', 1, 'comfort-jacket-wool-like', 120, '<p>Comfort Jacket (Wool Like)</p>', 6, 8, 1, 0, 'storage/uploads/product/comfort-jacket-wool-like-b26d860cbaca513e0ccf7720f07535c0.jpg', 'storage/uploads/product/comfort-jacket-wool-like-00d84d3da2ca2621854be4697e21e9c6.jpg', 0, '2024-03-14 21:49:00', '2024-04-16 21:27:50'),
-(2, 3, 4, 'AirSense JACKET (ULTRA LIGHT)', 400, 350, 'PMA581', 1, 'airsense-jacket-ultra-light', 70, '<p><strong>AirSense JACKET (ULTRA LIGHT)</strong></p>', 6, 9, 1, 0, 'storage/uploads/product/airsense-jacket-ultra-light-02127713910dace470e26c8726dd43a4.webp', 'storage/uploads/product/airsense-jacket-ultra-light-e5cfebc3ccf8ec84460d77967dc6d353.webp', 0, '2024-03-14 22:02:30', '2024-03-28 00:56:50'),
-(3, 8, 3, 'Linen Blend Sleeveless Blouse', 329, 299, 'MLB575', 1, 'linen-blend-sleeveless-blouse', 25, '<p><strong>Linen Blend Sleeveless Blouse</strong></p>', 6, 7, 0, 1, 'storage/uploads/product/linen-blend-sleeveless-blouse-e9c873e04541af37d6342e04e7ff341b.avif', 'storage/uploads/product/linen-blend-sleeveless-blouse-83c75f432fdd84c3a779a2eab38082cc.avif', 0, '2024-03-27 22:29:05', '2024-04-16 21:27:34'),
-(4, 10, 2, 'Warm Padded Washable Quilted', 500, 399, 'NIK667', 1, 'warm-padded-washable-quilted', 90, '<p>Warm Padded Washable Quilted</p>', 6, 0, 0, 1, 'storage/uploads/product/warm-padded-washable-quilted-34fa9125e042592c5d5c8c0c412bd703.jpg', 'storage/uploads/product/warm-padded-washable-quilted-42d76093200845b3fe6eeb357d764332.jpg', 0, '2024-03-27 23:39:19', '2024-03-27 23:58:15'),
-(5, 2, 1, 'Miracle Air Blazer (AirSense Blazer)', 450, 399, 'ADS167', 1, 'miracle-air-blazer-airsense-blazer', 56, '<p>Miracle Air Blazer (AirSense Blazer)</p>', 6, 1, 0, 1, 'storage/uploads/product/miracle-air-blazer-airsense-blazer-888a77fe4a9b586194c098c0f283e7a5.avif', 'storage/uploads/product/miracle-air-blazer-airsense-blazer-bec6f209ebf2b70ecd4e94a4fc2be24d.avif', 0, '2024-03-27 23:53:56', '2024-03-28 00:13:44');
+(1, 13, 5, 'Comfort Jacket (Wool Like)', 300, 249, 'UNI980', 1, 'comfort-jacket-wool-like', 120, '<p>Comfort Jacket (Wool Like)</p>', 6, 13, 1, 0, 'storage/uploads/product/comfort-jacket-wool-like-b26d860cbaca513e0ccf7720f07535c0.jpg', 'storage/uploads/product/comfort-jacket-wool-like-00d84d3da2ca2621854be4697e21e9c6.jpg', 0, '2024-03-14 21:49:00', '2024-04-21 19:13:18'),
+(2, 3, 4, 'AirSense JACKET (ULTRA LIGHT)', 400, 350, 'PMA581', 1, 'airsense-jacket-ultra-light', 70, '<p><strong>AirSense JACKET (ULTRA LIGHT)</strong></p>', 6, 23, 1, 0, 'storage/uploads/product/airsense-jacket-ultra-light-02127713910dace470e26c8726dd43a4.webp', 'storage/uploads/product/airsense-jacket-ultra-light-e5cfebc3ccf8ec84460d77967dc6d353.webp', 0, '2024-03-14 22:02:30', '2024-04-21 19:49:01'),
+(3, 8, 3, 'Linen Blend Sleeveless Blouse', 329, 299, 'MLB575', 1, 'linen-blend-sleeveless-blouse', 25, '<p><strong>Linen Blend Sleeveless Blouse</strong></p>', 6, 34, 0, 1, 'storage/uploads/product/linen-blend-sleeveless-blouse-e9c873e04541af37d6342e04e7ff341b.avif', 'storage/uploads/product/linen-blend-sleeveless-blouse-83c75f432fdd84c3a779a2eab38082cc.avif', 0, '2024-03-27 22:29:05', '2024-04-21 19:34:13'),
+(4, 10, 2, 'Warm Padded Washable Quilted', 500, 399, 'NIK667', 1, 'warm-padded-washable-quilted', 90, '<p>Warm Padded Washable Quilted</p>', 6, 40, 0, 1, 'storage/uploads/product/warm-padded-washable-quilted-34fa9125e042592c5d5c8c0c412bd703.jpg', 'storage/uploads/product/warm-padded-washable-quilted-42d76093200845b3fe6eeb357d764332.jpg', 0, '2024-03-27 23:39:19', '2024-04-21 19:09:11'),
+(5, 2, 1, 'Miracle Air Blazer (AirSense Blazer)', 450, 399, 'ADS167', 1, 'miracle-air-blazer-airsense-blazer', 56, '<p>Miracle Air Blazer (AirSense Blazer)</p>', 6, 37, 0, 1, 'storage/uploads/product/miracle-air-blazer-airsense-blazer-888a77fe4a9b586194c098c0f283e7a5.avif', 'storage/uploads/product/miracle-air-blazer-airsense-blazer-bec6f209ebf2b70ecd4e94a4fc2be24d.avif', 0, '2024-03-27 23:53:56', '2024-04-21 19:56:34');
 
 -- --------------------------------------------------------
 
@@ -353,6 +417,69 @@ INSERT INTO `product_details` (`id`, `product_id`, `color`, `size`, `quantity`, 
 (8, 4, '#ffc3a0', 'S', 20, 'storage/uploads/product/warm-padded-washable-quilted-34fa9125e042592c5d5c8c0c412bd703.jpg', 'storage/uploads/product/warm-padded-washable-quilted-42d76093200845b3fe6eeb357d764332.jpg', '2024-03-27 23:46:22', '2024-03-27 23:46:22'),
 (9, 5, '#373B44', 'L', 42, 'storage/uploads/product/miracle-air-blazer-airsense-blazer-888a77fe4a9b586194c098c0f283e7a5.avif', 'storage/uploads/product/miracle-air-blazer-airsense-blazer-bec6f209ebf2b70ecd4e94a4fc2be24d.avif', '2024-03-27 23:54:41', '2024-03-27 23:54:41'),
 (10, 5, '#DECBA4', 'M', 14, 'storage/uploads/product/miracle-air-blazer-airsense-blazer-888a77fe4a9b586194c098c0f283e7a5.avif', 'storage/uploads/product/miracle-air-blazer-airsense-blazer-bec6f209ebf2b70ecd4e94a4fc2be24d.avif', '2024-03-27 23:55:24', '2024-03-27 23:55:24');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `product_id` bigint(20) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `comment` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `user_id`, `product_id`, `rating`, `comment`, `created_at`, `updated_at`) VALUES
+(1, 9, 2, 4, 'Hi', '2024-04-21 17:24:44', '2024-04-21 17:24:44'),
+(2, 9, 2, 4, 'Duy Khải', '2024-04-21 17:26:10', '2024-04-21 17:26:10'),
+(3, 9, 4, 5, 'Duy Khải', '2024-04-21 17:29:46', '2024-04-21 17:29:46'),
+(4, 9, 4, 3, 'SP tot', '2024-04-21 17:44:50', '2024-04-21 17:44:50'),
+(5, 9, 4, 4, 'Sp tot khong nen mua', '2024-04-21 17:45:53', '2024-04-21 17:45:53'),
+(6, 9, 4, 1, 'Sp te', '2024-04-21 17:47:07', '2024-04-21 17:47:07'),
+(7, 9, 4, 1, 'te', '2024-04-21 17:48:44', '2024-04-21 17:48:44'),
+(8, 9, 4, 1, '2', '2024-04-21 17:48:58', '2024-04-21 17:48:58'),
+(9, 9, 5, 2, 'dssss', '2024-04-21 17:49:38', '2024-04-21 17:49:38'),
+(10, 9, 5, 4, 'Sssss', '2024-04-21 17:55:09', '2024-04-21 17:55:09'),
+(11, 9, 5, 4, 'Sssss', '2024-04-21 17:56:06', '2024-04-21 17:56:06'),
+(12, 9, 5, 3, 'Hello', '2024-04-21 17:58:57', '2024-04-21 17:58:57'),
+(13, 9, 5, 3, 'Hi', '2024-04-21 17:59:07', '2024-04-21 17:59:07'),
+(14, 9, 5, 4, 'Hello', '2024-04-21 18:01:52', '2024-04-21 18:01:52'),
+(15, 9, 5, 5, 'Duy Khải', '2024-04-21 18:03:21', '2024-04-21 18:03:21'),
+(16, 9, 5, 5, 'Great!!!', '2024-04-21 18:07:31', '2024-04-21 18:07:31'),
+(17, 9, 2, 4, 'sss', '2024-04-21 18:19:17', '2024-04-21 18:19:17'),
+(18, 9, 5, 5, 'create', '2024-04-21 18:21:19', '2024-04-21 18:21:19'),
+(19, 9, 3, 3, 'Bthg', '2024-04-21 18:31:11', '2024-04-21 18:31:11'),
+(20, 9, 3, 4, 'sss', '2024-04-21 18:32:53', '2024-04-21 18:32:53'),
+(21, 9, 1, 5, 'Sản phẩm tốt, nên mua', '2024-04-21 19:10:13', '2024-04-21 19:10:13'),
+(22, 9, 5, 4, 'sauydusaydas', '2024-04-21 19:13:27', '2024-04-21 19:13:27'),
+(23, 9, 5, 4, 'Đã đánh giá', '2024-04-21 19:14:43', '2024-04-21 19:14:43'),
+(24, 9, 5, 1, 'sđs', '2024-04-21 19:17:13', '2024-04-21 19:17:13'),
+(25, 9, 5, 3, 'sss', '2024-04-21 19:17:24', '2024-04-21 19:17:24'),
+(26, 9, 5, 2, 'DuyKhai', '2024-04-21 19:18:01', '2024-04-21 19:18:01'),
+(27, 9, 5, 2, 'DuyKhai', '2024-04-21 19:18:02', '2024-04-21 19:18:02'),
+(28, 9, 5, 3, 'Khai12', '2024-04-21 19:18:14', '2024-04-21 19:18:14'),
+(29, 9, 5, 2, 'sss', '2024-04-21 19:19:55', '2024-04-21 19:19:55'),
+(30, 9, 5, 5, 'ssss', '2024-04-21 19:20:01', '2024-04-21 19:20:01'),
+(31, 9, 5, 5, 'Đánh giá', '2024-04-21 19:27:14', '2024-04-21 19:27:14'),
+(32, 9, 5, 5, 'ssss', '2024-04-21 19:27:31', '2024-04-21 19:27:31'),
+(33, 9, 5, 4, 'HI', '2024-04-21 19:30:31', '2024-04-21 19:30:31'),
+(34, 9, 5, 4, 'HI', '2024-04-21 19:30:31', '2024-04-21 19:30:31'),
+(35, 9, 3, 4, 'SOS', '2024-04-21 19:34:06', '2024-04-21 19:34:06'),
+(36, 9, 2, 1, 's', '2024-04-21 19:37:43', '2024-04-21 19:37:43'),
+(37, 9, 2, 3, 'sss', '2024-04-21 19:44:05', '2024-04-21 19:44:05'),
+(38, 9, 5, 5, 'ssss', '2024-04-21 19:49:07', '2024-04-21 19:49:07'),
+(39, 9, 5, 5, 'uiasudisaud', '2024-04-21 19:49:14', '2024-04-21 19:49:14'),
+(40, 9, 5, 5, 'sss', '2024-04-21 19:53:08', '2024-04-21 19:53:08'),
+(41, 9, 5, 5, 'ădews', '2024-04-21 19:55:10', '2024-04-21 19:55:10');
 
 -- --------------------------------------------------------
 
@@ -425,6 +552,12 @@ ALTER TABLE `blogs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `brands`
 --
 ALTER TABLE `brands`
@@ -446,6 +579,12 @@ ALTER TABLE `cart_items`
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `coupons`
+--
+ALTER TABLE `coupons`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -473,6 +612,12 @@ ALTER TABLE `product_details`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
@@ -492,7 +637,13 @@ ALTER TABLE `wish_lists`
 -- AUTO_INCREMENT cho bảng `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `brands`
@@ -519,6 +670,12 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT cho bảng `coupons`
+--
+ALTER TABLE `coupons`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
@@ -541,6 +698,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `product_details`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT cho bảng `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
