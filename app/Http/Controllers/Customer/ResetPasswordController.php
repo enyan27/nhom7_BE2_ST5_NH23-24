@@ -36,7 +36,7 @@ class ResetPasswordController extends Controller
                 DB::table('password_resets')->updateOrInsert(['email' => $email], ['token' => $token]);
                 
                 Mail::send('customer.main.reset_password_email', compact('token'), function($message) use($email) {
-                            $message->from(env('MAIL_USERNAME'), 'Stable eShop');
+                            $message->from(env('MAIL_USERNAME'), 'Furin eShop');
                             $message->to($email);
                             $message->subject('Reset Password');
                 });

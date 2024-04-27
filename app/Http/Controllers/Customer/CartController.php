@@ -26,8 +26,7 @@ class CartController extends Controller
         $this->categoryService = $categoryService;
     }
 
-    public function view()
-    {
+    public function view() {
 
         $categories = $this->categoryService->getParent();
         $productBestSolds = $this->cartService->getProductBestSold();
@@ -36,40 +35,34 @@ class CartController extends Controller
         return view('customer.main.cart', compact('cartItems', 'categories', 'productBestSolds'));
     }
 
-    public function addCart(Request $request)
-    {
+    public function addCart(Request $request) {
 
         $result = $this->cartService->addCart($request);
         return $result;
     }
 
-    public function removeCart(Request $request)
-    {
+    public function removeCart(Request $request) {
 
         $result = $this->cartService->removeCart($request);
         return $result;
     }
 
-    public function updateCart(Request $request)
-    {
+    public function updateCart(Request $request) {
 
         $result = $this->cartService->updateCart($request);
         return $result;
     }
 
-    public function clearCart(Request $request)
-    {
+    public function clearCart(Request $request) {
 
         $result = $this->cartService->clearCart($request);
         return $result;
     }
 
     // Coupon 
-    public function applyCoupon(Request $request)
-    {
+    public function applyCoupon(Request $request) {
+        
         $couponCode = $request->input('coupon_code');
-
-
         $coupon = Coupon::where('code', $couponCode)->first();
 
         if (!$coupon) {

@@ -45,7 +45,7 @@
                                         <ul class="widget-categories-sub-menu">
                                             @foreach($category->childs as $child)
                                             <li class="widget-categories-sub-menu-list">
-                                                <a href="{{$child->slug}}.htm" class="widget-categories-sub-menu-link d-flex align-items-center">
+                                                <a href="{{$child->slug}}.html" class="widget-categories-sub-menu-link d-flex align-items-center">
                                                     <img src="storage/uploads/product/no_image.jpg" alt="{{$child->categoryname}}">
                                                     <span class="widget-categories-sub-menu-text">{{$child->categoryname}}</span>
                                                     <svg class="widget-categories-menu-arrowdown-icon" xmlns="http://www.w3.org/2000/svg" width="12.355"

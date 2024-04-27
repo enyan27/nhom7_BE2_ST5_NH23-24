@@ -1,10 +1,8 @@
 <?php
 
-use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Customer\ReviewController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\HomeController;
@@ -18,8 +16,8 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\StatisticController;
 use App\Http\Controllers\Customer\CartController;
-use App\Http\Controllers\Customer\CategoryCustomerController;
-use App\Http\Controllers\Customer\ProductCustomerController;
+
+
 
 /*
 |--------------------------------------------------------------------------

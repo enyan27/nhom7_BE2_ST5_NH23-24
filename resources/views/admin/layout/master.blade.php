@@ -16,7 +16,7 @@
                     <li> 
                         <a href="/admin/home">
                             <span class="icon"><ion-icon name="logo-xing"></ion-icon></span>
-                            <span class="title" style="font-weight: 600; font-size: 30px;">STABLE</span>
+                            <span class="title" style="font-weight: 600; font-size: 30px;">FURIN</span>
                         </a>
                     </li>
                     <li class="{{(request()->segment(2) == 'home') ? 'hovered' : ''}}">
@@ -63,13 +63,13 @@
                     </li>
                     <li  class="{{(request()->segment(2) == 'blog') ? 'hovered' : ''}}">
                         <a href="./admin/blog">
-                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                            <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
                             <span class="title">Blogs</span>
                         </a>
                     </li>
                     <li  class="{{(request()->segment(2) == 'coupon') ? 'hovered' : ''}}">
                         <a href="./admin/coupon">
-                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                            <span class="icon"><ion-icon name="ticket-outline"></ion-icon></span>
                             <span class="title">Coupons</span>
                         </a>
                     </li>

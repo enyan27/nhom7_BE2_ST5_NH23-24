@@ -106,7 +106,7 @@ class CheckoutService
         $email_to = $order->user_email;
 
         Mail::send('customer.main.sendmail', compact('order'), function($message) use($email_to) {
-            $message->from(env('MAIL_USERNAME'), 'Stable eShop');
+            $message->from(env('MAIL_USERNAME'), 'Furin eShop');
             $message->to($email_to);
             $message->subject('Order Notification');
         });
