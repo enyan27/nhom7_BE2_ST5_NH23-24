@@ -72,7 +72,7 @@
                             <strong>{{$orderDetail->productDetail->product->productname}}</strong>
                         </td>
                         <td>{{$orderDetail->productDetail->color}}</td>
-                        <td>{{$orderDetail->productDetail->size}}</td>
+                        <td>{{$orderDetail->ordered_size}}</td>
                         <td>${{number_format($orderDetail->productDetail->product->price_sale, 2)}}</td>
                         <td>{{$orderDetail->quantity}}</td>
                         <td>{{$order->discount}}%</td>

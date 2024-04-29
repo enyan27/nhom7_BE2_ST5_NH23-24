@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\ProductDetail;
 use App\Models\Brand;
@@ -21,17 +22,27 @@ class ProductService
     private function uploadImg(Request $request, $fieldImg, $attr) {
 
         $product_slug = Str::of($request->input('productname'))->slug('-');
-
+    
         if($request->hasFile($fieldImg)) {
-            
+    
             $original_name = $request->file($fieldImg)->getClientoriginalName();
             $ext = $request->file($fieldImg)->extension();
             $new_name = $product_slug . '-' . md5($original_name) . '.' .$ext;
-
+    
             $path = 'uploads/product';
             $request->file($fieldImg)->storeAs('public/' . $path , $new_name);
-
+    
             return $request->merge([$attr => 'storage/'. $path . '/' . $new_name ]);
+        }
+    }
+
+    // Remove the 'storage/' prefix and add 'public/' prefix
+    private function deleteImg($imgPath) {
+
+        $imgPath = 'public/' . str_replace('storage/', '', $imgPath);
+    
+        if(Storage::exists($imgPath)) {
+            Storage::delete($imgPath);
         }
     }
     
@@ -52,22 +63,37 @@ class ProductService
     }
 
     public function update($request, $product_id) {
-        
-        $this->uploadImg($request, 'imageProduct_1','image_1');
-        $this->uploadImg($request, 'imageProduct_2', 'image_2');
+
+        $product = $this->find($product_id);
+      
+        // Upload new images if provided and delete old ones
+        if($request->hasFile('imageProduct_1')) {
+            $this->deleteImg($product->image_1);
+            $this->uploadImg($request, 'imageProduct_1','image_1');
+        }
+        if($request->hasFile('imageProduct_2')) {
+            $this->deleteImg($product->image_2);
+            $this->uploadImg($request, 'imageProduct_2', 'image_2');
+        }
         
         $data = $request->all();
         $data['slug'] = Str::of($request->input('productname'))->slug('-');
-
-        $this->find($product_id)->update($data);
+    
+        $product->update($data);
     }
+    
+    
 
     public function destroy($product_id) {
 
+        $product = $this->find($product_id);
         $productDetails = ProductDetail::where('product_id', $product_id)->get();
-
-        if ($this->find($product_id)->delete()) {
-
+    
+        if ($product->delete()) {
+    
+            $this->deleteImg($product->image_1);
+            $this->deleteImg($product->image_2);
+    
             foreach ($productDetails as $productDetail) {
                 $productDetail->delete();
             }

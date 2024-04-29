@@ -7,6 +7,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+    --myPrimary: #EB3349;
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
@@ -5062,7 +5063,7 @@ fieldset:disabled .btn {
 
 .accordion-button:not(.collapsed) {
     color: #fff;
-    background-color: #ee2761;
+    background-color: var(--myPrimary);
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
 }
 
@@ -5197,7 +5198,7 @@ fieldset:disabled .btn {
 .page-link {
     position: relative;
     display: block;
-    color: #ee2761;
+    color: var(--myPrimary);
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #dee2e6;
@@ -5213,13 +5214,13 @@ fieldset:disabled .btn {
 .page-link:hover {
     z-index: 2;
     color: #fff;
-    background-color: #ee2761;
+    background-color: var(--myPrimary);
 }
 
 .page-link:focus {
     z-index: 3;
     color: #fff;
-    background-color: #ee2761;
+    background-color: var(--myPrimary);
     outline: 0;
 }
 
@@ -5230,7 +5231,7 @@ fieldset:disabled .btn {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #ee2761;
+    background-color: var(--myPrimary);
 }
 
 .page-item.disabled .page-link {

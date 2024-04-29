@@ -77,7 +77,7 @@
                                             <a href="/{{$cartItem->productDetail->product->slug }}.html">{{ $cartItem->productDetail->product->productname }}</a>
                                             <div class="d-flex">
                                                 <p>Color: {{$cartItem->productDetail->color}}</p>
-                                                <p style="margin-left: 10px">Size: {{$cartItem->productDetail->size}} </p>
+                                                <p style="margin-left: 10px">Size: {{$cartItem->selected_size}} </p>
                                             </div>
                                         </div>
                                     </div>

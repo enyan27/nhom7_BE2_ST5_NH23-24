@@ -67,7 +67,7 @@
                                                         <a href="/{{ $cartItem->productDetail->product->slug}}.html">{{$cartItem->productDetail->product->productname}}</a>
                                                     </h4>
                                                     <span class="cart-content-variant">Color: {{$cartItem->productDetail->color}}</span>
-                                                    <span class="cart-content-variant">Size: {{$cartItem->productDetail->size}}</span>
+                                                    <span class="cart-content-variant">Size: {{$cartItem->selected_size}}</span>
                                                 </div>
                                             </div>
                                         </td>

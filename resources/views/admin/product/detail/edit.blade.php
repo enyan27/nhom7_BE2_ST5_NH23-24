@@ -36,14 +36,7 @@
                                 <label for="size">Size
                                     <span class="text-danger">*</span>
                                 </label>
-                                <select class="form-select" name="size" id="size" required>
-                                    <option disabled value="">--- Choose Size ---</option>
-                                    <option value="S" {{$productDetail->size == 'S' ? 'selected' : ''}}>S</option>
-                                    <option value="M" {{$productDetail->size == 'M' ? 'selected' : ''}}>M</option>
-                                    <option value="L" {{$productDetail->size == 'L' ? 'selected' : ''}}>L</option>
-                                    <option value="XL" {{$productDetail->size == 'XL' ? 'selected' : ''}}>XL</option>
-                                    <option value="XXL" {{$productDetail->size == 'XXL' ? 'selected' : ''}}>XXL</option>
-                                </select>
+                                <input value="{{ implode(',', $productDetail->size) }}" class="form-control" type="text" name="size" id="size" placeholder="Size (XS, S, M, L, XL, XXL,...)" required>
                                 @error('size')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror

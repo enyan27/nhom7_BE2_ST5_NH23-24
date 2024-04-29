@@ -586,7 +586,7 @@
                                                                 style="text-align: center; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,'Karla'; font-size: 14px; line-height: 26px; font-weight: normal; color: #bdbdbd; word-break: break-all;">
 
                                                                 Color: {{$orderDetail->productDetail->color}}
-                                                                <br>Size: {{$orderDetail->productDetail->size}}
+                                                                <br>Size: {{$orderDetail->ordered_size}}
                                                               </span>
                                                             </p>
                                                           </th>

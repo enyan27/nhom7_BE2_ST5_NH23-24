@@ -258,24 +258,21 @@ $(document).ready(function () {
     $(".getColor").change(function () {
         var color = $(this).val();
         var product_id = $(".product_id").val();
-
+    
         $.ajax({
             url: "/get-size",
             data: { color: color, product_id: product_id },
             type: "POST",
             success: function (result) {
-                arr_size = [];
-                result.forEach((item) => {
-                    arr_size.push(item.size);
-                });
-
-                var size = `<legend class="product-variant-title mb-8">Select Size :</legend>`;
+                var sizes = result.sizes;
                 var default_size = ["XS", "S", "M", "L", "XL", "XXL"];
-
+    
+                var sizesJSON = JSON.stringify(sizes);
+                var size = `<legend class="product-variant-title mb-8">Select Size :</legend>`;
+    
                 for (var i = 0; i < default_size.length; i++) {
-                    console.log($.inArray(default_size[i], arr_size));
-
-                    if ($.inArray(default_size[i], arr_size) != -1) {
+                    
+                    if (sizesJSON.includes(JSON.stringify(default_size[i]))) {
                         size += `<input class="visually-hidden product-size" value="${default_size[i]}" type="radio" name="size" id="${default_size[i]}-size">
                   <label class="variant-size-value" for="${default_size[i]}-size">${default_size[i]}</label>`;
                     } else {
@@ -290,6 +287,9 @@ $(document).ready(function () {
             },
         });
     });
+    
+    
+    
 
     // Add to cart
 
@@ -300,6 +300,8 @@ $(document).ready(function () {
         var size = $(".product-size:checked").val();
         var color = $(".getColor:checked").val();
         var quantity = $(".quantity-number").val();
+
+        console.log(product_id, size, color, quantity);
 
         $.ajax({
             url: "/add-to-cart",

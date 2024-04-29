@@ -438,7 +438,8 @@ Needed for proper display in IE 10-.
     font-family: 'Jost-Regular', sans-serif;
 }
 :root{
-    --pink: #EB3349;
+    --primary: #EB3349;
+    --second: #EB3349;
     --white: #fff;
     --grey: #f5f5f5;
     --black1: #222;
@@ -480,8 +481,8 @@ ul{
     position: fixed;
     width: 300px;
     height: 100%;
-    background-color: var(--pink);
-    border-left: 10px solid var(--pink);
+    background: linear-gradient(to right, var(--primary), var(--second));
+    border-left: 10px solid var(--primary);
     transition: 0.5s;
     overflow: hidden;
 }
@@ -520,7 +521,7 @@ ul{
 }
 .navigation ul li:hover a,
 .navigation ul li.hovered a{
-    color: var(--pink);
+    color: var(--primary);
 }
 .navigation ul li a .icon{
     position: relative;
@@ -597,7 +598,7 @@ ul{
     padding: 0 15px;
 }
 .account-login-input:focus{
-    border-color: var(--pink);
+    border-color: var(--primary);
 }
 .account-login-btn{
     width: 30%;
@@ -671,7 +672,7 @@ ul{
     margin-right: 10px;
 }
 .user-name--inner{
-    color: var(--pink);
+    color: var(--primary);
     font-weight: 600;
     margin-bottom: -7px;
 }
@@ -725,7 +726,7 @@ ul{
     position: relative;
     font-weight: 600;
     font-size: 40px;
-    color: var(--pink);
+    color: var(--primary);
 }
 .cardBox .card .cardName{
     color: var(--black2);
@@ -737,7 +738,7 @@ ul{
     color: var(--black2);
 }
 .cardBox .card:hover{
-    background: var(--pink);
+    background: var(--primary);
 }
 .cardBox .card:hover .numbers,
 .cardBox .card:hover .cardName,
@@ -772,12 +773,12 @@ ul{
 }
 .cardHeader h2{
     font-weight: 600;
-    color: var(--pink);
+    color: var(--primary);
 }
 .btn{
     position: relative;
     padding: 5px 10px;
-    background: var(--pink);
+    background: var(--primary);
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
@@ -798,7 +799,7 @@ ul{
     border-bottom: none;
 } */
 /* .details .recentOrders table tbody tr:hover{
-    background: var(--pink);
+    background: var(--primary);
     color: var(--white);
 } */
 .details .recentOrders table tr td{
@@ -890,7 +891,7 @@ ul{
     line-height: 1.2em;
 }
 .recentCustomers table tr:hover{
-    background: var(--pink);
+    background: var(--primary);
     color: var(--white);
 }
 
@@ -968,11 +969,11 @@ ul{
 }
 .form-group input:hover,
 .form-group select:hover {
-    border-color: var(--pink);
+    border-color: var(--primary);
 }
 .form-group input:focus,
 .form-group select:focus {
-    border-color: var(--pink);
+    border-color: var(--primary);
 }
 .ck-editor__editable[role="textbox"] {
     min-height: 200px;
@@ -1091,7 +1092,7 @@ input::-webkit-inner-spin-button {
     bottom: 0;
     left: 20px;
     display: flex;
-    color: var(--pink)
+    color: var(--primary)
 }
 .backToHome .icon{
     display: block;

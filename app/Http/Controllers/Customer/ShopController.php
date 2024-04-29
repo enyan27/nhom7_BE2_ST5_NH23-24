@@ -67,18 +67,21 @@ class ShopController extends Controller
         $averageRating = $reviews->avg('rating');
         return view('customer.main.product_detail', compact( 'categories','product','relatedProducts','productDetails','reviews','averageRating'));
     }
-
+    
     public function getSize(Request $request){
         if($request->ajax()){
             $data = $request->all();
             $productDetails = ProductDetail::where('product_id' ,$data['product_id'])
                                             ->where('color', $data['color'])
                                             ->where('quantity','>', 0)
-                                            ->get();
+                                            ->pluck('size')
+                                            ->toArray();
             
-            return $productDetails;
+            return response()->json(['sizes' => $productDetails]);
         }
     }
+    
+    
 
     public function buyNow(Request $request) {
 

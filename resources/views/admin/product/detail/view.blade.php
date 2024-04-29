@@ -1,13 +1,13 @@
 @extends('admin.layout.master')
 
-@section('title','Product List')
+@section('title','Product Details List')
 
 @section('body')
     @include('admin.component.alert')
     <div class="details details2">
         <div class="recentOrders">
             <div class="cardHeader">
-                <h2>Products Details List #{{$product->id}}</h2>
+                <h2>Product Details List #{{$product->id}}</h2>
                 <a href="admin/product/{{$product->id}}/detail/create" class="btn btn2">
                     <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
                     <span class="title">Create New Product Detail</span>
@@ -26,14 +26,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                     @foreach($productDetails as $productDetail)
-                     <tr>
+                    @foreach($productDetails as $productDetail)
+                    <tr>
                         <td>#{{$productDetail->id}}</td>
                         <td>{{$productDetail->product->productname}}</td>
+                        <td>{{$productDetail->color}}</td>
                         <td>
-                            {{$productDetail->color}} 
+                            @php $sizeCount = count($productDetail->size); @endphp
+                            @foreach($productDetail->size as $key => $size)
+                                {{$size}}
+                                @if($key < $sizeCount - 1)
+                                    ,
+                                @endif
+                            @endforeach
                         </td>
-                        <td>{{$productDetail->size}}</td>
                         <td>{{$productDetail->quantity}}</td>
                         <td>
                             <img class="imgProduct" src="{{$productDetail->colorImg_1}}" alt="{{$productDetail->product->productname}}">
@@ -64,8 +70,8 @@
                                 </div>
                             </div>
                         </td>
-                     </tr>
-                     @endforeach
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

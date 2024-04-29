@@ -25,16 +25,15 @@ class CartService
     }
 
     public function addCart($request) {
-        
         if(Auth::check()) {
             if($request->ajax()) {
                 $data = $request->all();
     
                 $product_check = Product::where('id', $data['product_id'])->exists();
                 $productDetail = ProductDetail::where('product_id', $data['product_id'])
-                                                    ->where('size', $data['size'] )
-                                                    ->where('color', $data['color'] )
-                                                    ->first();
+                                                ->whereJsonContains('size', $data['size'] ) // fix bug - (4/29/24)
+                                                ->where('color', $data['color'] )
+                                                ->first();
                 $cart_id = Auth::user()->cart->id;
                     
                 if($product_check) {
@@ -43,20 +42,22 @@ class CartService
                     }
                     else {
                         $cartItem = CartItem::where('product_detail_id', $productDetail->id)
+                                            ->where('selected_size', $data['size'])
                                             ->where('cart_id', $cart_id);
-
+                
                         if($cartItem->exists()) {
-
+                
                             $cartItem = $cartItem->first();
                             $cartItem->quantity += $data['quantity'];
-
+                
                             $cartItem->save();
                         }
                         else {
                             $data['product_detail_id'] = $productDetail->id;
-                            $data['quantity'] = $data['quantity'];      //*
+                            $data['selected_size'] = $data['size'];
+                            $data['quantity'] = $data['quantity'];
                             $data['cart_id'] = $cart_id;
-
+                    
                             CartItem::create($data);
                         }   
                     }
@@ -69,6 +70,7 @@ class CartService
             return false;
         }
     }
+    
 
     public function removeCart($request) {
 

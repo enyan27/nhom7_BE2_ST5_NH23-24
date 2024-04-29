@@ -18,6 +18,10 @@ class ProductDetail extends Model
         'colorImg_2'
     ];
 
+    protected $casts = [
+        'size' => 'array',
+    ];
+
     public function product() {
         return $this->belongsTo(Product::class, 'product_id','id');
     }
@@ -25,9 +29,9 @@ class ProductDetail extends Model
     public function orderDetails() {
         return $this->hasMany(OrderDetail::class, 'product_detail_id','id');
     }
-    public function cartItems() {
-        return $this->belongsToMany(CartItem::class, 'product_detail_id','id');
-    }
 
-    protected $color; //*x
+    public function cartItems() {
+        return $this->belongsToMany(CartItem::class);
+    }
 }
+

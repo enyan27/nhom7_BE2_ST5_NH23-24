@@ -57,6 +57,10 @@ class CheckoutService
             $data = [
                 'order_id' => $order_id,
                 'product_detail_id' => $cartItem->product_detail_id,
+
+                // get 'size' from 'cartItem->selected_size'
+                'ordered_size' => $cartItem->selected_size,
+
                 'quantity' => $cartItem->quantity,
                 'unit_price' => $cartItem->productDetail->product->price_sale,
                 'amount' => $cartItem->quantity * $cartItem->productDetail->product->price_sale
