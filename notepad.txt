@@ -1,0 +1,28 @@
+	/app/Providers/AppServiceProvider.php -> register()
+		$this -> app -> bind('path.public', function()
+		{
+        		return base_path('public_html');
+		});
+
+	/config/app.php -> line 107: 'key' => env('APP_KEY')
+		base64_decode('PvJ0J1j8uJCRZ4RLT8hIxnpJCFyijmF7qeZpnf2MWGk=')
+
+
+        
+    <?php
+    $config['phpMailer'] = [
+        'smtpHost' => 'smtp.gmail.com',
+        'smtpUsername' => 'truongdat2325@gmail.com',
+        'smtpPassword' => 'houyhrzynyhjfjkz',
+        'smtpPort' => '587',
+    ];
+
+        admin@localhost.com
+        truongdat2325@gmail.com
+        ena@gmail.com
+
+
+        domain: https://furin.io.vn
+        XpQsdlLQp3uiPJvG/mXGxqKVnRC/ozP4ANOF5XC6aBs
+        AeoPg5lJGSEz_JB1F2-lL7mJKpOuTHyGm50qbNJIiVAt6D9Q4TjB6s91-oqa8QH_ibbChNC4d1P_XQN3
+        EApIN5wlWq7TD9qm04ca9EH_8EB79EMQWKn6L92FHX72M14ysybm5GSY0bBN8B7GlFIdumQGL6MU3GRz
