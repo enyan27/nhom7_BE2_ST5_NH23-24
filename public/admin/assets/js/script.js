@@ -238,4 +238,15 @@ function createNotify(status,title){
     })
   }
 
- // Create chart
+    // Color Picker
+    var colorPicker = document.getElementById('colorPicker');
+    var colorText = document.getElementById('color');
+
+    colorPicker.addEventListener('input', function () {
+        colorText.value = this.value;
+    });
+
+    colorText.addEventListener('input', function () {
+        colorPicker.value = this.value;
+    });
+

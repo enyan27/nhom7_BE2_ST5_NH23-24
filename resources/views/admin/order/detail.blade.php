@@ -71,7 +71,7 @@
                             <img class="imgProduct" src="{{$orderDetail->productDetail->colorImg_1}}">
                             <strong>{{$orderDetail->productDetail->product->productname}}</strong>
                         </td>
-                        <td>{{$orderDetail->productDetail->color}}</td>
+                        <td>{{$orderDetail->productDetail->name}}</td>
                         <td>{{$orderDetail->ordered_size}}</td>
                         <td>${{number_format($orderDetail->productDetail->product->price_sale, 2)}}</td>
                         <td>{{$orderDetail->quantity}}</td>

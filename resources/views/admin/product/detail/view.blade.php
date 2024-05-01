@@ -18,7 +18,8 @@
                     <tr>
                         <td>ID</td>
                         <td>Product Name</td>
-                        <td>Color</td>
+                        <td>Color Name</td>
+                        <td>Color Value</td>
                         <td>Size</td>
                         <td>Quantity</td>
                         <td>Images</td>
@@ -30,6 +31,7 @@
                     <tr>
                         <td>#{{$productDetail->id}}</td>
                         <td>{{$productDetail->product->productname}}</td>
+                        <td>{{$productDetail->name}}</td>
                         <td>{{$productDetail->color}}</td>
                         <td>
                             @php $sizeCount = count($productDetail->size); @endphp

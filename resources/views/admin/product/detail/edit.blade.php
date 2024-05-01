@@ -23,15 +23,31 @@
                                 <label for="productname">Product Name</label>
                                 <input disabled class="form-control"  name="productname" value="{{$productDetail->product->productname}}"  required>
                             </div>
+                            
+
                             <div class="form-group">
-                                <label for="color">Color
+                                <label for="quantity">Color Name
                                     <span class="text-danger">*</span>
                                 </label>
-                                <input value="{{$productDetail->color}}" class="form-control" type="text" name="color" id="color" placeholder="Color" required>
-                                @error('color')
-                                    <p class="text-danger">{{ $message }}</p>
+                                <input class="form-control" name="name" value="{{$productDetail->name}}" placeholder="Color Name" required>
+                                @error('quantity')
+                                <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label for="color">Color Value
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div style="display: flex; position: relative;">
+                                    <input value="{{$productDetail->color}}" style="height: 46px; width: 56px; position: absolute; z-index: 1;" class="form-control" type="color" name="colorPicker" id="colorPicker" placeholder="Color Value" required>
+                                    <input value="{{$productDetail->color}}" style="height: 46px; flex-grow: 1; padding-left: 68px;" class="form-control" type="text" name="color" id="color" placeholder="Color Value" required>
+                                </div>
+                                @error('color')
+                                <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            
                             <div class="form-group">
                                 <label for="size">Size
                                     <span class="text-danger">*</span>
@@ -41,6 +57,7 @@
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <label for="quantity">Quantity
                                     <span class="text-danger">*</span>

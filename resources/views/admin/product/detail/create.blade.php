@@ -23,16 +23,31 @@
                         <label for="productname">Product Name</label>
                         <input disabled class="form-control"  name="productname" value="{{$product->productname}}" required>
                     </div>
+
+
                     <div class="form-group">
-                        <label for="color">Color
+                        <label for="quantity">Color Name
                             <span class="text-danger">*</span>
                         </label>
-                        <input class="form-control" type="text" name="color" id="color" placeholder="Color" required>
-                        @error('color')
-                            <p class="text-danger">{{ $message }}</p>
+                        <input class="form-control" name="name" placeholder="Color Name" required>
+                        @error('quantity')
+                        <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
-                        <div class="form-group">
+                    <div class="form-group">
+                        <label for="color">Color Value
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div style="display: flex; position: relative;">
+                            <input value="#e8e8e8" style="height: 46px; width: 56px; position: absolute; z-index: 1;" class="form-control" type="color" name="colorPicker" id="colorPicker" placeholder="Color" required>
+                            <input style="height: 46px; flex-grow: 1; padding-left: 68px;" class="form-control" type="text" name="color" id="color" placeholder="Color Value" required>
+                        </div>
+                        @error('color')
+                        <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
                         <label for="size">Size
                             <span class="text-danger">*</span>
                         </label>

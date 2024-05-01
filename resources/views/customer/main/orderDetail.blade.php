@@ -62,7 +62,7 @@
                                     <div class="product-detail_checkout">
                                         <a href="/{{$orderDetail->productDetail->product->slug }}.html">{{ $orderDetail->productDetail->product->productname }}</a>
                                         <div class="d-flex">
-                                            <p>Color: {{$orderDetail->productDetail->color}} </p>
+                                            <p>Color: {{$orderDetail->productDetail->name}} </p>
                                             <p style="margin-left: 10px">Size: {{$orderDetail->ordered_size}} </p>
                                         </div>
                                     </div>
