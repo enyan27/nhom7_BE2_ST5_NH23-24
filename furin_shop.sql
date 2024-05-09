@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2024 at 05:04 PM
+-- Generation Time: May 08, 2024 at 05:02 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -129,7 +129,11 @@ INSERT INTO `carts` (`id`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 1, '2024-04-24 23:54:24', '2024-04-24 23:54:24'),
 (2, 2, '2024-04-25 00:16:28', '2024-04-25 00:16:28'),
 (3, 3, '2024-04-24 23:54:24', '2024-04-24 23:54:24'),
-(4, 4, '2024-04-25 00:16:28', '2024-04-25 00:16:30');
+(4, 4, '2024-04-25 00:16:28', '2024-04-25 00:16:30'),
+(5, 5, '2024-05-05 15:05:26', '2024-05-05 15:05:26'),
+(6, 6, '2024-05-05 15:37:25', '2024-05-05 15:37:25'),
+(7, 7, '2024-05-05 15:43:05', '2024-05-05 15:43:05'),
+(8, 8, '2024-05-05 15:46:39', '2024-05-05 15:46:39');
 
 -- --------------------------------------------------------
 
@@ -152,7 +156,10 @@ CREATE TABLE `cart_items` (
 --
 
 INSERT INTO `cart_items` (`id`, `cart_id`, `product_detail_id`, `selected_size`, `quantity`, `created_at`, `updated_at`) VALUES
-(2, 1, 1, 'XXL', 1, '2024-05-01 19:43:49', '2024-05-01 19:43:49');
+(2, 1, 1, 'XXL', 1, '2024-05-01 19:43:49', '2024-05-01 19:43:49'),
+(44, 2, 3, 'M', 2, '2024-05-05 16:38:25', '2024-05-05 16:39:05'),
+(45, 2, 2, 'XL', 1, '2024-05-05 16:38:38', '2024-05-05 16:39:04'),
+(46, 2, 14, 'L', 4, '2024-05-05 16:38:44', '2024-05-05 16:39:00');
 
 -- --------------------------------------------------------
 
@@ -260,14 +267,35 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `user_fullname`, `user_email`, `user_phonenumber`, `user_country`, `user_address`, `user_postcode`, `status`, `discount`, `message`, `payment`, `total_price`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 4, 0, NULL, 'cod', 228, '2024-05-01 21:46:34', '2024-05-01 21:46:53'),
-(2, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 3, 0, NULL, 'cod', 235, '2024-05-01 21:47:37', '2024-05-01 21:53:16'),
-(3, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 3, 0, NULL, 'vnpay', 292, '2024-05-01 21:48:23', '2024-05-01 21:53:28'),
-(4, 3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'cod', 325, '2024-05-01 21:50:43', '2024-05-01 21:55:05'),
-(5, 3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'vnpay', 130, '2024-05-01 21:51:06', '2024-05-01 21:55:06'),
-(6, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 1, 0, NULL, 'vnpay', 165, '2024-05-01 21:54:09', '2024-05-01 21:55:34'),
-(7, 3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 0, 0, NULL, 'cod', 236, '2024-05-01 21:56:59', '2024-05-01 21:56:59'),
-(8, 3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 0, 0, NULL, 'vnpay', 203, '2024-05-01 21:58:02', '2024-05-01 21:58:02');
+(1, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 4, 0, NULL, 'cod', 228, '2024-04-30 21:46:34', '2024-04-30 21:46:34'),
+(2, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 3, 0, NULL, 'cod', 235, '2024-04-30 21:46:34', '2024-04-30 21:46:34'),
+(3, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 3, 0, NULL, 'vnpay', 292, '2024-04-30 21:46:34', '2024-04-30 21:46:34'),
+(4, 3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'cod', 325, '2024-04-30 21:46:34', '2024-04-30 21:46:34'),
+(5, 3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'vnpay', 130, '2024-05-01 21:46:34', '2024-05-01 21:46:34'),
+(6, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'vnpay', 165, '2024-05-01 21:46:34', '2024-05-01 21:46:34'),
+(7, 3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 1, 0, NULL, 'cod', 236, '2024-05-01 21:46:34', '2024-05-01 21:46:34'),
+(8, 3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 1, 0, NULL, 'vnpay', 203, '2024-05-01 21:46:34', '2024-05-01 21:46:34'),
+(9, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'cod', 29, '2024-05-01 21:46:34', '2024-05-01 21:46:34'),
+(10, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'cod', 78, '2024-05-01 21:46:34', '2024-05-01 21:46:34'),
+(11, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'cod', 100, '2024-05-01 21:46:34', '2024-05-01 21:46:34'),
+(12, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 3, 0, NULL, 'cod', 89, '2024-05-02 15:01:42', '2024-05-02 15:01:42'),
+(13, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'cod', 70, '2024-05-02 15:01:42', '2024-05-02 15:01:42'),
+(14, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'cod', 29, '2024-05-02 15:01:42', '2024-05-02 15:01:42'),
+(15, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 3, 0, NULL, 'cod', 237, '2024-05-02 15:01:42', '2024-05-02 15:01:42'),
+(16, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'cod', 65, '2024-05-03 15:03:32', '2024-05-03 15:03:32'),
+(17, 5, 'Duy Khai', 'duykhai@gmail.com', '0397561257', 'Viet Nam', 'Linh Trung, Thu Duc', '7000001', 2, 0, NULL, 'cod', 78, '2024-05-03 15:03:32', '2024-05-03 15:03:32'),
+(18, 5, 'Duy Khai', 'duykhai@gmail.com', '0397561257', 'Viet Nam', 'Linh Trung, Thu Duc', '7000001', 3, 0, NULL, 'cod', 98, '2024-05-04 15:06:51', '2024-05-04 15:06:51'),
+(19, 5, 'Duy Khai', 'duykhai@gmail.com', '0397561257', 'Viet Nam', 'Linh Trung, Thu Duc', '7000001', 3, 0, NULL, 'cod', 58, '2024-05-05 15:07:25', '2024-05-05 15:11:51'),
+(20, 5, 'Duy Khai', 'duykhai@gmail.com', '0397561257', 'Viet Nam', 'Linh Trung, Thu Duc', '7000001', 2, 0, NULL, 'cod', 118, '2024-05-06 15:07:40', '2024-05-06 15:07:40'),
+(21, 5, 'Duy Khai', 'duykhai@gmail.com', '0397561257', 'Viet Nam', 'Linh Trung, Thu Duc', '7000001', 2, 0, NULL, 'cod', 89, '2024-05-07 15:07:56', '2024-05-07 15:07:56'),
+(22, 5, 'Duy Khai', 'duykhai@gmail.com', '0397561257', 'Viet Nam', 'Linh Trung, Thu Duc', '7000001', 2, 0, NULL, 'cod', 70, '2024-05-08 15:07:56', '2024-05-08 15:07:56'),
+(23, 5, 'Duy Khai', 'duykhai@gmail.com', '0397561257', 'Viet Nam', 'Linh Trung, Thu Duc', '7000001', 1, 0, NULL, 'cod', 29, '2024-05-09 15:21:46', '2024-05-09 15:21:46'),
+(24, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 1, 0, NULL, 'vnpay', 140, '2024-05-10 15:22:28', '2024-05-10 15:22:28'),
+(25, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 4, 0, NULL, 'cod', 29, '2024-05-11 15:57:01', '2024-05-11 15:57:01'),
+(26, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 0, 0, NULL, 'cod', 59, '2024-05-05 15:57:17', '2024-05-05 15:57:17'),
+(27, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 3, 0, NULL, 'cod', 58, '2024-05-05 15:57:33', '2024-05-05 16:00:54'),
+(28, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 1, 0, NULL, 'cod', 118, '2024-05-05 15:57:54', '2024-05-05 16:00:15'),
+(29, 2, 'Dat', 'truongdat2325@gmail.com', '0799709006', 'Viet Nam', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', '700001', 2, 0, NULL, 'cod', 78, '2024-05-05 15:58:43', '2024-05-05 16:00:56');
 
 -- --------------------------------------------------------
 
@@ -306,7 +334,30 @@ INSERT INTO `order_details` (`id`, `order_id`, `product_detail_id`, `ordered_siz
 (12, 6, 13, 'XL', 3, 29, 87, '2024-05-01 21:54:39', '2024-05-01 21:54:39'),
 (13, 7, 17, 'M', 4, 59, 236, '2024-05-01 21:56:59', '2024-05-01 21:56:59'),
 (14, 8, 5, 'S', 4, 29, 116, '2024-05-01 21:58:23', '2024-05-01 21:58:23'),
-(15, 8, 12, 'L', 3, 29, 87, '2024-05-01 21:58:23', '2024-05-01 21:58:23');
+(15, 8, 12, 'L', 3, 29, 87, '2024-05-01 21:58:23', '2024-05-01 21:58:23'),
+(16, 9, 13, 'XL', 1, 29, 29, '2024-05-05 14:53:40', '2024-05-05 14:53:40'),
+(17, 10, 10, 'L', 2, 39, 78, '2024-05-05 14:53:59', '2024-05-05 14:53:59'),
+(18, 11, 6, 'XL', 1, 65, 65, '2024-05-05 14:54:29', '2024-05-05 14:54:29'),
+(19, 11, 16, 'L', 1, 35, 35, '2024-05-05 14:54:29', '2024-05-05 14:54:29'),
+(20, 12, 8, 'M', 1, 89, 89, '2024-05-05 15:01:42', '2024-05-05 15:01:42'),
+(21, 13, 15, 'L', 2, 35, 70, '2024-05-05 15:02:19', '2024-05-05 15:02:19'),
+(22, 14, 5, 'XL', 1, 29, 29, '2024-05-05 15:02:35', '2024-05-05 15:02:35'),
+(23, 15, 1, 'M', 3, 79, 237, '2024-05-05 15:02:58', '2024-05-05 15:02:58'),
+(24, 16, 6, 'XXL', 1, 65, 65, '2024-05-05 15:03:32', '2024-05-05 15:03:32'),
+(25, 17, 11, 'L', 2, 39, 78, '2024-05-05 15:06:25', '2024-05-05 15:06:25'),
+(26, 18, 17, 'XS', 1, 59, 59, '2024-05-05 15:06:51', '2024-05-05 15:06:51'),
+(27, 18, 11, 'M', 1, 39, 39, '2024-05-05 15:06:51', '2024-05-05 15:06:51'),
+(28, 19, 12, 'XL', 2, 29, 58, '2024-05-05 15:07:25', '2024-05-05 15:07:25'),
+(29, 20, 3, 'M', 2, 59, 118, '2024-05-05 15:07:40', '2024-05-05 15:07:40'),
+(30, 21, 8, 'XL', 1, 89, 89, '2024-05-05 15:07:56', '2024-05-05 15:07:56'),
+(31, 22, 2, 'XXL', 1, 70, 70, '2024-05-05 15:08:10', '2024-05-05 15:08:10'),
+(32, 23, 13, 'XL', 1, 29, 29, '2024-05-05 15:21:46', '2024-05-05 15:21:46'),
+(33, 24, 14, 'L', 4, 35, 140, '2024-05-05 15:22:49', '2024-05-05 15:22:49'),
+(34, 25, 12, 'XL', 1, 29, 29, '2024-05-05 15:57:01', '2024-05-05 15:57:01'),
+(35, 26, 17, 'L', 1, 59, 59, '2024-05-05 15:57:17', '2024-05-05 15:57:17'),
+(36, 27, 5, 'M', 2, 29, 58, '2024-05-05 15:57:33', '2024-05-05 15:57:33'),
+(37, 28, 4, 'L', 2, 59, 118, '2024-05-05 15:57:54', '2024-05-05 15:57:54'),
+(38, 29, 9, 'M', 2, 39, 78, '2024-05-05 15:58:43', '2024-05-05 15:58:43');
 
 -- --------------------------------------------------------
 
@@ -354,16 +405,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `brand_id`, `productname`, `price`, `price_sale`, `sku`, `featured`, `slug`, `quantity`, `description`, `created_by`, `view_count`, `trending`, `newarrival`, `image_1`, `image_2`, `sold`, `created_at`, `updated_at`) VALUES
-(1, 8, 1, 'Comfort Jacket (Wool Like)', 120, 79, 'JKL890', 1, 'comfort-jacket-wool-like', 50, '<p>Comfort Jacket (Wool Like)</p>', 1, 13, 1, 0, 'storage/uploads/product/comfort-jacket-wool-like-3610a597ecf2d51ed7115fe07ef4571a.jpg', 'storage/uploads/product/comfort-jacket-wool-like-00d84d3da2ca2621854be4697e21e9c6.jpg', 0, '2024-04-24 21:45:47', '2024-05-01 21:46:53'),
-(2, 8, 1, 'AirSense JACKET (ULTRA LIGHT)', 100, 70, 'HIG567', 1, 'airsense-jacket-ultra-light', 40, '<p>AirSense JACKET (ULTRA LIGHT)</p>', 1, 22, 1, 0, 'storage/uploads/product/airsense-jacket-ultra-light-2964436f6551e445cd3efff2b3cbb464.webp', 'storage/uploads/product/airsense-jacket-ultra-light-08b1fefce405ae1e4d9a64fd4a780db4.webp', 0, '2024-04-24 21:49:04', '2024-05-01 21:46:53'),
-(3, 13, 1, 'Linen Blend Sleeveless Blouse', 70, 59, 'EFC234', 1, 'linen-blend-sleeveless-blouse', 90, '<p>Linen Blend Sleeveless Blouse</p>', 1, 25, 1, 0, 'storage/uploads/product/linen-blend-sleeveless-blouse-5f0c967c4477f0554d43dcd9f0257528.avif', 'storage/uploads/product/linen-blend-sleeveless-blouse-3b32025e41226f569134c36131103dcb.avif', 2, '2024-04-24 21:51:31', '2024-05-01 21:53:16'),
-(4, 22, 3, 'Warm Padded Washable Quilted', 40, 29, 'ABD901', 1, 'warm-padded-washable-quilted', 41, '<p>Warm Padded Washable Quilted</p>', 1, 3, 1, 0, 'storage/uploads/product/warm-padded-washable-quilted-2da35157a0883bb16cf47624e86f5129.jpg', 'storage/uploads/product/warm-padded-washable-quilted-c2872e334948945d53d9f6962aeb14e3.jpg', 0, '2024-04-24 21:54:44', '2024-05-01 21:58:23'),
-(5, 4, 4, 'Miracle Air Blazer (AirSense Blazer)', 70, 65, 'XWZ648', 1, 'miracle-air-blazer-airsense-blazer', 33, '<p>Miracle Air Blazer (AirSense Blazer)</p>', 1, 7, 1, 0, 'storage/uploads/product/miracle-air-blazer-airsense-blazer-a061a0c12fbfd154761944e68b8e6f80.avif', 'storage/uploads/product/miracle-air-blazer-airsense-blazer-2e99f8748c3bb8ea2ccdb7873aac413b.avif', 2, '2024-04-24 21:56:42', '2024-05-01 21:55:06'),
-(6, 7, 5, 'Sweat Long Sleeve Cardigan', 110, 89, 'UVW345', 1, 'sweat-long-sleeve-cardigan', 63, '<p>Sweat Long Sleeve Cardigan</p>', 1, 7, 0, 1, 'storage/uploads/product/sweat-long-sleeve-cardigan-78354b3426c1815627f735a75d7b4978.avif', 'storage/uploads/product/sweat-long-sleeve-cardigan-d43fcf728620f3118dcc7ff764ea666d.avif', 2, '2024-04-24 22:00:24', '2024-05-01 21:55:05'),
-(7, 5, 2, 'Sweat Long Sleeve Full-Zip Hoodie', 50, 39, 'RST012', 1, 'sweat-long-sleeve-full-zip-hoodie', 113, '<p>Sweat Long Sleeve Full-Zip Hoodie</p>', 1, 12, 0, 1, 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-89de9696eea878bb54737406d04208ea.avif', 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-20c3211db8710cebf13fef8c754563e5.avif', 0, '2024-04-24 22:03:05', '2024-05-01 21:54:38'),
-(8, 4, 1, 'AIRism Cotton Half Sleeve Relaxed T-Shirt', 40, 29, 'OPQ789', 1, 'airism-cotton-half-sleeve-relaxed-t-shirt', 62, '<p>AIRism Cotton Half Sleeve Relaxed T-Shirt</p>', 1, 12, 0, 1, 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-31536ee0120e6af40503a25665d76395.avif', 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-cdff7be61fd167c8f63a0a7bf86f2ccf.avif', 1, '2024-04-24 22:07:04', '2024-05-01 21:58:23'),
-(9, 4, 3, 'Cool Touch Woven Polo Shirt', 60, 35, 'LMN456', 1, 'cool-touch-woven-polo-shirt', 75, '<p>Cool Touch Woven Polo Shirt</p>', 1, 61, 0, 1, 'storage/uploads/product/cool-touch-woven-polo-shirt-8dd9aca3c30fde017b92417d93a61daf.jpg', 'storage/uploads/product/cool-touch-woven-polo-shirt-ec4a1448ee24ab4b621906e185042779.jpg', 0, '2024-04-24 22:14:53', '2024-05-01 21:57:29'),
-(10, 12, 3, 'Women\'s Soy fiber ribbed Polo Cardigan', 85, 59, 'TUV678', 1, 'womens-soy-fiber-ribbed-polo-cardigan', 29, '<p>Women\'s Soy fiber ribbed Polo Cardigan</p>', 1, 5, 0, 1, 'storage/uploads/product/womens-soy-fiber-ribbed-polo-cardigan-971b9d7ed3faead1c1d83446bf4f2ed5.jpg', 'storage/uploads/product/womens-soy-fiber-ribbed-polo-cardigan-765e3db507eeb4c47e93d471e4d85f6b.jpg', 2, '2024-04-24 23:30:26', '2024-05-01 21:56:59');
+(1, 8, 1, 'Comfort Jacket (Wool Like)', 120, 79, 'JKL890', 1, 'comfort-jacket-wool-like', 50, '<p>Comfort Jacket (Wool Like)</p>', 1, 14, 1, 0, 'storage/uploads/product/comfort-jacket-wool-like-3610a597ecf2d51ed7115fe07ef4571a.jpg', 'storage/uploads/product/comfort-jacket-wool-like-00d84d3da2ca2621854be4697e21e9c6.jpg', 0, '2024-04-24 21:45:47', '2024-05-05 15:11:22'),
+(2, 8, 1, 'AirSense JACKET (ULTRA LIGHT)', 100, 70, 'HIG567', 1, 'airsense-jacket-ultra-light', 39, '<p>AirSense JACKET (ULTRA LIGHT)</p>', 1, 26, 1, 0, 'storage/uploads/product/airsense-jacket-ultra-light-2964436f6551e445cd3efff2b3cbb464.webp', 'storage/uploads/product/airsense-jacket-ultra-light-08b1fefce405ae1e4d9a64fd4a780db4.webp', 1, '2024-04-24 21:49:04', '2024-05-05 16:38:28'),
+(3, 13, 1, 'Linen Blend Sleeveless Blouse', 70, 59, 'EFC234', 1, 'linen-blend-sleeveless-blouse', 86, '<p>Linen Blend Sleeveless Blouse</p>', 1, 30, 1, 0, 'storage/uploads/product/linen-blend-sleeveless-blouse-5f0c967c4477f0554d43dcd9f0257528.avif', 'storage/uploads/product/linen-blend-sleeveless-blouse-3b32025e41226f569134c36131103dcb.avif', 4, '2024-04-24 21:51:31', '2024-05-05 16:38:21'),
+(4, 22, 3, 'Warm Padded Washable Quilted', 40, 29, 'ABD901', 1, 'warm-padded-washable-quilted', 40, '<p>Warm Padded Washable Quilted</p>', 1, 5, 1, 0, 'storage/uploads/product/warm-padded-washable-quilted-2da35157a0883bb16cf47624e86f5129.jpg', 'storage/uploads/product/warm-padded-washable-quilted-c2872e334948945d53d9f6962aeb14e3.jpg', 1, '2024-04-24 21:54:44', '2024-05-05 16:00:54'),
+(5, 4, 4, 'Miracle Air Blazer (AirSense Blazer)', 70, 65, 'XWZ648', 1, 'miracle-air-blazer-airsense-blazer', 31, '<p>Miracle Air Blazer (AirSense Blazer)</p>', 1, 9, 1, 0, 'storage/uploads/product/miracle-air-blazer-airsense-blazer-a061a0c12fbfd154761944e68b8e6f80.avif', 'storage/uploads/product/miracle-air-blazer-airsense-blazer-2e99f8748c3bb8ea2ccdb7873aac413b.avif', 4, '2024-04-24 21:56:42', '2024-05-05 15:11:23'),
+(6, 7, 5, 'Sweat Long Sleeve Cardigan', 110, 89, 'UVW345', 1, 'sweat-long-sleeve-cardigan', 62, '<p>Sweat Long Sleeve Cardigan</p>', 1, 10, 0, 1, 'storage/uploads/product/sweat-long-sleeve-cardigan-78354b3426c1815627f735a75d7b4978.avif', 'storage/uploads/product/sweat-long-sleeve-cardigan-d43fcf728620f3118dcc7ff764ea666d.avif', 3, '2024-04-24 22:00:24', '2024-05-05 15:11:52'),
+(7, 5, 2, 'Sweat Long Sleeve Full-Zip Hoodie', 50, 39, 'RST012', 1, 'sweat-long-sleeve-full-zip-hoodie', 107, '<p>Sweat Long Sleeve Full-Zip Hoodie</p>', 1, 16, 0, 1, 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-89de9696eea878bb54737406d04208ea.avif', 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-20c3211db8710cebf13fef8c754563e5.avif', 8, '2024-04-24 22:03:05', '2024-05-05 16:00:56'),
+(8, 4, 1, 'AIRism Cotton Half Sleeve Relaxed T-Shirt', 40, 29, 'OPQ789', 1, 'airism-cotton-half-sleeve-relaxed-t-shirt', 60, '<p>AIRism Cotton Half Sleeve Relaxed T-Shirt</p>', 1, 17, 0, 1, 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-31536ee0120e6af40503a25665d76395.avif', 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-cdff7be61fd167c8f63a0a7bf86f2ccf.avif', 5, '2024-04-24 22:07:04', '2024-05-05 15:58:13'),
+(9, 4, 3, 'Cool Touch Woven Polo Shirt', 60, 35, 'LMN456', 1, 'cool-touch-woven-polo-shirt', 68, '<p>Cool Touch Woven Polo Shirt</p>', 1, 71, 0, 1, 'storage/uploads/product/cool-touch-woven-polo-shirt-8dd9aca3c30fde017b92417d93a61daf.jpg', 'storage/uploads/product/cool-touch-woven-polo-shirt-ec4a1448ee24ab4b621906e185042779.jpg', 3, '2024-04-24 22:14:53', '2024-05-05 16:38:40'),
+(10, 12, 3, 'Women\'s Soy fiber ribbed Polo Cardigan', 85, 59, 'TUV678', 1, 'womens-soy-fiber-ribbed-polo-cardigan', 28, '<p>Women\'s Soy fiber ribbed Polo Cardigan</p>', 1, 10, 0, 1, 'storage/uploads/product/womens-soy-fiber-ribbed-polo-cardigan-971b9d7ed3faead1c1d83446bf4f2ed5.jpg', 'storage/uploads/product/womens-soy-fiber-ribbed-polo-cardigan-765e3db507eeb4c47e93d471e4d85f6b.jpg', 2, '2024-04-24 23:30:26', '2024-05-05 16:37:25');
 
 -- --------------------------------------------------------
 
@@ -389,23 +440,23 @@ CREATE TABLE `product_details` (
 --
 
 INSERT INTO `product_details` (`id`, `product_id`, `name`, `color`, `size`, `quantity`, `colorImg_1`, `colorImg_2`, `created_at`, `updated_at`) VALUES
-(1, 1, '08 BLACK GRAY', '#37312f', '[\"XS\",\"M\",\"L\",\"XL\"]', 50, 'storage/uploads/product/comfort-jacket-wool-like-3610a597ecf2d51ed7115fe07ef4571a.jpg', 'storage/uploads/product/comfort-jacket-wool-like-00d84d3da2ca2621854be4697e21e9c6.jpg', '2024-05-01 20:16:40', '2024-05-01 21:46:53'),
-(2, 2, '07 LIGHT GRAY', '#959597', '[\"S\",\"M\",\"L\",\"XL\",\"XXL\"]', 40, 'storage/uploads/product/airsense-jacket-ultra-light-2964436f6551e445cd3efff2b3cbb464.webp', 'storage/uploads/product/airsense-jacket-ultra-light-08b1fefce405ae1e4d9a64fd4a780db4.webp', '2024-05-01 20:24:49', '2024-05-01 21:46:53'),
-(3, 3, '12 PINK', '#fda796', '[\"S\",\"M\",\"XL\",\"XXL\"]', 60, 'storage/uploads/product/linen-blend-sleeveless-blouse-5f0c967c4477f0554d43dcd9f0257528.avif', 'storage/uploads/product/linen-blend-sleeveless-blouse-3b32025e41226f569134c36131103dcb.avif', '2024-05-01 20:29:56', '2024-05-01 20:55:13'),
-(4, 3, '27 GREEN', '#88ac94', '[\"S\",\"M\",\"L\",\"XL\"]', 30, 'storage/uploads/product/linen-blend-sleeveless-blouse-554272a60d1f3332a58e6e6eb7e7256d.avif', 'storage/uploads/product/linen-blend-sleeveless-blouse-01b7c17bf04b52bccde40c7e54bef1b5.png', '2024-05-01 20:32:09', '2024-05-01 21:53:16'),
-(5, 4, '13 LIGHT PINK', '#e6d6ca', '[\"S\",\"M\",\"XL\"]', 41, 'storage/uploads/product/warm-padded-washable-quilted-b78555f7fda8950127e7529fb15f40cf.jpg', 'storage/uploads/product/warm-padded-washable-quilted-4098ea11dd87cf1b75de220becb7b44b.jpg', '2024-05-01 20:35:55', '2024-05-01 21:58:23'),
-(6, 5, '69 NAVY', '#23262f', '[\"S\",\"M\",\"XL\",\"XXL\"]', 33, 'storage/uploads/product/miracle-air-blazer-airsense-blazer-a061a0c12fbfd154761944e68b8e6f80.avif', 'storage/uploads/product/miracle-air-blazer-airsense-blazer-2e99f8748c3bb8ea2ccdb7873aac413b.avif', '2024-05-01 20:37:13', '2024-05-01 21:51:22'),
+(1, 1, '08 BLACK GRAY', '#37312f', '[\"XS\",\"M\",\"L\",\"XL\"]', 50, 'storage/uploads/product/comfort-jacket-wool-like-3610a597ecf2d51ed7115fe07ef4571a.jpg', 'storage/uploads/product/comfort-jacket-wool-like-00d84d3da2ca2621854be4697e21e9c6.jpg', '2024-05-01 20:16:40', '2024-05-05 15:11:22'),
+(2, 2, '07 LIGHT GRAY', '#959597', '[\"S\",\"M\",\"L\",\"XL\",\"XXL\"]', 39, 'storage/uploads/product/airsense-jacket-ultra-light-2964436f6551e445cd3efff2b3cbb464.webp', 'storage/uploads/product/airsense-jacket-ultra-light-08b1fefce405ae1e4d9a64fd4a780db4.webp', '2024-05-01 20:24:49', '2024-05-05 15:08:10'),
+(3, 3, '12 PINK', '#fda796', '[\"S\",\"M\",\"XL\",\"XXL\"]', 58, 'storage/uploads/product/linen-blend-sleeveless-blouse-5f0c967c4477f0554d43dcd9f0257528.avif', 'storage/uploads/product/linen-blend-sleeveless-blouse-3b32025e41226f569134c36131103dcb.avif', '2024-05-01 20:29:56', '2024-05-05 15:07:40'),
+(4, 3, '27 GREEN', '#88ac94', '[\"S\",\"M\",\"L\",\"XL\"]', 28, 'storage/uploads/product/linen-blend-sleeveless-blouse-554272a60d1f3332a58e6e6eb7e7256d.avif', 'storage/uploads/product/linen-blend-sleeveless-blouse-01b7c17bf04b52bccde40c7e54bef1b5.png', '2024-05-01 20:32:09', '2024-05-05 15:57:54'),
+(5, 4, '13 LIGHT PINK', '#e6d6ca', '[\"S\",\"M\",\"XL\"]', 40, 'storage/uploads/product/warm-padded-washable-quilted-b78555f7fda8950127e7529fb15f40cf.jpg', 'storage/uploads/product/warm-padded-washable-quilted-4098ea11dd87cf1b75de220becb7b44b.jpg', '2024-05-01 20:35:55', '2024-05-05 16:00:54'),
+(6, 5, '69 NAVY', '#23262f', '[\"S\",\"M\",\"XL\",\"XXL\"]', 31, 'storage/uploads/product/miracle-air-blazer-airsense-blazer-a061a0c12fbfd154761944e68b8e6f80.avif', 'storage/uploads/product/miracle-air-blazer-airsense-blazer-2e99f8748c3bb8ea2ccdb7873aac413b.avif', '2024-05-01 20:37:13', '2024-05-05 15:03:32'),
 (7, 6, '00 WHITE', '#f6f1ee', '[\"S\",\"M\",\"XL\",\"XXL\"]', 38, 'storage/uploads/product/sweat-long-sleeve-cardigan-78354b3426c1815627f735a75d7b4978.avif', 'storage/uploads/product/sweat-long-sleeve-cardigan-d43fcf728620f3118dcc7ff764ea666d.avif', '2024-05-01 20:39:08', '2024-05-01 21:50:43'),
-(8, 6, '09 BLACK', '#26272b', '[\"S\",\"M\",\"L\",\"XL\"]', 25, 'storage/uploads/product/sweat-long-sleeve-cardigan-bb98f6e5b569d63d123b63d23e3ac4b0.avif', 'storage/uploads/product/sweat-long-sleeve-cardigan-fb50d82a0ae94f9c50f0cf6dcb8edf98.png', '2024-05-01 20:42:38', '2024-05-01 21:16:09'),
-(9, 7, '05 GRAY', '#d7d7dd', '[\"S\",\"M\",\"XL\",\"XXL\"]', 37, 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-89de9696eea878bb54737406d04208ea.avif', 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-20c3211db8710cebf13fef8c754563e5.avif', '2024-05-01 20:44:10', '2024-05-01 20:48:37'),
-(10, 7, '09 BLACK', '#24282b', '[\"S\",\"M\",\"L\",\"XL\"]', 50, 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-eea60059b4d29e9780b628999a9183d3.avif', 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-fb50d82a0ae94f9c50f0cf6dcb8edf98.png', '2024-05-01 20:45:56', '2024-05-01 21:53:28'),
-(11, 7, '67 BLUE', '#273a59', '[\"S\",\"M\",\"L\"]', 26, 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-cb0850c4638cbd8416da88d0d19ef337.avif', 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-e5707cf8fe7c4294c1edca89d291bbb5.png', '2024-05-01 20:47:47', '2024-05-01 21:54:38'),
-(12, 8, '57 OLIVE', '#817f65', '[\"S\",\"M\",\"L\",\"XL\"]', 24, 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-31536ee0120e6af40503a25665d76395.avif', 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-cdff7be61fd167c8f63a0a7bf86f2ccf.avif', '2024-05-01 20:53:11', '2024-05-01 21:58:23'),
-(13, 8, '31 BEIGE', '#d6c9c0', '[\"M\",\"L\",\"XL\",\"XXL\"]', 38, 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-06762ab2ba4618c2e7a479bbda324db8.png', 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-19c01a799070b5cb06be46f66732226a.png', '2024-05-01 20:54:37', '2024-05-01 21:54:39'),
-(14, 9, '68 NAVY BLUE', '#212f3e', '[\"S\",\"M\",\"L\",\"XL\"]', 30, 'storage/uploads/product/cool-touch-woven-polo-shirt-8dd9aca3c30fde017b92417d93a61daf.jpg', 'storage/uploads/product/cool-touch-woven-polo-shirt-ec4a1448ee24ab4b621906e185042779.jpg', '2024-05-01 20:57:24', '2024-05-01 21:53:28'),
-(15, 9, '08 BLACK GRAY', '#24292c', '[\"XS\",\"M\",\"L\"]', 25, 'storage/uploads/product/cool-touch-woven-polo-shirt-4380ac7fa2559780b86093f5b374bb70.jpg', 'storage/uploads/product/cool-touch-woven-polo-shirt-c90e0bbec872b5da14f1791191575b90.jpg', '2024-05-01 20:58:46', '2024-05-01 21:06:00'),
-(16, 9, '03 LIGHT GRAY', '#d3d5d8', '[\"L\",\"XL\",\"XXL\"]', 20, 'storage/uploads/product/cool-touch-woven-polo-shirt-56288d3fae83c555d119bfb97f5891a8.jpg', 'storage/uploads/product/cool-touch-woven-polo-shirt-66ff39b2bf8e6522de868c64c5a2b83c.jpg', '2024-05-01 21:00:17', '2024-05-01 21:02:11'),
-(17, 10, '09 BLACK', '#181a1c', '[\"XS\",\"S\",\"M\",\"L\"]', 29, 'storage/uploads/product/womens-soy-fiber-ribbed-polo-cardigan-971b9d7ed3faead1c1d83446bf4f2ed5.jpg', 'storage/uploads/product/womens-soy-fiber-ribbed-polo-cardigan-765e3db507eeb4c47e93d471e4d85f6b.jpg', '2024-05-01 21:04:53', '2024-05-01 21:56:59');
+(8, 6, '09 BLACK', '#26272b', '[\"S\",\"M\",\"L\",\"XL\"]', 24, 'storage/uploads/product/sweat-long-sleeve-cardigan-bb98f6e5b569d63d123b63d23e3ac4b0.avif', 'storage/uploads/product/sweat-long-sleeve-cardigan-fb50d82a0ae94f9c50f0cf6dcb8edf98.png', '2024-05-01 20:42:38', '2024-05-05 15:11:18'),
+(9, 7, '05 GRAY', '#d7d7dd', '[\"S\",\"M\",\"XL\",\"XXL\"]', 35, 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-89de9696eea878bb54737406d04208ea.avif', 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-20c3211db8710cebf13fef8c754563e5.avif', '2024-05-01 20:44:10', '2024-05-05 15:58:43'),
+(10, 7, '09 BLACK', '#24282b', '[\"S\",\"M\",\"L\",\"XL\"]', 48, 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-eea60059b4d29e9780b628999a9183d3.avif', 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-fb50d82a0ae94f9c50f0cf6dcb8edf98.png', '2024-05-01 20:45:56', '2024-05-05 14:53:59'),
+(11, 7, '67 BLUE', '#273a59', '[\"S\",\"M\",\"L\"]', 24, 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-cb0850c4638cbd8416da88d0d19ef337.avif', 'storage/uploads/product/sweat-long-sleeve-full-zip-hoodie-e5707cf8fe7c4294c1edca89d291bbb5.png', '2024-05-01 20:47:47', '2024-05-05 15:11:49'),
+(12, 8, '57 OLIVE', '#817f65', '[\"S\",\"M\",\"L\",\"XL\"]', 24, 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-31536ee0120e6af40503a25665d76395.avif', 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-cdff7be61fd167c8f63a0a7bf86f2ccf.avif', '2024-05-01 20:53:11', '2024-05-05 15:58:13'),
+(13, 8, '31 BEIGE', '#d6c9c0', '[\"M\",\"L\",\"XL\",\"XXL\"]', 36, 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-06762ab2ba4618c2e7a479bbda324db8.png', 'storage/uploads/product/airism-cotton-half-sleeve-relaxed-t-shirt-19c01a799070b5cb06be46f66732226a.png', '2024-05-01 20:54:37', '2024-05-05 15:21:46'),
+(14, 9, '68 NAVY BLUE', '#212f3e', '[\"S\",\"M\",\"L\",\"XL\"]', 26, 'storage/uploads/product/cool-touch-woven-polo-shirt-8dd9aca3c30fde017b92417d93a61daf.jpg', 'storage/uploads/product/cool-touch-woven-polo-shirt-ec4a1448ee24ab4b621906e185042779.jpg', '2024-05-01 20:57:24', '2024-05-05 15:22:49'),
+(15, 9, '08 BLACK GRAY', '#24292c', '[\"XS\",\"M\",\"L\"]', 23, 'storage/uploads/product/cool-touch-woven-polo-shirt-4380ac7fa2559780b86093f5b374bb70.jpg', 'storage/uploads/product/cool-touch-woven-polo-shirt-c90e0bbec872b5da14f1791191575b90.jpg', '2024-05-01 20:58:46', '2024-05-05 15:02:19'),
+(16, 9, '03 LIGHT GRAY', '#d3d5d8', '[\"L\",\"XL\",\"XXL\"]', 19, 'storage/uploads/product/cool-touch-woven-polo-shirt-56288d3fae83c555d119bfb97f5891a8.jpg', 'storage/uploads/product/cool-touch-woven-polo-shirt-66ff39b2bf8e6522de868c64c5a2b83c.jpg', '2024-05-01 21:00:17', '2024-05-05 14:54:29'),
+(17, 10, '09 BLACK', '#181a1c', '[\"XS\",\"S\",\"M\",\"L\"]', 28, 'storage/uploads/product/womens-soy-fiber-ribbed-polo-cardigan-971b9d7ed3faead1c1d83446bf4f2ed5.jpg', 'storage/uploads/product/womens-soy-fiber-ribbed-polo-cardigan-765e3db507eeb4c47e93d471e4d85f6b.jpg', '2024-05-01 21:04:53', '2024-05-05 15:57:17');
 
 -- --------------------------------------------------------
 
@@ -461,8 +512,12 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `fullname`, `email`, `password`, `gender`, `phonenumber`, `address`, `avatar`, `level`, `remember_token`, `active`, `country`, `postcode`, `created_at`, `updated_at`) VALUES
 (1, 'えにゃん', 'enyan27@gmail.com', '$2y$10$VnWYBmgAozXAP5kFrkFt1ehrc8NcoGro7Z8lMRvwcsOiIhxF80qAu', 0, '0799709025', '53 Vo Van Ngan, Linh Chieu, Thu Duc City, Ho Chi Minh City', 'storage/uploads/user/2024/03/14/avatar-enananuser-Fb30iZYaIAItbBf.jpg', 0, NULL, 0, NULL, NULL, '2024-02-14 18:25:00', '2024-04-25 01:03:25'),
 (2, 'Dat', 'truongdat2325@gmail.com', '$2y$10$C9QvN6si8sLiZBmdUQOk8emMoqJ83r7llZ0mibL.kCnszCKC.9QBO', 0, '0799709006', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', 'storage/uploads/user/2024/04/25/avatar-dat-luca-florio-Sts4Q22v8ts-unsplash.jpg', 2, NULL, 0, 'Viet Nam', '700001', '2024-04-24 23:54:24', '2024-05-01 18:37:17'),
-(3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '$2y$10$uqW505PtsKRzZrPZ7MHc/.XZ8WbF3.izib.YPtONF7c0ec.NRchzS', 0, '0799709006', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', NULL, 2, NULL, 0, 'Viet Nam', '700001', '2024-04-25 00:16:28', '2024-05-01 18:36:50'),
-(4, 'Do Duy Khai', 'khai@gmail.com', '$2y$10$Dh4R8/Vt9LJhFXjkCY8EKuHr/zxvgHnBjumXUo53jSOPDEOTnqAja', 0, '096322446', 'None', 'storage/uploads/user/2024/04/25/avatar-do-duy-khai-F1OhzhtacAAtc46.jpg', 0, NULL, 0, NULL, NULL, '2024-04-25 00:23:53', '2024-04-25 00:23:53');
+(3, 'Ena', '22211tt0373@mail.tdc.edu.vn', '$2y$10$uqW505PtsKRzZrPZ7MHc/.XZ8WbF3.izib.YPtONF7c0ec.NRchzS', 0, '0799709006', '2-9 Street 18B, Phuoc Binh, District 9, Ho Chi Minh City', 'storage/uploads/user/2024/05/05/avatar-ena-GLcvJBWW0AE3D0k.ico', 2, NULL, 0, 'Viet Nam', '700001', '2024-04-25 00:16:28', '2024-05-05 15:52:20'),
+(4, 'Do Duy Khai', 'khai@gmail.com', '$2y$10$Dh4R8/Vt9LJhFXjkCY8EKuHr/zxvgHnBjumXUo53jSOPDEOTnqAja', 0, '096322446', 'None', 'storage/uploads/user/2024/04/25/avatar-do-duy-khai-F1OhzhtacAAtc46.jpg', 0, NULL, 0, NULL, NULL, '2024-04-25 00:23:53', '2024-04-25 00:23:53'),
+(5, 'Duy Khai', 'duykhai@gmail.com', '$2y$10$UdPNq6RAOWKm4gOBI9lmDurmPeVkzEIaGQsPYvCdelTNuHJf4QmXW', 0, '0397561257', 'Linh Trung, Thu Duc', 'storage/uploads/user/2024/05/05/avatar-duy-khai-435145346_2076753722699585_5406273002653430506_n.jpg', 2, NULL, 0, 'Viet Nam', '7000001', '2024-05-05 15:05:26', '2024-05-05 15:44:39'),
+(6, 'Trinh Phuong', 'trinhphuong@gmail.com', '$2y$10$jHUktfL4yRib3sq7e5aefuT9Vnfvl9.MLr0RguvlrAvSP6fNur8sS', 1, '0763354246', NULL, 'storage/uploads/user/2024/05/05/avatar-trinh-phuong-436118909_1041487684076111_95982683633854898_n.jpg', 2, NULL, 0, NULL, NULL, '2024-05-05 15:37:25', '2024-05-05 15:40:33'),
+(7, 'Fukuoka', 'fukuoka@gmail.com', '$2y$10$ugkd5D7HivowGfja7IwsT.R9UqazqBUYRuKPFHGx3qdTITjoOlmda', 0, '0924467845', NULL, 'storage/uploads/user/2024/05/05/avatar-fukuoka-FyFrx1nakAE8b3H.jpg', 2, NULL, 0, NULL, NULL, '2024-05-05 15:43:05', '2024-05-05 15:43:53'),
+(8, 'Hoang Duy', 'hoangduy@gmail.com', '$2y$10$9XsI8.f1Jttqoz0gHp7zQOIyXU3U5jZelZ0b5E/hA1ZdXWRZQKCRq', 0, '0794553476', NULL, 'storage/uploads/user/2024/05/05/avatar-hoang-duy-337862530_131155063251859_7920693076826601630_n.jpg', 2, NULL, 0, NULL, NULL, '2024-05-05 15:46:39', '2024-05-05 15:50:35');
 
 -- --------------------------------------------------------
 
@@ -485,7 +540,10 @@ CREATE TABLE `wish_lists` (
 INSERT INTO `wish_lists` (`id`, `product_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (3, 3, 2, '2024-04-25 00:01:55', '2024-04-25 00:01:55'),
 (4, 6, 2, '2024-04-25 00:01:57', '2024-04-25 00:01:57'),
-(6, 9, 3, '2024-04-25 00:34:53', '2024-04-25 00:34:53');
+(6, 9, 3, '2024-04-25 00:34:53', '2024-04-25 00:34:53'),
+(9, 10, 1, '2024-05-05 16:20:37', '2024-05-05 16:20:37'),
+(11, 2, 1, '2024-05-05 16:35:15', '2024-05-05 16:35:15'),
+(12, 9, 1, '2024-05-05 16:35:20', '2024-05-05 16:35:20');
 
 --
 -- Indexes for dumped tables
@@ -601,13 +659,13 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `cart_items`
 --
 ALTER TABLE `cart_items`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -625,13 +683,13 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -655,13 +713,13 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `wish_lists`
 --
 ALTER TABLE `wish_lists`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
