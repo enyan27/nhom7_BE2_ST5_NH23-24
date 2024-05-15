@@ -1,9 +1,8 @@
 @extends('admin.layout.master')
 
-@section('title','Create New Product')
+@section('title', 'Create New Product')
 
 @section('body')
-
     <div class="details details2">
         <div class="recentOrders">
             <div class="cardHeader">
@@ -13,7 +12,6 @@
                 @csrf
                 <div class="row justify-content-center">
                     <div class="col-9">
-                        
                         <div class="form-group">
                             <label for="productName">Product Name
                                 <span class="text-danger">*</span>
@@ -50,6 +48,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
@@ -57,7 +56,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <input class="form-control" name="price" type="number" placeholder="0" min="0" id="price" required>
-                                <div class="invalid-feedback">Please type price</div>
+                                    <div class="invalid-feedback">Please type price</div>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -67,6 +66,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
@@ -74,7 +74,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <input class="form-control" name="sku" type="text" placeholder="SKU" required>
-                                <div class="invalid-feedback">Please type price</div>
+                                    <div class="invalid-feedback">Please type price</div>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -87,6 +87,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
@@ -95,7 +96,7 @@
                                         <option value="0">No</option>
                                         <option value="1">Yes</option>
                                     </select>
-                                <div class="invalid-feedback">Please type price</div>
+                                    <div class="invalid-feedback">Please type price</div>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -108,18 +109,20 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label for="description">Description
                                 <span class="text-danger">*</span>
                             </label>
-                            <textarea name="description" id="description" cols="30" rows="10" ></textarea>
-                            <div class="invalid-feedback">Please type product description </div>
+                            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                            <div class="invalid-feedback">Please type product description</div>
                         </div>
+
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Image 1</label>
-                                    <input class="form-control" type="file" name="imageProduct_1" id="image_1" onchange="previewImg(this,'product-detail-img1')" required>
+                                    <input class="form-control" type="file" name="imageProduct_1" id="image_1" accept="image/*" onchange="validateImage(this); previewImg(this, 'product-detail-img1')">
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <img id="product-detail-img1" class="img-product-detail" src="/storage/uploads/product/no_image.jpg" alt="">
@@ -128,20 +131,43 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Image 2</label>
-                                    <input class="form-control" type="file" name="imageProduct_2" id="image_2" onchange="previewImg(this,'product-detail-img2')" required>
+                                    <input class="form-control" type="file" name="imageProduct_2" id="image_2" accept="image/*" onchange="validateImage(this); previewImg(this, 'product-detail-img2')">
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <img id="product-detail-img2" class="img-product-detail" src="/storage/uploads/product/no_image.jpg" alt="">
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btnAdd mt-30" data-bs-toggle="modal" >Add Product</button>
+
+                        <button type="submit" class="btn btnAdd mt-30" data-bs-toggle="modal">Add Product</button>
                     </div>
                 </div>
-                
             </form>
         </div>
-
     </div>
 
+    <script>
+        function validateImage(input) {
+            const file = input.files[0];
+            if (file) {
+                const fileType = file['type'];
+                const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/svg+xml'];
+                if (!validImageTypes.includes(fileType)) {
+                    alert('Please select a valid image file (jpeg, png, jpg, gif, svg).');
+                    input.value = '';
+                }
+            }
+        }
+
+        function previewImg(input, imgId) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(imgId).src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 @endsection

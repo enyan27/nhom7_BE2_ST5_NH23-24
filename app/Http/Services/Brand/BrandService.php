@@ -21,15 +21,25 @@ class BrandService
         $brand->fill($request->all());
         $brand->save();
     }
-
+    
     public function destroy($id) {
-        
-        $brand = Brand::Find($id);
+        $brand = Brand::find($id);
 
-        if($brand) {
+        if ($brand) {
+            // Kiểm tra xem brand có sản phẩm nào không
+            $products = $brand->product()->get(['id', 'productname']);
+            if ($products->isNotEmpty()) {
+                return [
+                    'success' => false,
+                    'productCount' => $products->count(),
+                    'products' => $products
+                ]; // Brand có sản phẩm, không cho phép xóa
+            }
 
-            return $brand->delete();
+            // Xóa brand
+            $brand->delete();
+            return ['success' => true];
         }
-        return false;
+        return ['success' => false, 'productCount' => 0, 'products' => collect()];
     }
 }

@@ -9,7 +9,7 @@
         <div class="cardHeader">
             <h2>Create New Product Detail</h2>
         </div>
-        <form class="formProduct" method="POST" action="admin/product/{{$product->id}}/detail/create/store" enctype="multipart/form-data"  novalidate>
+        <form class="formProduct" method="POST" action="admin/product/{{$product->id}}/detail/create/store" enctype="multipart/form-data" novalidate>
             @csrf
             <div class="row justify-content-center">
                 <div class="col-7">
@@ -21,9 +21,8 @@
                     @endif
                     <div class="form-group">
                         <label for="productname">Product Name</label>
-                        <input disabled class="form-control"  name="productname" value="{{$product->productname}}" required>
+                        <input disabled class="form-control" name="productname" value="{{$product->productname}}" required>
                     </div>
-
 
                     <div class="form-group">
                         <label for="quantity">Color Name
@@ -69,7 +68,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Image 1</label>
-                                <input class="form-control" type="file" name="imageProduct_1" id="image_1" onchange="previewImg(this,'product-detail-img1')" required>
+                                <input class="form-control" type="file" name="imageProduct_1" id="image_1" accept="image/*" onchange="validateImage(this); previewImg(this,'product-detail-img1')">
                             </div>    
                             <div class="d-flex justify-content-center">
                                 <img id="product-detail-img1" class="img-product-detail" src="/storage/uploads/product/no_image.jpg" alt="">
@@ -78,19 +77,42 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Image 2</label>
-                                <input class="form-control" type="file" name="imageProduct_2" id="image_2" onchange="previewImg(this,'product-detail-img2')" required>
+                                <input class="form-control" type="file" name="imageProduct_2" id="image_2" accept="image/*" onchange="validateImage(this); previewImg(this,'product-detail-img2')">
                             </div>
                             <div class="d-flex justify-content-center">
                                 <img id="product-detail-img2" class="img-product-detail" src="/storage/uploads/product/no_image.jpg" alt="">
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btnAdd btnSaveProfile mt-30 ">Create</button>
+                    <button type="submit" class="btn btnAdd btnSaveProfile mt-30">Create</button>
                 </div>
             </div>
-            
         </form>
     </div>
 </div>
-            
+
+<script>
+    function validateImage(input) {
+        const file = input.files[0];
+        if (file) {
+            const fileType = file['type'];
+            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/svg+xml'];
+            if (!validImageTypes.includes(fileType)) {
+                alert('Please select a valid image file (jpeg, png, jpg, gif, svg).');
+                input.value = '';
+            }
+        }
+    }
+
+    function previewImg(input, imgId) {
+        const file = input.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById(imgId).src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 @endsection

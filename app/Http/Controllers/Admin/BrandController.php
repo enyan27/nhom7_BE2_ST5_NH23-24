@@ -45,13 +45,21 @@ class BrandController extends Controller
         $this->brandService->update($request, $brand);
         return redirect('admin/brand')->with('success','SUCCESS: Brand was successfully edited!');
     }
-
     public function destroy($id) {
-        
-        $result = $this->brandService->destroy($id);   
-
-        if($result) {
-            return redirect('admin/brand')->with('success','SUCCESS: Brand was successfully deleted!');
+        $result = $this->brandService->destroy($id);
+    
+        if ($result['success']) {
+            return redirect('admin/brand')->with('success', 'SUCCESS: Brand was successfully deleted!');
+        } else {
+            $productCount = $result['productCount'];
+            $productDetails = $result['products']->map(function($product) {
+                return '#' . $product->id . ' - ' . $product->productname;
+            })->implode('<br>');
+    
+            return redirect('admin/brand')->with([
+                'error' => "ERROR: Cannot delete brand that has $productCount products.",
+                'error_details' => "Error details:<br>$productDetails"
+            ]);
         }
-    }
+    }    
 }

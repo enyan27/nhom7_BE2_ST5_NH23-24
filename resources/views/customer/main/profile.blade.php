@@ -85,15 +85,29 @@
         <div class="col-5 d-flex align-items-center justify-content-center">
             <div class="user-avatar">
                 <div class="user-avatar-img">
-                    <img src="/{{ Auth::user()->avatar ?? 'storage/uploads/user/no_avatar.png'}}" id="user-avatar" alt="user-avatar">
+                    <img src="/{{ Auth::user()->avatar ?? 'storage/uploads/user/no_avatar.png' }}" id="user-avatar" alt="user-avatar" class="img-thumbnail">
                 </div>
                 <div class="user-avatar-btn">
                     <label for="avatar">Choose Image
-                        <input onchange="previewImg(this,'user-avatar')" type="file" name="image" id="avatar">
+                        <input onchange="validateImage(this)" type="file" name="avatar" id="avatar" accept="image/*" style="display: none;">
                     </label>
                 </div>
             </div>
         </div>
     </div>
 </form>
+
+<script>
+    function validateImage(input) {
+        const file = input.files[0];
+        if (file) {
+            const fileType = file['type'];
+            const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/svg+xml'];
+            if (!validImageTypes.includes(fileType)) {
+                alert('Please select a valid image file (jpeg, png, jpg, gif, svg).');
+                input.value = '';
+            }
+        }
+    }
+</script>
 @endsection

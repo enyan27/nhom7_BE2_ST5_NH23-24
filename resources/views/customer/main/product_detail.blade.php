@@ -352,13 +352,13 @@
         <input type="hidden" name="product_id" value="{{ $product->id }}">
         <input type="hidden" name="rating" id="ratingValue" value="">
         <div class="form-group">
-            <label for="comment">Bình luận:</label>
+            <label for="comment">Comment:</label>
             <textarea name="comment" id="comment" class="form-control" rows="5"></textarea>
             <span class="text-danger" id="commentError"></span>
         </div>
-        <button type="submit" class="btn btn-primary">Gửi</button>
+        <button type="submit" class="btn btn-primary">Send</button>
     </form>
-    <div class="average-rating" id="averageRating">Số sao trung bình: {{ $averageRating }}</div>
+    <div class="average-rating" id="averageRating">Average Rating: {{ $averageRating }}</div>
 
     <div class="new-comment mt-3">
         <!-- Nội dung bình luận mới sẽ được thêm vào đây sau khi gửi thành công -->
@@ -367,17 +367,19 @@
             <div class="col-lg-2">
                 <div class="review-info">
                     <p class="review-author">{{$review->user->fullname}}</p>
-                    <p class="review-date">{{$review->created_at = date('d/m/Y', strtotime($review->created_at))}}</p>
+
+                    <p class="review-comment">{{$review->comment}}</p>
                 </div>
             </div>
             <div class="col-lg-10">
                 <div class="review-content">
-                    <p class="review-rating">Đánh giá:
+
+                <p class="review-rating">
                         @for ($i = 0; $i < $review->rating; $i++)
                             <span class="star">★</span>
-                            @endfor
-                    </p>
-                    <p class="review-comment">{{$review->comment}}</p>
+                        @endfor
+                </p>
+                <p class="review-date">{{$review->created_at = date('d/m/Y', strtotime($review->created_at))}}</p>
                 </div>
             </div>
         </div>

@@ -23,34 +23,42 @@ class ProductService
 
         $product_slug = Str::of($request->input('productname'))->slug('-');
     
-        if($request->hasFile($fieldImg)) {
+        if ($request->hasFile($fieldImg)) {
     
-            $original_name = $request->file($fieldImg)->getClientoriginalName();
+            $original_name = $request->file($fieldImg)->getClientOriginalName();
             $ext = $request->file($fieldImg)->extension();
-            $new_name = $product_slug . '-' . md5($original_name) . '.' .$ext;
+            $new_name = $product_slug . '-' . md5($original_name) . '.' . $ext;
     
             $path = 'uploads/product';
-            $request->file($fieldImg)->storeAs('public/' . $path , $new_name);
+            $request->file($fieldImg)->storeAs('public/' . $path, $new_name);
     
-            return $request->merge([$attr => 'storage/'. $path . '/' . $new_name ]);
+            return 'storage/' . $path . '/' . $new_name;
         }
+    
+        return null;
     }
+    
 
     // Remove the 'storage/' prefix and add 'public/' prefix
     private function deleteImg($imgPath) {
-
+        // Kiểm tra nếu imgPath là ảnh mặc định, không xóa
+        if ($imgPath === 'storage/uploads/product/no_image.jpg') {
+            return;
+        }
+    
+        // Remove the 'storage/' prefix and add 'public/' prefix
         $imgPath = 'public/' . str_replace('storage/', '', $imgPath);
     
-        if(Storage::exists($imgPath)) {
+        if (Storage::exists($imgPath)) {
             Storage::delete($imgPath);
         }
     }
-    
+
     public function store($request) {
 
-        $this->uploadImg($request, 'imageProduct_1','image_1');
-        $this->uploadImg($request, 'imageProduct_2', 'image_2');
-
+        $image1 = $this->uploadImg($request, 'imageProduct_1', 'image_1') ?? 'storage/uploads/product/no_image.jpg';
+        $image2 = $this->uploadImg($request, 'imageProduct_2', 'image_2') ?? 'storage/uploads/product/no_image.jpg';
+    
         $product = $request->all();
         $product['slug'] = Str::of($request->input('productname'))->slug('-');
         $product['quantity'] = 0;
@@ -58,32 +66,37 @@ class ProductService
         $product['rate_total'] = 0;
         $product['rate_count'] = 0;
         $product['created_by'] = Auth::user()->id;
-
+        $product['image_1'] = $image1;
+        $product['image_2'] = $image2;
+    
         return Product::create($product);
     }
 
     public function update($request, $product_id) {
 
         $product = $this->find($product_id);
-      
+    
         // Upload new images if provided and delete old ones
-        if($request->hasFile('imageProduct_1')) {
+        if ($request->hasFile('imageProduct_1')) {
             $this->deleteImg($product->image_1);
-            $this->uploadImg($request, 'imageProduct_1','image_1');
+            $product->image_1 = $this->uploadImg($request, 'imageProduct_1', 'image_1');
+        } elseif (!$product->image_1) {
+            $product->image_1 = 'storage/uploads/product/no_image.jpg';
         }
-        if($request->hasFile('imageProduct_2')) {
+    
+        if ($request->hasFile('imageProduct_2')) {
             $this->deleteImg($product->image_2);
-            $this->uploadImg($request, 'imageProduct_2', 'image_2');
+            $product->image_2 = $this->uploadImg($request, 'imageProduct_2', 'image_2');
+        } elseif (!$product->image_2) {
+            $product->image_2 = 'storage/uploads/product/no_image.jpg';
         }
-        
+    
         $data = $request->all();
         $data['slug'] = Str::of($request->input('productname'))->slug('-');
     
         $product->update($data);
     }
     
-    
-
     public function destroy($product_id) {
 
         $product = $this->find($product_id);

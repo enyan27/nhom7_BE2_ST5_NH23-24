@@ -557,9 +557,14 @@
                                                     width="1"
                                                     style="mso-line-height-rule: exactly; border-bottom-width: 2px; border-bottom-color: #dadada; border-bottom-style: solid; padding: 13px 13px 13px 0;"
                                                     bgcolor="#ffffff" valign="middle">
-                                                                                                <!-- Test lai product image-->
-                                                    <img width="140" class="product-image"
+                                                    <!-- Test lai product image-->
+                                                    <!-- <img width="140" class="product-image"
                                                       src="{{$orderDetail->productDetail->product->image_1}}" 
+                                                      alt="Product Image"
+                                                      style="vertical-align: middle; text-align: center; width: 140px; max-width: 140px; height: auto !important; border-radius: 1px; padding: 0px;">
+                                                  </th> -->
+                                                  <img width="140" class="product-image"
+                                                      src="https://cdn.shopify.com/s/files/1/1070/9630/products/Case-2_140x140_cropped@2x.jpg?v=1527243096"
                                                       alt="Product Image"
                                                       style="vertical-align: middle; text-align: center; width: 140px; max-width: 140px; height: auto !important; border-radius: 1px; padding: 0px;">
                                                   </th>
