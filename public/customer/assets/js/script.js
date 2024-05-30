@@ -1,15 +1,20 @@
 // Load Avatar
 
-function previewImg(fileInput, showImg) {
-    if (fileInput.files && fileInput.files[0]) {
-        const reader = new FileReader();
-
-        reader.onload = (e) => {
-            document
-                .getElementById(showImg)
-                .setAttribute("src", e.target.result);
-        };
-        reader.readAsDataURL(fileInput.files[0]);
+function validateAndPreviewImg(input, imgId) {
+    const file = input.files[0];
+    if (file) {
+        const fileType = file['type'];
+        const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/svg+xml'];
+        if (!validImageTypes.includes(fileType)) {
+            alert('Please select a valid image file (jpeg, png, jpg, gif, svg).');
+            input.value = '';
+        } else {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById(imgId).src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
     }
 }
 

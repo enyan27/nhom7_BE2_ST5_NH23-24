@@ -5062,7 +5062,7 @@ fieldset:disabled .btn {
 
 .accordion-button:not(.collapsed) {
     color: #fff;
-    background-color: #ee2761;
+    background-color: #EB3349;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
 }
 
@@ -5199,7 +5199,7 @@ fieldset:disabled .btn {
 .page-link {
     position: relative;
     display: block;
-    color: #ee2761;
+    color: #EB3349;
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #dee2e6;
@@ -5215,13 +5215,13 @@ fieldset:disabled .btn {
 .page-link:hover {
     z-index: 2;
     color: #fff;
-    background-color: #ee2761;
+    background-color: #EB3349;
 }
 
 .page-link:focus {
     z-index: 3;
     color: #fff;
-    background-color: #ee2761;
+    background-color: #EB3349;
     outline: 0;
 }
 
@@ -5232,7 +5232,7 @@ fieldset:disabled .btn {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #ee2761;
+    background-color: #EB3349;
 }
 .page-item.disabled .page-link {
     color: #6c757d;
